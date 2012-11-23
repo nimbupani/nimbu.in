@@ -1,0 +1,703 @@
+<!doctype html>
+
+<!--
+
+    Welcome to the light side of the source, young padawan.
+
+    One step closer to learn something interesting you are...
+
+                               ____                  
+                            _.' :  `._               
+                        .-.'`.  ;   .'`.-.           
+               __      / : ___\ ;  /___ ; \      __  
+             ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
+             :' `.t""=-.. '<@.`;_  ',@:` ..-=""j.' `;
+                  `:-.._J '-.-'L__ `-.-' L_..-;'     
+                    "-.__ ;  .-"  "-.  : __.-"       
+                        L ' /.======.\ ' J           
+                         "-.   "__"   .-"            
+                        __.l"-:_JL_;-";.__           
+                     .-j/'.;  ;""""  / .'\"-.        
+                   .' /:`. "-.:     .-" .';  `.      
+                .-"  / ;  "-. "-..-" .-"  :    "-.   
+             .+"-.  : :      "-.__.-"      ;-._   \  
+             ; \  `.; ;                    : : "+. ; 
+             :  ;   ; ;                    : ;  : \: 
+             ;  :   ; :                    ;:   ;  : 
+            : \  ;  :  ;                  : ;  /  :: 
+            ;  ; :   ; :                  ;   :   ;: 
+            :  :  ;  :  ;                : :  ;  : ; 
+            ;\    :   ; :                ; ;     ; ; 
+            : `."-;   :  ;              :  ;    /  ; 
+             ;    -:   ; :              ;  : .-"   : 
+             :\     \  :  ;            : \.-"      : 
+              ;`.    \  ; :            ;.'_..-=  / ; 
+              :  "-.  "-:  ;          :/."      .'  :
+               \         \ :          ;/  __        :
+                \       .-`.\        /t-""  ":-+.   :
+                 `.  .-"    `l    __/ /`. :  ; ; \  ;
+                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
+                    \ / .-"   /.     .'.' ;_:'    ;  
+                     :-""-.`./-.'     /    `.___.'   
+                           \ `t  ._  /               
+                            "-.t-._:'                
+
+-->
+
+<!--
+    
+    So you'd like to know how to use impress.js?
+    
+    You've made the first, very important step - you're reading the source code.
+    And that's how impress.js presentations are built - with HTML and CSS code.
+    
+    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
+    And what is even more important, you need to be a designer, too, because there are no default
+    styles for impress.js presentations, there is no default or automatic layout for them.
+    
+    You need to design and build it by hand.
+    
+    So...
+    
+    Would you still like to know how to use impress.js?
+    
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Pushing the Cutting Edge Forward | Divya Manian</title>
+    
+    <meta name="description" content="Talk on Pushing Cutting Edge Forward by Divya Manian at WDCNZ, August 2012" />
+    <meta name="author" content="Divya Manian" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheet. Script adds all styles it needs for
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/impress.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesing things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+    
+ <div class="step  middle" data-x="0" data-y="-500" data-z="0">
+  <h1>Pushing the Cutting Edge Forward with Web Standards</h1>
+  <h2><a href="http://twitter.com/divya">@divya</a> ★ Slides: <a href="http://nimbu.in/sfhtml5">nimbu.in/sfhtml5</a></h2>
+</div>
+
+<div class="step " data-x="1000" data-y="0" data-z="" data-scale="0.5">
+  <h1>A little story</h1>
+</div>
+
+<div class="step  middle" data-x="1000" data-y="0" data-z="-1000" data-scale="0.5">
+  <img src="https://dl.dropbox.com/u/952/wdcnz/zeldman.jpg">
+</div>
+
+<div class="step " data-x="1000" data-y="0" data-z="-2000" data-scale="0.5">            
+  <h1>My first website</h1>
+  <img src="https://dl.dropbox.com/u/952/wdcnz/first-blog.png">
+</div>
+
+<div class="step " data-x="1000" data-y="0" data-z="-3000" data-scale="0.5">            
+  <h1>Mission Accomplished?</h1>
+</div>        
+
+<div class="step " data-x="1000" data-y="0" data-z="-4000"  data-scale="0.5">
+  <h1>Looking at my code</h1>
+  <img src="https://dl.dropbox.com/u/952/wdcnz/view-source.png">
+</div>
+ 
+<div class="step  middle" data-x="3000" data-y="1000">
+<h1>What I learnt</h1>
+  <ul>
+    <li>Cut down debug time</li>
+    <li>Better evaluate frameworks</li>
+  </ul>
+</div>
+
+<div class="step  middle" data-x="3000" data-y="1000" data-z="-1000">
+  <h1>Influence Web Standards</h1>
+</div>
+
+
+<div class="step " data-x="4000" data-y="2000" data-z="" data-scale="3">
+<h1>Why</h1>
+<ul>
+  <li>Speedier Specification process</li>
+  <li>Stop others from making the same mistakes</li>
+  <li>Get the features <em>you</em> want</li>
+  <li>More tests = Fewer Browser bugs</li>
+  <li>Writing tool extensions, polyfills drive adoption</li>
+</ul>
+</div>  
+
+<div class="step " data-x="4000" data-y="2000" data-z="-1000" data-scale="3">
+<h1>Make the web easier for you</h1>
+<p>Be involved in the direction specifications are taking</p>
+</div>
+
+<div class="step " data-x="-1000" data-y="-1000" data-z="" data-rotate="90">
+  <h1>What are these specifications?</h1>
+  <p><a href="http://platform.html5.org/">platform.html5.org</a></p>
+</div>
+
+<div class="step  middle" data-x="-1000" data-y="-1000" data-z="-1000" data-rotate="90">
+  <h1>For</h1>
+  <ul>
+    <li>User Agents</li>
+    <li>You</li>
+  </ul>
+</div>
+
+<div class="step " data-x="-1000" data-y="-1000" data-z="-2000" data-rotate="90">
+  <h1>Compliance</h1>
+</div>
+
+<div class="step  middle" data-x="-1000" data-y="-1000" data-z="-3000" data-rotate="90">
+  <h1>Normative</h1>
+  <p>Compliant <strong>User Agents</strong> must implement.</p>
+</div>
+
+<div class="step " data-x="-1000" data-y="-1000" data-z="-4000" data-rotate="90">
+  <h1>Conformance Requirements</h1>
+  <p>Each feature has restrictions on what kinds of values it can have.</p>
+</div>
+
+<div class="step " data-x="-1000" data-y="-1000" data-z="-5000" data-rotate="90">
+  <h1>Browser Conformance Requirements ≠ Author Conformance Requirements</h1>
+</div>
+
+<div class="step " data-x="-2000" data-y="-2000" data-z="">
+  <h1>Who writes these specs?</h1>
+</div>
+
+<div class="step  middle" data-x="-2000" data-y="-2000" data-z="-1000">
+  <p>Specs developed within <em>Working Groups</em></p>
+</div>
+
+<div class="step " data-x="-2000" data-y="-2000" data-z="-3000">
+  <p>Each Working Group officially consists of representatives of organizations</p>
+</div>
+
+<div class="step " data-x="-2000" data-y="-2000" data-z="-4000">
+  <p>Sometimes, an <em>Invited Expert</em> is asked to contribute</p>
+</div>
+
+<div class="step " data-x="-2000" data-y="-2000" data-z="-5000">
+  <p> Most activity occurs on emails, IRC channels, weekly teleconferences or quarterly face to face conversations.</p>
+</div>
+
+<div class="step " data-x="-2000" data-y="-2000" data-z="-6000">
+  <h1>In the Open</h1>
+  <ul>
+  <li>Everyone can give feedback</li>
+  <li>Everyone can read emails, or hang in the IRC channels (especially during weekly teleconferences)</li>
+  <li>Your opinion (if expressed with right intent) is valued</li>
+  </ul>
+</div>
+
+<div class="step " data-x="-3000" data-y="-3000" data-z="">
+  <h1>When is a spec ready to use?</h1>
+</div>
+
+<div class="step  middle" data-x="-3000" data-y="-3000" data-z="-1000">
+  <p>Officially when a spec is a recommendation</p>
+</div>
+
+<div class="step  middle" data-x="-4000" data-y="-4000">
+<p>First Working Draft 
+→ (discussions/iterations on Editor's Draft) 
+→ Candidate Recommendation 
+→ Proposed Recommendation 
+→ Recommendation
+</p>
+</div>
+<div class="step " data-x="-4000" data-y="-4000" data-z="-2000">
+  <h1>Past timeline</h1>
+  <ul>
+  <li><strong>Namespaces</strong>: 1999 → 2011 (2002: Mozilla 1.0)</li>
+  <li><strong>Colors</strong>: 1999 → 2011 (2008: Safari 3.1)</li>
+  <li><strong>Media Queries</strong>: 2001 → 2012 (2008: Safari 3.2)</li>
+  <li><strong>Selectors Level 3</strong>: 1999 → 2011 (2008: Safari 3.2)</li>
+  <li><strong>Backgrounds &amp; Borders</strong>: 2001 → 2012 (2008: Safari 3.1)</li>
+  </ul>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-3000">
+  <h1>ಠ_ಠ</h1>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-4000">
+  <h1>It gets better!</h1>
+  <ul>
+    <li><strong>Regions</strong>: 2011 (2011: Chrome 15)</li>
+    <li><strong>Grids</strong>: 2011 (2011: IE 10)</li>
+    <li><strong>Variables</strong>: 2012 (2012: WebKit Nightly)</li>
+    <li><strong>Device Adaptation</strong>: 2011 (2011: Opera Mobile 11)</li>
+  </ul>
+</div>
+
+<div class="step  middle" data-x="-4000" data-y="-4000" data-z="-5000">
+<h1>Unofficially</h1>
+<p>(in my view)</p>
+<ul>
+  <li>Stable Syntax</li>
+  <li>Stable implementations in 3 or more rendering engines</li>
+  <li>Consistent behavior in all of them</li>
+  <li>Minimal failure in non-compliant browsers
+  (or a good fallback story)</li>
+</ul>
+</div>
+
+<div class="step " data-x="-5000" data-y="-5000" data-z="" data-scale="3">
+  <p>(or check <a href="http://html5please.com">html5please.com</a>)</p>
+</div>
+
+<div class="step " data-x="5000" data-y="3000" data-z="">
+  <h1>How to participate</h1>
+  <ul>
+    <li>Read specs & ask questions</li>
+    <li>Document what you have learned</li>
+  </ul>  
+</div>
+
+<div class="step " data-x="5000" data-y="3000" data-z="-1000">
+<h1>CSS</h1>
+<ul>
+  <li><strong>Specs</strong>: <a href="dev.w3.org/csswg/">dev.w3.org/csswg/</a></li>
+  <li><strong>Mailing List</strong>: <a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a></li>
+  <li><strong>IRC</strong>: #css on irc.w3.org:6667</li>
+</ul>
+
+</div>
+
+<div class="step " data-x="5000" data-y="3000" data-z="-2000">
+<h1>HTML</h1>
+<ul>
+  <li><strong>Specs</strong>: <a href="http://dev.w3.org/html5/spec/">dev.w3.org/html5/spec/</a> &amp; <a href="http://whatwg.org/html">whatwg.org/html</a></li>
+  <li><strong>Mailing List</strong>: <a href="http://lists.w3.org/Archives/Public/public-html/">public-html</a> (<em>read only</em>) &amp; <a href="http://www.whatwg.org/mailing-list">whatwg.org</a></li>
+  <li><strong>IRC</strong>: #whatwg on freenode.net</li>
+</ul>
+</div>
+
+<div class="step " data-x="5000" data-y="3000" data-z="-3000">
+<h1>JS</h1>
+<ul>
+  <li><strong>Specs</strong>: <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">wiki.ecmascript.org/doku.php?id=harmony:specification_drafts</a></li>
+  <li><strong>Mailing List</strong>: <a href="https://mail.mozilla.org/listinfo/es-discuss/">es-discuss</a></li>
+  <li><a href="https://mail.mozilla.org/pipermail/es-discuss/2012-July/024260.html">Guidance on reviewing ES 6 drafts</a></li>
+</ul>
+</div>
+
+<div class="step " data-x="5000" data-y="3000" data-z="-4000">
+<h1>SVG</h1>
+<ul>
+  <li><strong>Specs</strong>: <a href="https://svgwg.org/svg2-draft/">svgwg.org/svg2-draft</a></li>
+  <li><strong>Mailing List</strong>: <a href="http://lists.w3.org/Archives/Public/www-svg/">www-svg</a></li>
+  <li><strong>IRC</strong>: #svg on irc.w3.org:6667</li>
+</ul>
+
+</div>
+
+<div class="step  middle" data-x="6000" data-y="4000" data-z="" data-scale="2">
+  <h1>As a Web Developer</h1>
+</div>
+
+<div class="step " data-x="6000" data-y="4000" data-z="-2000" data-scale="2">
+    <h2>If you do not understand what the spec intends or means</h2>
+</div>
+
+<div class="step " data-x="6000" data-y="4000" data-z="-4000" data-scale="2">
+  <h2>If you find some feature hard to use</h2>
+</div>
+
+<div class="step " data-x="6000" data-y="4000" data-z="-6000" data-scale="2">
+  <h2>If some feature does not cover an obvious use case</h2>
+</div>
+
+<div class="step " data-x="6000" data-y="4000" data-z="-8000" data-scale="2">
+  <h2>Test features and verify if they work as intended</h2>
+</div>
+
+<div class="step " data-x="7000" data-y="5000" data-z="" >
+  <h1>As an API Designer</h1>
+</div>
+
+<div class="step " data-x="7000" data-y="5000" data-z="-1000">
+  <h2>&#39;This API sucks!&#39;</h2>
+  <p>Look at <a href="http://www.w3.org/TR/html-design-principles/">HTML Design Principles</a> and see if the API can be made better within these restrictions</p>
+</div>
+
+<div class="step " data-x="7000" data-y="5000" data-z="-2000">
+  <h2>&#39;This should have an API&#39;</h2>
+</div>
+
+<div class="step " data-x="7000" data-y="5000" data-z="-3000">
+<h2>&#39;This syntax is contrary to everything a good syntax should be&#39;</h2>
+</div>
+
+<div class="step  middle" data-x="8000" data-y="5000" data-z="-5000">
+  <h1>Feedback</h1>
+  <p>Ask on mailing list noted on the spec in the <strong>Discussion</strong> on top of the spec.</p>
+</div>
+
+<div class="step " data-x="8000" data-y="5000" data-z="-6000">
+  <img src="https://dl.dropbox.com/u/952/wdcnz/feedback.png">
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-rotate="-90">
+  <h1>How to ask such that you get a response</h1>
+</div>
+
+<div class="step  middle" data-x="9000" data-y="6000" data-z="-1000" data-rotate="-90">
+  <h2>Search mailing list archives</h2>  
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-2000" data-rotate="-90">
+  <p> Write in plaintext (seriously)</p>
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-3000" data-rotate="-90">
+  <p> Inline quote your response within the context of what you are responding to</p>
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-4000" data-rotate="-90">
+  <img src="https://dl.dropbox.com/u/952/wdcnz/inline-quote.png">
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-5000" data-rotate="-90">
+  <p> Always cite reference to any assertion you claim as a fact</p>
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-6000" data-rotate="-90">
+  <img src="https://dl.dropbox.com/u/952/wdcnz/cite-refs.png">
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-7000" data-rotate="-90">
+  <p> Ask specific questions</p>
+</div>
+
+<div class="step " data-x="9000" data-y="6000" data-z="-8000" data-rotate="-90">
+  <p>Show you have done the work to find a solution</p>
+</div>
+
+<div class="step " data-x="-3000" data-y="-3000">
+  <h1>Found a bug?</h1>
+</div>
+
+<div class="step  middle" data-x="-3000" data-y="-3000" data-z="-1000">
+  <h2>Isolate the bug</h2>  
+  <p><a href="http://codepen.io">codepen.io</a> • <a href="http://jsfiddle.net">jsfiddle.net</a> • <a href="http://jsbin.com">jsbin.com</a> • <a href="http://dabblet.com">dabblet.com  </a> </p>
+  <p>Chris Coyier on writing reduced test cases:<br> <a href="http://css-tricks.com/reduced-test-cases/">css-tricks.com/reduced-test-cases/</a></p>
+</div>
+
+<div class="step " data-x="-3000" data-y="-3000" data-z="-2000">
+  <p>Is this a bug in the specification or the browser?</p>
+</div>
+
+<div class="step " data-x="-3000" data-y="-3000" data-z="-3000">
+  <p>Has this bug been reported? </p>
+</div>
+
+<div class="step " data-x="-3000" data-y="-3000" data-z="-4000">
+  <h2>File a bug</h2>
+  <p>Lea Verou&#39;s on how to file a bug:<br><a href="http://coding.smashingmagazine.com/2011/09/07/help-the-community-report-browser-bugs/">coding.smashingmagazine.com/2011/09/07/help-the-community-report-browser-bugs/</a> </p>
+</div>
+
+<div class="step " data-x="-7000" data-y="-7000">
+  <h1>Manage your time</h1>
+</div>
+
+<div class="step  middle" data-x="-7000" data-y="-7000" data-z="-1000">
+  <p>Filter all emails from standards mailing lists</p>
+</div>
+
+<div class="step " data-x="-7000" data-y="-7000" data-z="-2000">
+  <p>Schedule tasks!</p>
+</div>
+
+<div class="step " data-x="-7000" data-y="-7000" data-z="-3000">
+  <h1>Weekly goal</h1>
+  <ul>
+    <li>File a bug report
+    <li>Write a test case
+    <li>Give Feedback on a feature/spec
+    <li>Document one property/API completely on <a href="http://webplatform.org">webplatform.org</a>
+    <li><small>(stolen from <a href="http://twitter.com/hober">@hober</a>)</small>
+  </ul>
+</div>
+
+<div class="step " data-x="-8000" data-y="-8000" data-z="">
+  <h1>Participate!</h1>
+</div>
+
+<div class="step  middle" data-x="-8000" data-y="-8000" data-z="-1000">
+  <h1>Write tests for specs!</h1>
+  <p>Take part in <a href="http://testthewebforward.org">Test the Web Forward</a> (<a href="http://twitter.com/testthewebfwd">@testthewebfwd</a>)</p>
+</div>
+
+<div class="step " data-x="-8000" data-y="-8000" data-z="-2000">
+  <h1>Test features</h1>
+  <p>Note your findings, and contribute to <a href="http://html5please.com">html5please.com</a> </p>
+</div>
+
+<div class="step " data-x="-8000" data-y="-8000" data-z="-3000">
+  <h1>Document the Web</h1>
+  <p> Join <a href="http://webplatform.org">webplatform.org</a> & start contributing. </p>
+  <p>Questions? Ask on IRC #webplatform on Freenode</p>
+</div>
+
+<div class="step " data-x="-8000" data-y="-8000" data-z="-4000">
+  <p>Other ideas: <a href="http://movethewebforward.org">Move the Web Forward</a></p>
+</div>
+
+<div class="step " data-x="-9000" data-y="-9000" data-z="">
+  <h1>What can you do?</h1>
+  <ul>
+    <li>Read the Editor's Drafts</li>
+    <li>Test features of the bleeding edge</li>
+    <li>Write about what you learnt</li>
+    <li>Give feedback to Specification authors</li>
+    <li>Write tests</li>
+    <li>Participate in hackathons like<a href="http://twitter.com/testthewebfwd">@testthewebfwd</a>!</li>
+  </ul>
+</div>
+
+<div class="step " data-x="10000" data-y="2000" data-z="" data-rotate="90" data-scale="4">
+  <h1>Thanks!</h1>
+  <p><a href="http://html.adobe.com/jobs/">html.adobe.com/jobs</a></p>
+  <p class="footnote">Made with <a href="http://bartaz.github.com/impress.js/">impress.js</a></p>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="" data-scale="2">
+  <h1>Follow on Twitter</h1>
+</div>
+
+<div class="step  middle" data-x="-4000" data-y="-4000" data-z="-1000" data-scale="2">
+  <h1>Adobe</h1>
+  <p><a href="http://twitter.com/vincent_hardy">@vincent_hardy</a> (SVG, CSS Regions &amp; Exclusions) /<a href="http://twitter.com/astearns">@astearns</a> (CSS Regions) /<a href="http://twitter.com/dirkschulze">@dirkschulze</a> (SVG &amp; CSS Animations)</p>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-2000" data-scale="2">
+  <h1>Apple</h1>
+<p><a href="http://twitter.com/smfr">@smfr</a> /<a href="http://twitter.com/grogswork">@grogswork</a> /<a href="http://twitter.com/hober">@hober</a> /<a href="http://twitter.com/ohunt">@ohunt</a> (EcmaScript)</p>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-4000" data-scale="2">
+  <h1>Google</h1>
+  <p><a href="http://twitter.com/tabatkins">@tabatkins</a> (CSS/SVG) /<a href="http://twitter.com/dglazkov">@dglazkov</a> (Web Components) /<a href="http://twitter.com/slightlylate">@slightlylate</a> (Web Components, ECMAScript).</p>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-6000" data-scale="2">
+  <h1>Microsoft</h1>
+  <p><a href="http://twitter.com/sgalineau">@sgalineau</a> /<a href="http://twitter.com/mrcss">@mrcss</a> /<a href="http://twitter.com/thejohnjansen">@thejohnjansen</a> /<a href="http://twitter.com/alexmog">@alexmog</a></p>
+</div>
+
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-8000" data-scale="2">
+  <h1>Mozilla</h1>
+  <p><a href="http://twitter.com/davidbaron">@davidbaron</a> (CSS) /<a href="http://twitter.com/fantasai">@fantasai</a> (CSS) /<a href="http://twitter.com/hsivonen">@hsivonen</a> (HTML) /<a href="http://twitter.com/heycam">@heycam</a> (SVG) /<a href="http://twitter.com/brendanEich">@brendanEich</a> (ECMAScript) /<a href="http://twitter.com/littlecalculist">@littlecalculist</a> (ECMAScript)</p>
+</div>
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-10000" data-scale="2">
+  <h1>Opera</h1>
+  <p><a href="http://twitter.com/erikdahlstorm">@erikdahlstorm</a> (SVG) / <a href="http://twitter.com/zcorpan">@zcorpan</a> (HTML5) /<a href="http://twitter.com/foolip">@foolip</a> (Audio) / <a href="http://twitter.com/richtibbett">@richtibbett</a> (Device APIs)</p>
+</div>
+
+
+<div class="step " data-x="-4000" data-y="-4000" data-z="-12000" data-scale="2">
+  <h1>Others</h1>
+  <p><a href="http://twitter.com/gasubic">@gasubic</a> (CSSOM) / <a href="http://twitter.com/frivoal">@frivoal</a> (Media Queries) / <a href="http://twitter.com/silviapfeiffer">@silviapfeiffer</a> ‏(Video) /<a href="http://twitter.com/jkiss">@jkiss</a> (Accessibility) /<a href="http://twitter.com/stevefaulkner">@stevefaulkner</a> (Accessibility).</p>
+</div>
+    
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    
+    Oh, you've already cloned the code from GitHub?
+    
+    You have it open in text editor?
+    
+    Stop right there!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    
+    For real?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm<a href="http://twitter.com/bartaz">@bartaz</a> on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    
+    Cheers!
+    
+-->
+

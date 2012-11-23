@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <title> Loading</title> 
+  <link rel="stylesheet" href="../reset.css">
+  <style type='text/css'> 
+    html, body { overflow: hidden; background: #000; color: #fff; }
+    @-webkit-keyframes fade {
+        0% { margin-left: 0%; }
+    	  4% { opacity: 1;  }
+    	 25% { opacity: 1; }      	
+    	 29% { opacity: 0.5; }
+    	100% { margin-left: 100%;}
+    	}
+
+    	@-moz-keyframes fade {
+      	4% { opacity: 1; }
+      	30% { opacity: 1; }      	
+      	37% { opacity: 0.5; }
+    	}
+      pre { width: 400px; margin: 0 auto; }
+      .animation { margin: 1em auto; width: 430px; position: relative; }
+      .animation b { position: absolute; left: -5em; top: 0; display: block; }
+      .animation b:last-of-type { top: 120px; }      
+      .animation i { display: block; margin: 10px 0; height: 100px; width: 100px; }
+      .animation i img { height: 100%; width: 100%; }      
+      .animation i { opacity: 0.5; -webkit-animation: fade 24s linear infinite; -moz-animation: fade 24s linear infinite; background: indianred; }
+      .animation i:last-of-type { -webkit-animation-delay: 6s; }
+      .animation i:hover { -webkit-animation-play-state: paused; }
+       .animation em { -webkit-transform: rotate(90deg); display: block; margin-left: 0.75em; }
+       .animation u { display: block; position: absolute; top: 0; left: 0%; border-right: 1px solid white; height: 100%; width: 1px; text-decoration: none; white-space: nowrap; }      
+       .animation u:nth-of-type(2) { border-color: aliceblue; left: 5%; }
+       .animation u:nth-of-type(3) { border-color: purple; left: 25%; }  
+       .animation u:nth-of-type(4) { border-color: maroon; left: 30%; }            
+       .animation u:nth-of-type(5) { border-color: khaki; left: 100%; }                   
+  </style> 
+</head> 
+<body> 
+  <div class="animation">
+    <b>no delay</b>
+    <b>2s delay</b>
+	  <i><img src="http://placekitten.com/100/101"></i>
+	  <i><img src="http://placekitten.com/100/101"></i>	  
+	  <u><em>0%(0s)</em></u>
+	  <u><em>4%(0.24s)</em></u>
+	  <u><em>33%(1.98s)</em></u>
+	  <u><em>37%(2.22s)</em></u>
+	  <u><em>100%(6s)</em></u>	  
+  </div>
+    <pre>@-webkit-keyframes fade {
+  /* Fades in 4% (4% - 0%) of 6s = 0.24s */      
+        0% { opacity: 0; }
+      	4% { opacity: 1; } 
+
+  /* Opacity visible for 33% of 6s 
+  = 1.98s (1.98 + .24 = 3.22s) */    	
+      	33% { opacity: 1; } 
+
+  /* Fades out next 4% (37% - 33%) of 8s = 0.24s */    	
+      	37% { opacity: 0; }
+       100% { opacity: 0; }
+  }</pre>  
+</body> 
+</html>

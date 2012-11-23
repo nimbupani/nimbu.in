@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Bring Your Apps to life with CSS</title>
+
+	<link href="slideshow.css" rel="stylesheet" type="text/css" />
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>  
+</head>
+<body>
+
+<header id="intro" class="slide">
+	<h1>Bring your apps to life with CSS</h1>
+</header>
+
+<div class="slide single" title="Today">
+	<h2>What's for lunch?</h2>
+	<ul>
+		<li class="delayed">Define web apps and design constraints</li>
+		<li class="delayed">Why we should use CSS</li>
+		<li class="delayed">2 demos of creative uses of CSS across browsers</li>
+		<li class="delayed">Frameworks to mitigate effort of style.</li>
+	</ul>
+</div>
+
+<div class="slide single" title="Who am I?">
+	<h2>Who am I?</h2>
+	<ul>
+		<li class="delayed">Web Opener <br> <img src="img/opera-logo.png" alt="Opera Software"></li>
+		<li class="delayed">Core Contributor<br> <a href="http://html5boilerplate.com"><img src="./img/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
+		<li class="delayed"><a href="http://html5readiness.com"><img src="./img/html5readiness.png" alt="html5readiness.com" width="480"></a><a href="http://w3fools.com"><img src="./img/w3fools.png" alt="w3fools.com" width="480" height="271"></a></li>
+		<li class="delayed"><a href="http://nimbupani.com">nimbupani.com</a> and <a href="http://twitter.com/divya">@divya</a></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>What is a web app?</h2>
+</div>
+<div class="slide iframe center">
+  <img width="800" src="img/facebook.png">
+</div>
+<div class="slide iframe center">
+  <img width="800" src="img/nimbupani.png">
+</div>
+<div class="slide iframe center">
+  <img width="800" src="img/amazon.png">
+</div>
+<div class="slide single">
+  <h2>What is a web app?</h2>
+  <ul>
+    <li class="delayed">Is used very often by several regular users.</li>
+    <li class="delayed">Used on a variety of devices.</li>
+    <li class="delayed">Users accomplish tasks or specific activities with it.</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Nature of a web app</h2>
+  <ul>
+    <li class="delayed">Works on several layouts, browsers, and bandwidth constraints.</li>
+    <li class="delayed">Optimised to accomplish user's tasks on all these layouts and browsers.</li>
+    <li class="delayed">Fast to load for frequent users, quick enough for new users.</li>
+    <li class="delayed">Interface does not get in the way of user's intentions.</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Design Constraints</h2>
+  <ul>
+    <li class="delayed">Flexible enough to take advantage of all kinds of layouts.</li>
+    <li class="delayed">Uses as few assets as possible.</li>
+    <li class="delayed">Uses features as available on the platform it is run on.</li>
+    <li class="delayed">Still presents a seamless experience for the user.</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Which means…</h2>
+  <ul>
+    <li class="delayed">More graphics you use, the more the assets.</li>
+    <li class="delayed">More pixel perfection you yearn for, more the file sizes and the maintenance nightmare.</li>
+    <li class="delayed">More polyfilling to torture older browsers to perform beyond their capability, slower is the user experience.</li>
+    <li class="delayed">What could be the solution?</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>CSS3!</h2>
+  <ul>
+    <li class="delayed">Present experience native to the user's browser/platform ability</li>
+    <li class="delayed">Features that work on Opera 10.5+, IE9+, Firefox 3.6+, Safari 4+, Chrome 8+</li>
+    <li class="delayed">Native animation trumps JavaScript animation</li>
+    <li class="delayed">Dont use <code>setTimeout</code> and <code>setInterval</code> for visual effects.</li>
+    <li class="delayed"><h3>No background images</h3>Less network requests, smaller files > greater performance</li>
+    <li class="delayed">"Subtle CSS3 effects should be employed as a reward for users who run a modern browser." <br>- <a href="http://taitems.github.com/Front-End-Development-Guidelines/">Front-End Development Guidelines</a></li>
+    <li class="delayed">Delight the user with whats available, and not moan about what isn't or make the experience terrible for those without.</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Ready?</h2>
+  <ul>
+    <li class="delayed">2 in-depth demos that showcase power of CSS</li>
+    <li class="delayed">See key interesting CSS features</li>
+    <li class="delayed">Use CSS to work within browser constraints</li>
+  </ul>
+</div>
+
+<div class="slide center">
+  <iframe src="demos/slideshow.html"></iframe>
+</div>
+<div class="slide center">
+  <iframe src="demos/spinner.html"></iframe>
+</div>
+<div class="slide">
+  <h2>Slideshow</h2>
+</div>
+<div class="slide code">
+  <h2>Slideshow - Markup</h2>
+  <pre class="brush: xml">&lt;section class=&quot;slideshow&quot;&gt;
+<article id="one">
+  <img src="http://placekitten.com/500/301" alt="Slide One of Our App">
+  <h3>Chee Liam has checked in Barcelona! <a href="#">Check it out!</a></h3>
+</article>
+<article id="two">
+  <img src="http://placekitten.com/500/300" alt="Slide Two of Our App">
+  <h3>Julia has partied at Sentosa! <a href="#">Sentosa parties</a></h3>
+</article>
+<article id="three">
+  <img src="http://placekitten.com/500/302" alt="Slide Three of Our App">
+  <h3>Radha is slunking at Kuala Lumpur <a href="#">Catch him here!</a></h3>
+</article>
+&lt;/section&gt;</pre>
+</div>
+<div class="slide code">
+  <h2>Slideshow - Style</h2>
+<pre class="brush: css; highlight: [3, 4]">
+.slideshow { 
+ /* Set the viewbox for the slideshow */  
+  width: 500px;
+  height: 300px; 
+/* Make all slides position absolutely w.r.t this viewbox */  
+  position: relative;
+}
+
+.slideshow article { 
+/* Each slide is stacked on top of each other */  
+  position: absolute;
+  top: 0; left: 0; 
+}
+</pre>
+</div>
+<div class="slide code">
+  <h2>Slideshow - Animations</h2>
+<pre class="brush: css; highlight: [8, 11, 16]">.cssanimations .slideshow article {
+/* Hide all slides to prepare
+for display with animations */
+  opacity: 0;
+
+/* Each slide animates linearly
+in 12s cycles forever using fade animation  */
+  animation: fade 6s linear infinite;
+}
+
+.cssanimations .slideshow article:nth-of-type(2) {
+/* Delay starting animation for this slide by 2s */
+  animation-delay: 2s;
+}
+
+.cssanimations .slideshow article:last-of-type {
+/* Delay starting animation for this slide by 4s */
+  animation-delay: 4s;
+}</pre>  
+</div>
+<div class="slide single">
+  <h2>CSS3 Selectors</h2>
+  <ul>
+    <li class="delayed">
+      <p><code>article:nth-of-type(2)</code></p>
+      <p>2nd in the list of siblings of the type article</p>
+    </li>
+    <li class="delayed">
+      <p><code>article:last-of-type</code></p>
+      <p>last in the list of siblings of the type article</p>
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>CSS3 Selectors</h2>
+  <ul>
+    <li>More selectors: <a href="http://dev.w3.org/csswg/selectors3/#selectors">dev.w3.org/csswg/selectors3/#selectors</a></li>
+    <li>Test them: <a href="http://leaverou.me/demos/nth.html">leaverou.me/demos/nth.html</a></li>
+    <li><h3>Browser Support</h3><p><img src="./img/opera.png"><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/firefox.png"><img src="./img/ie9.png" width="64"></p></li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>CSS Animations</h2>
+  <p class="codeexplained">
+    <code>animation:</code> <code>fade <b>Animation Name</b></code> <code>6s<b>Duration of the animation</b></code> <code>linear <b>Timing function to use</b></code> <code>infinite</code>;
+  </p>
+  <h3>Browser Support</h3><p><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/aurora.png" width="64"></p>
+</div>
+<div class="slide code">
+  <h2>Slideshow - Animations</h2>
+<pre class="brush: css">
+/* The fade animation */
+@keyframes fade {
+/* Fades in from 0% to 4% of animation */  
+    0% { opacity: 0; }
+    4% { opacity: 1; }
+
+/* From 4% to 33% keep opacity steady at 1 */
+   33% { opacity: 1; }
+
+/* Fades out in 4%(37% - 31%) of animation */	
+   37% { opacity: 0; }
+  100% { opacity: 0; }
+}</pre>  
+</div>
+<div class="slide single">
+  <h2>Calculations</h2>
+  <ul>
+    <li class="delayed">Each slide needs to stay on for 2 seconds. </li>
+    <li class="delayed">Total time for 3 slides: 6 seconds</li>
+    <li class="delayed">Each slide should be visible for about 2s…</li> 
+    <li class="delayed">…which translates to 33% (⅓) of the total animation time.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Calculations</h2>
+  <p><a href="demos/animation-1.html">Basic Animation for each slide</a></p>
+</div>
+<div class="slide">
+  <h2>Calculations</h2>
+  <p><a href="demos/animation-2.html">Basic Animation with 2 slides</a></p>
+</div>
+<div class="slide">
+  <h2>Calculations</h2>
+  <p><a href="demos/animation-3.html">Animation with 2 slides synchronized</a></p>
+</div>
+<div class="slide code">
+  <h2>How to pause animations?</h2>
+  <pre class="brush: css">.cssanimations .slideshow:hover article { 
+  animation-play-state: paused; 
+  }</pre>
+</div>
+<div class="slide single">
+  <h2>How about browsers without support for animations?</h2>
+  <ul>
+    <li class="delayed">Latest stable and earlier versions of Opera, Firefox, IE do not support animations</li>
+    <li class="delayed">It is also not available on Opera Mini, Mobile, Firefox Mobile, WP7</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>What to do?</h2>
+  <ul>
+    <li class="delayed">Detect Animations: Use <a href="http://modernizr.com">modernizr</a></li>
+    <li class="delayed">Give what each browser can do best.</li>
+  </ul>
+</div>
+<div class="slide code">
+  <h2>Browsers without CSS animations</h2>
+<pre class="brush: xml">
+&lt;nav&gt;
+  &lt;a href=&quot;#one&quot; title=&quot;View First Friend Update&quot;&gt;&#x25CF;&lt;/a&gt;
+  &lt;a href=&quot;#two&quot; title=&quot;View Second Friend Update&quot;&gt;&#x25CF;&lt;/a&gt;
+  &lt;a href=&quot;#three&quot; title=&quot;View Third Friend Update&quot;&gt;&#x25CF;&lt;/a&gt;
+&lt;/nav&gt;
+</pre>
+</div>
+
+<div class="slide code">
+  <h2>Browsers without CSS animations</h2>
+<pre class="brush: css; highlight: [12]">.slideshow nav { 
+/* Position above the slideshow */  
+  text-align: center; 
+  margin-top: -2em; 
+  font-size: 2em;  
+  display: block; 
+}
+
+.slideshow article { 
+/* Prepare slides for showing when clicked */  
+  opacity: 0; 
+  transition: opacity 1s linear; 
+}
+
+.slideshow article:first-of-type,
+.slideshow article:target { 
+/* If no article element is targetted, 
+have first slide show, else,
+show the target element */  
+  opacity: 1; 
+}</pre>
+</div>
+<div class="slide">
+  <h2>Transitions</h2>
+  <p class="codeexplained"><code>transition:</code> <code>opacity<b>CSS property to apply on</b></code> <code>1s<b>Time transition should take</b></code><code>linear<b>Easing Function</b></code></p>
+</div>
+<div class="slide">
+  <h2>How should it look on devices with smaller screens?</h2>
+</div>
+<div class="slide code">
+  <h2>Slideshow - Different Screens?</h2>
+  <pre class="brush: css; highlight = [10]">
+/* Styles for smaller screens */    
+  .slideshow article { 
+    padding: 1em; 
+    overflow: hidden; 
+  }
+  .slideshow img { 
+    float: left; 
+    width: 100px; 
+  }
+@media screen and (min-width: 800px) {  
+/* Styles we used previously */
+}</pre>
+</div>
+<div class="slide list">
+  <h2>Media Queries</h2>
+  <p class="codeexplained">
+    <code>@media</code> <code>screen <b>Type of media: tv, print, projection</b></code> <code>and <b>combining queries, also <code>not</code>, <code>only</code> and ","</b></code> (<code>min-width: <b>A media feature</b></code> <code>800px <b>Value for that media feature</b></code>)
+<br><br>    
+  </p>
+  <ul>
+    <li>More at: <a href="http://dev.w3.org/csswg/css3-mediaqueries/">dev.w3.org/csswg/css3-mediaqueries/</a></li>
+    <li>Using this in conjunction with device viewport: <a href="http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/">bit.ly/cssviewport</a></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Slideshow - Smaller Screens</h2>
+  <ul>
+    <li>On Opera Mobile</li>
+    <li>On Opera Mini</li>
+  </ul>
+</div>
+<div class="slide iframe">
+  <iframe src="demos/slideshow.html"></iframe>
+</div>
+<div class="slide single">
+  <h2>In Short…</h2>
+  <ul>
+    <li class="delayed">CSS Animations can help you do away with Flash or JavaScript based slideshows</li>
+    <li class="delayed">CSS Selectors give you powerful choice of elements</li>
+    <li class="delayed">Media Queries to optimize content for different layouts</li>    
+    <li class="delayed">Using modernizr can help you provide optimal solutions based on feature-support.</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Isotope: Graceful use of CSS3</h2>
+  <ul>
+    <li class="delayed"><a href="http://isotope.metafizzy.co">isotope.metafizzy.co</a></li>
+    <li class="delayed">Magical layouts with a jQuery plugin</li>
+    <li class="delayed">Case study of how to do rich animations across browsers</li>
+    <li class="delayed">Uses Modernizr if it exists, else does a mini-test for CSS 3D transforms, 2D transforms, and transitions. </li>
+    <li class="delayed">If none exist, uses absolute positioning for layout changes.</li>
+    <li class="delayed">Else uses what is available.</li>
+  </ul>
+</div>
+<div class="slide iframe">
+  <iframe src="demos/spinner.html"></iframe>
+</div>
+<div class="slide code">
+  <h2>Spinner</h2>
+<pre class="brush: xml">
+&lt;span class=&quot;loader&quot;&gt;loading&hellip;&lt;/span&gt;
+</pre>
+</div>
+<div class="slide code">
+<h2>Spinner - CSS</h2>
+<pre class="brush: css; highlight: [15]">
+.cssanimations .loader {
+/* Set the size of the spinner */  
+width: 100px; 
+height: 100px;
+
+/* We want to hide the text "loading" */  
+text-indent: 110px;
+white-space: nowrap;
+overflow: hidden;
+  
+/* There is no spinner but a circular spinner */
+border-radius: 100px;
+  
+/* The Real Magic! */  
+background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%), 
+                  linear-gradient(transparent 0%, indianred 90%, indianred 100%), 
+                  linear-gradient(0deg, indianred 0%, indianred 50%, #000 50%, indianred 100%);
+}
+</pre>
+</div>
+<div class="slide single">
+  <h2>CSS3 Backgrounds</h2>
+  <ul>
+    <li class="delayed">
+      <h3>Multiple Backgrounds</h3>
+      <p class="codeexplained">
+        <code>background-image</code>: <code>radial-gradient(…)<b>Appears on top of all other background images</b></code>, <code>linear-gradient(…)<b>Penultimate background image</b></code>, <code>linear-gradient(…)<b>Lowest background image</b></code>;        
+      </p></li>
+    <li class="delayed">
+      <h3>Gradients as Images</h3>
+      <p class="codeexplained">
+        <code>linear-gradient</code>(<code>0deg<b>direction for the gradient creating a gradient line</b></code>, <code>indianred 0%<b>A color stop</b></code>, <code>aliceblue 50%<b>Another color stop</b></code>, <code>indianred 100%<b>Last color stop</b></code>);
+      </p>
+      <p>Color stops are points on the gradient line</p>      
+    </li>
+  </ul>
+</div>
+<div class="slide dont-resize single">
+  <h2>In Photoshop language</h2>
+  <ul>
+    <li class="delayed">
+      <h3>Gradient Line</h3>
+      <p><img src="img/gradient-line.png" alt="screenshot of how a gradient line appears" height="200"></p>
+    </li>
+    <li class="delayed">
+      <h3>Color Stops</h3>
+      <p><img src="img/color-stops.png" alt="color stops in photoshop"></p>
+    </li>
+  </ul>
+</div>
+<div class="slide iframe">
+  <iframe src="demos/multiplebgs-1.html"></iframe>
+</div>
+<div class="slide code">
+  <h2>Spinner - Animation</h2>
+  <pre class="brush: css; highlight: [6]">
+.loader {   
+  animation: spin 2s linear infinite; 
+}
+@keyframes spin { 
+/* Make the element spin to 360deg */
+    0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } 
+}</pre>
+</div>
+<div class="slide iframe">
+  <iframe src="demos/multiplebgs-2.html"></iframe>
+</div>
+<div class="slide iframe">
+  <iframe src="demos/spinner.html"></iframe>
+</div>
+<div class="slide single" title="CSS Progress Indicators">
+  <h2>In Short…</h2>
+  <ul>
+    <li class="delayed">1 element 1 rule</li>
+    <li class="delayed">Save a network request, and a large animated gif</li>
+    <li class="delayed">Even without animation or gradient support, it works.</li>
+  </ul>
+</div>
+<div class="slide list">
+  <h2>Other Subtle Effects</h2>
+  <ul>
+    <li>Drop Shadows without images: <a href="http://nicolasgallagher.com/css-drop-shadows-without-images/demo/">bit.ly/cssdropshadows</a></li>
+    <li>Gradient Patterns: <a href="http://leaverou.me/css3patterns/">leaverou.me/css3patterns/</a></li>
+    <li>CSS demos: <a href="http://simurai.com/tagged/lab">simurai.com/tagged/lab</a> & <a href="http://playground.deaxon.com/css/">playground.deaxon.com/css/</a> (webkit only ☹)</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Make CSS3 Work for You</h2>
+  <ul>
+    <li class="delayed">Use CSS preprocessors: Sass (<a href="http://sass-lang.com">sass-lang.com</a>) or Less (<a href="http://lesscss.org/">lesscss.org/</a>)</li>
+    <li class="delayed">Compass CSS3 Mixin Library: <a href="http://compass-style.org/docs/reference/compass/css3/">bit.ly/compasscss3mixins</a></li>
+  </ul>
+</div>
+<div class="slide twocol code">
+  <h2>Easy Prefixed Gradient</h2>
+  <ul>
+    <li>
+      <h3>Sass</h3>
+      <pre class="brush: xml">html { 
+  @include background-image(
+  linear-gradient(left top, white, #ddd)); 
+}</pre>      
+    </li>
+    <li>
+      <h3>CSS</h3>
+      <pre class="brush: css">html {
+   background-image: -webkit-gradient(linear, 0% 0% , 100% 100% , color-stop( 0% , #ffffff ), color-stop( 100% , #dddddd ));
+   background-image: -webkit-linear-gradient( left top , #ffffff , #dddddd );
+   background-image: -moz-linear-gradient( left top , #ffffff , #dddddd );
+   background-image: -ms-linear-gradient( left top , #ffffff , #dddddd );   
+   background-image: -o-linear-gradient( left top , #ffffff , #dddddd );
+   background-image: linear-gradient( left top , #ffffff , #dddddd );
+}</pre>      
+    </li>
+  </ul>
+</div>
+<div class="slide twocol code">
+  <h2>Easy 2D Transforms</h2>
+  <ul>
+    <li>
+      <h3>Sass</h3>
+      <pre class="brush: xml">html { 
+  @include transform2d(rotate(90deg)); 
+}</pre>      
+    </li>
+    <li>
+      <h3>CSS</h3>
+        <pre class="brush: css">html {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}</pre>      
+    </li>
+  </ul>
+</div>
+<div class="slide code">
+  <h2>Install</h2>
+  <pre class="brush: bash">sudo* gem install sass
+sudo* gem install compass</pre>
+<p><small>* On a mac</small></p>
+</div>
+<div class="slide list">
+  <h2>Too Hard?</h2>
+  <ul>
+    <li><a href="http://css3please.com/">css3please.com</a></li>
+    <li><a href="http://leaverou.me/demos/cssgradientsplease/">leaverou.me/demos/cssgradientsplease/</a></li>
+    <li><a href="http://border-image.com">border-image.com</a></li>
+    <li><a href="http://layerstyles.org/">layerstyles.org</a> (old syntax)</li>
+    <li><a href="http://mothereffingtextshadow.com/">mothereffingtextshadow.com</a></li>
+    <li><a href="http://text-align.com/">text-align.com</a></li>    
+  </ul>
+</div>
+<div class="slide list">
+  <h2>Follow the leaders</h2>
+  <ul class="multicol">
+    <li><img src="https://si3.twimg.com/profile_images/1177838998/Gravatar.png" width="50">Chris Coyier <a href="http://twitter.com/chriscoyier">@chriscoyier</a></li>
+    <li><img src="https://si3.twimg.com/profile_images/1158205226/ft2010-closeup.png" width="50">Lea Verou <a href="http://twitter.com/leaverou">@leaverou</a></li>
+    <li><img src="https://si3.twimg.com/profile_images/105220944/dead-crow.png" width="50">Nicolas Gallagher <a href="http://twitter.com/necolas">@necolas</a></li>
+    <li><img src="https://si0.twimg.com/profile_images/755304868/photo2.jpg" width="50">Ryan Seddon <a href="http://twitter.com/ryanseddon">@ryanseddon</a></li>
+    <li><img src="https://si1.twimg.com/profile_images/1280562030/simurai_red_blur.png" width="50">Simurai <a href="http://twitter.com/simurai">@simurai</a></li>
+    <li><img src="https://si3.twimg.com/profile_images/1283783491/cutieface-stamp512d.png" width="50">David DeSandro <a href="http://twitter.com/desandro">@desandro</a></li>
+    <li><img src="https://si3.twimg.com/profile_images/736784232/avatar.jpg" width="50">Thierry Kolblentz <a href="http://twitter.com/thierrykoblentz">@thierrykoblentz</a></li>
+    <li><img src="https://si1.twimg.com/profile_images/1264978934/IMG_7021.jpg" width="50">Zoe M Gillenwater <a href="http://twitter.com/zomigi">@zomigi</a></li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Remember</h2>
+  <ul>
+    <li class="delayed">Prefixes: All or none*.</li>
+    <li class="delayed">Always have fallback.</li>
+    <li class="delayed">transparent = rgba(0, 0, 0, 0)</li>
+    <li class="delayed">Webkit does not transform inline elements.</li>
+    <li class="delayed">Transitions or animations on pseudo-elements (e.g. <code>::before</code>, <code>::after</code>) only available on Aurora.</li>
+    <li class="delayed">Each gradient or transition needs to be specified 5 times for multiple prefixes (and prefixless).</li>
+    <li class="delayed">Minimize use of CSS gradients, transforms & animations.</li>
+    <li class="delayed">Use Modernizr, now in low-fat flavours: <a href="http://modernizr.github.com/Modernizr/2.0-beta/">modernizr.github.com/Modernizr/2.0-beta/</a></li>
+  </ul>
+</div>
+<div class="slide list">
+  <h2>Should the design look the same in all browsers?</h2>
+  <ul>
+    <li>Stoyan Stefenov's Performance Business Pitch <a href="http://www.phpied.com/the-performance-business-pitch/">bit.ly/cssperformance</a></li>
+    <li>Zoe M Gillenwater’s CSS3 Case Study <a href="http://www.graphics.com/modules.php?name=Sections&op=viewarticle&artid=914">bit.ly/zomigicasestudy</a></li>
+    <li>Trent Walton's CSS vs CSS3 - a speed benchmark <a href="http://www.smashingmagazine.com/2011/04/21/css3-vs-css-a-speed-benchmark/">bit.ly/cssvscss3</a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Thanks</h2>
+  <ul>
+    <li>Holler <a href="http://twitter.com/divya">@divya</a></li>
+    <li>Slides: <a href="http://nimbu.in/unplugged/">nimbu.in/unplugged/</a></li>
+    <li>Demos: <a href="http://nimbu.in/unplugged/demos/">nimbu.in/unplugged/demos/</a></li>
+  </ul>
+</div>
+<footer>
+  <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
+</footer>
+<script src="classList.js"></script>
+<script src="slideshow.js"></script>
+<script>
+var slideshow = new SlideShow(document.getElementById('presentation'));
+</script>
+<script src="syntaxhighlighter/scripts/shCore.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushCSS.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushXML.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

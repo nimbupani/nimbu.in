@@ -1,0 +1,181 @@
+/*  style.css contains a reset, font normalization and some base styles.
+*/
+/*  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline) v1.4 2009-07-27 | Author: Richard Clark http://html5doctor.com/html-5-reset-stylesheet/
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+article, aside, figure, footer, header, hgroup, nav, section { display: block; }
+
+nav ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; content: none; }
+
+a { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted #000; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+/* END RESET CSS */
+/*
+fonts.css from the YUI Library: http://developer.yahoo.com/yui/
+refer to http://developer.yahoo.com/yui/fonts/ for font sizing
+*/
+body { font: 14px/1.4 georgia; *font-size: small; *font: x-small; }
+
+table { font-size: inherit; font: 100%; }
+
+select, input, textarea { font: 99% arial,helvetica,"Nimbus Sans L", "Bitstream Vera Sans", sans-serif; }
+
+pre, code { font: 115% monospace; *font-size: 100%; }
+
+/* always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* make buttons play nice in IE:     http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button { width: auto; overflow: visible; }
+
+/* bicubic resizing for non-native sized IMG:  http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/* styling the basics.   original author: paul irish TODO: consider: http://developer.yahoo.com/yui/base/ */
+/* #444 looks better than black: http://twitter.com/H_FJ/statuses/11800719859 */
+body, select, input, textarea { color: #444; }
+
+strong, th, h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+/* disable because you'll override these anyhow  h5 { font-size:85%; margin:8px 0 1px; } h4 { font-size:92%; margin:10px 0 2px; }  h3 { font-size:107%; margin:13px 0 3px; }  h2 { font-size:122%; margin:15px 0 3px; } h1 { font-size:136%; margin:0 0 10px; } 
+*/
+p { margin: 15px 0 10px; }
+
+a, a:active, a:visited { text-decoration: none; font-weight: bold; padding: 0.2em 0.4em; }
+
+a:hover { -moz-transition-property: background; -webkit-transition-property: background; -o-transition-property: background; transition-property: background; -moz-transition-duration: 0.3s; -webkit-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; -moz-transition-timing-function: ease-in; -webkit-transition-timing-function: ease-in; -o-transition-timing-function: ease-in; transition-timing-function: ease-in; -moz-border-radius: 4px; -webkit-border-radius: 4px; -o-border-radius: 4px; -ms-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px; }
+
+ul { margin-left: 30px; }
+
+ol { margin-left: 30px; list-style-type: decimal; }
+
+small { font-size: 85%; }
+
+td, td img { vertical-align: top; }
+
+/* for image replacement */
+.ir { display: block; text-indent: -999px; overflow: hidden; background-repeat: none; }
+
+/* Hide for both screenreaders and browsers */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders  http://www.webaim.org/techniques/css/invisiblecontent/ */
+.visuallyhidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+.invisible { visibility: hidden; }
+
+/* DESIGN BY DIVYA MANIAN V1.0 http://nimbupani.com */
+#loading { margin: 1em 0; font-size: 1.5em; }
+
+#feet { display: none; background: url("../img/feet-r.png") repeat-y 0 0; position: absolute; top: 400px; left: 0; width: 100px; height: 111px; }
+#feet i { position: absolute; bottom: 0; right: 0; width: 50%; height: 111px; background: #ae7d52; }
+
+#container { margin: 4em auto; width: 680px; background: #ebcb96; border: 1em solid #cc7f51; padding: 2em; outline: 0.5em dotted #000; outline-offset: 0em; -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 1em; -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 1em; -o-box-shadow: rgba(0, 0, 0, 0.3) 0 0 1em; box-shadow: rgba(0, 0, 0, 0.3) 0 0 1em; }
+
+header { text-align: center; font-size: 2em; text-shadow: 5px 5px 0 #000, -5px 5px 0 #B6CFDF; margin-bottom: 2em; }
+
+header h1 { font-size: 3em; line-height: 1; }
+header h1 b { white-space: nowrap; padding-left: 0.5em; }
+
+#container ul { margin: 1em 0; -moz-column-gap: 4em; -webkit-column-gap: 4em; -o-column-gap: 4em; column-gap: 4em; -moz-column-count: 4; -webkit-column-count: 4; -o-column-count: 4; column-count: 4; -moz-column-rule: 5px dotted black; -webkit-column-rule: 5px dotted black; -o-column-rule: 5px dotted black; column-rule: 5px dotted black; }
+
+#container li { list-style: none; margin-bottom: 0.25em; white-space: nowrap; }
+
+#events { margin: 2em 0; width: 100%; }
+
+#events thead th:first-child { -moz-border-radius-topleft: 0.5em; -webkit-border-top-left-radius: 0.5em; -o-border-top-left-radius: 0.5em; -ms-border-top-left-radius: 0.5em; -khtml-border-top-left-radius: 0.5em; border-top-left-radius: 0.5em; }
+
+#events thead th:last-child { -moz-border-radius-topright: 0.5em; -webkit-border-top-right-radius: 0.5em; -o-border-top-right-radius: 0.5em; -ms-border-top-right-radius: 0.5em; -khtml-border-top-right-radius: 0.5em; border-top-right-radius: 0.5em; }
+
+#events thead th { background: #6a94ea; padding: 0.25em 0 0.25em 1em; font-size: 2em; text-align: left; }
+
+#events td { padding: 0.5em 2em; background: #f8fbff; border-bottom: 1px dotted #6a94ea; text-transform: capitalize; }
+
+#events td.date { white-space: nowrap; }
+
+#events tr:nth-child(odd) td { background: #e7faff; }
+
+#events tr:last-child td { padding-bottom: 2em; border-bottom: 0; }
+
+#events tr:last-child td:first-child { -moz-border-radius-bottomleft: 1em; -webkit-border-bottom-left-radius: 1em; -o-border-bottom-left-radius: 1em; -ms-border-bottom-left-radius: 1em; -khtml-border-bottom-left-radius: 1em; border-bottom-left-radius: 1em; }
+
+#events tr:last-child td:last-child { -moz-border-radius-bottomright: 1em; -webkit-border-bottom-right-radius: 1em; -o-border-bottom-right-radius: 1em; -ms-border-bottom-right-radius: 1em; -khtml-border-bottom-right-radius: 1em; border-bottom-right-radius: 1em; }
+
+footer { font-size: 0.8em; text-align: center; }
+footer a[rel='license']:hover { background: none; }
+
+/* TYPOGRAPHY */
+.wf-active h1, .wf-active #events thead th, #loading { font-family: "Lobster", georgia; }
+
+/* COLORS */
+body { background: url("../img/desert.jpg") repeat-x #ae7d52; color: #23160e; }
+
+header h1, a, a:active, a:visited { color: #a4574f; }
+
+a:hover { background: #000; }
+
+/* END DESIGN */
+/* These selection declarations have to be separate. No text-shadow http://twitter.com/miketaylr/status/12228805301 */
+::-moz-selection { background: #FF5E99; color: #fff; text-shadow: none; }
+
+::selection { background: #FF5E99; color: #fff; text-shadow: none; }
+
+/* http://j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+@media screen and (max-width: 999px) { body { font-size: 12px; }
+  #container { width: 500px; }
+  header h1 { font-size: 3em; } }
+
+@media screen and (min-width: 1000px) and (max-width: 1099px) { body { font-size: 13px; }
+  #container { width: 720px; }
+  header h1 { font-size: 3em; } }
+
+@media screen and (min-width: 1100px) { body { font-size: 14px; }
+  #container { width: 960px; }
+  header h1 { font-size: 4em; } }
+
+/* inline'd print styles avoid required HTTP connection http://www.phpied.com/delay-loading-your-print-css/ */
+/* Original Author: Divya Manian */
+@media print { * { background: transparent !important; color: #444 !important; text-shadow: none; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; }
+  abbr:after { content: " (" attr(title) ")"; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; } }
+
+@media all and (orientation:portrait) { /* Style adjustments for portrait mode goes here */ }
+
+@media all and (orientation:landscape) { /* Style adjustments for landscape mode goes here */ }
+
+@media screen and (max-device-width: 480px) { /* All Capable Mobile Browser (Opera Mobile, iPhone Safari, Android Chrome) CSS goes here */
+  html { -webkit-text-size-adjust: none; }
+  /* Prevent iPhone from adjusting font size */
+  body { font-size: 11px; }
+  #container { margin: 2em auto; padding: 1em; width: 300px; }
+  #container #events td.date, #container li { white-space: normal; }
+  #container ul { -moz-column-gap: 1em; -webkit-column-gap: 1em; -o-column-gap: 1em; column-gap: 1em; -moz-column-count: 2; -webkit-column-count: 2; -o-column-count: 2; column-count: 2; }
+  header h1 { font-size: 2em; }
+  header h1 b { white-space: normal; }
+  #events thead th { font-size: 1em; padding-left: 0.25em; }
+  #events td { padding-left: 0.5em; } }

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CSS Next</title>
+
+	<link href="slideshow.css" rel="stylesheet" type="text/css" />
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>  
+</head>
+<body>
+
+<header id="intro" class="slide">
+	<h1>CSS Next</h1>
+</header>
+
+<div class="slide" title="Today">
+  <ul class="delayed"><li>Wha…?</li></ul>
+</div>
+
+<div class="slide" title="Who am I?">
+	<h2>Who am I?</h2>
+	<ul class="delayed">
+		<li>Web Opener <br> <img src="./img/opera-logo.png" alt="Opera Software"></li>
+		<li>Core Contributor <br> <img src="./img/html5boilerplate.png" alt="Opera Software"></li>
+		<li><a href="http://nimbupani.com">nimbupani.com</a></li>
+		<li><a href="http://twitter.com/divya">@divya</a></li>
+		<li><a href="http://nimbu.in/oslo/1/">nimbu.in/oslo/1/</a></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>CSS</h2>
+  <ul class="delayed">
+    <li>Features from specs</li>
+    <li>Drafted by editors and approved by <a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a></li>
+    <li>68 members</li>
+    <li>Representatives from Browser vendors, Universities, Others or are Invited Experts.</li>
+  </ul>
+</div>
+<div class="slide">
+  <ul class="delayed">
+    <li>Discussions on <a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a>
+    <li>Phone calls among the WG to resolve weekly agenda items.
+    <li>Meets infrequently for face to face meetings to resolve specs in detail
+  </ul>
+</div>
+<div class="slide single">
+  <h2>The Life of a Spec</h2>
+  <ul>
+    <li>
+      <p>Working Draft: Most of CSS Next here</p>
+      <p>Last Call</p>
+      <p>Candidate Recommendation: Vendor Prefixes <a href="http://wiki.csswg.org/spec/vendor-prefixes">get dropped</a></p>
+      <p>Proposed Recommendation</p>
+      <p>Recommendation</p>      
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>What’s Hot</h2>
+  <ul>
+    <li>
+      <p>Image Values</p>
+      <p>Filters</p>
+      <p>Flexbox</p>  
+      <p>Grids</p>
+      <p>Floats (Wrap)</p>  
+      <p>Regions</p>      
+    </li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Image Values</h2>
+  <ul class="delayed">
+    <li><h3>Gradient Angles</h3>
+      <pre class="brush:css">p { background: linear-gradient(90deg, black, white); }</pre>
+      <li><h3>Before</h3>    <img src=./img/bearing-angles-before.png></li>
+      <li><h3>After</h3>    <img src=./img/bearing-angles.png></li>      
+    <li><h3>Angle Gradients</h3>
+      <img src=http://zeroimag.es/wp-content/uploads/2011/08/volume-control1.png>
+    </li>
+    <li>
+      <h3>Object Fit and Object Position</h3>
+      <img src=http://devfiles.myopera.com/articles/4682/figure2.jpg>
+    </li>
+    <li>
+      <pre class="brush:css">
+img {
+  width: 300px; height: 300px;
+  object-fit: contain;
+}        
+      </pre>
+      <a href="http://dev.opera.com/articles/view/css3-object-fit-object-position/">dev.opera.com/articles/view/css3-object-fit-object-position/</a>      
+    </li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Filters</h2>
+  <ul class="delayed">
+    <li>Already in SVG
+    <li><img src=http://svgopen.org/2002/papers/hirtzler__using_svg_filters/filters/images/fdm_examples.jpg>
+    <li>
+      <pre class="brush:css">
+h2 { background-image: filter(url('bg.png'), saturate(0.5)); }
+.blurb { filter: blur(10px); }
+      </pre>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Flexbox</h2>
+  <ul class="delayed">
+    <li>Do not use!</li>
+    <li><img src=./img/flexbox.png></li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Grids</h2>
+  <ul class="delayed">
+    <li><img src=http://dev.w3.org/csswg/css3-grid-align/images/auto-placed-form.png>
+    <li><pre class="brush:css">form {
+  display: grid;
+  grid-columns: "labels" auto "controls" auto "oversized" auto;
+  grid-flow: rows
+}
+
+form > input, form > select { 
+  grid-column: "controls"; grid-row: auto; 
+}
+
+form > label { grid-column: "labels"; grid-row: auto; }
+
+#department {
+    grid-column: "oversized";
+    grid-row: auto;
+    grid-row-span: 3;
+}
+
+#buttons {
+    grid-row: auto;
+    grid-column: start end;
+    grid-column-align: end
+}</pre>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Floats</h2>
+  <ul class="delayed">
+    <li><img src=http://cdn.cbsi.com.au/story_media/339316344/css-areas_1.jpg></li>
+    <li><img src=http://wiki.csswg.org/_media/ideas/css3-floats-use-cases/exclusions_repeating.jpg?cache=&w=540&h=700>
+    <li><img src=http://wiki.csswg.org/_media/ideas/css3-floats-use-cases/exclusions_overlapping.jpg?cache=&w=540&h=700>
+    <li>
+<pre class="brush:css">img { 
+  wrap-shape: path(m11,36c9,-1 14.02433,-1.49269 19, 0 4,0 5,0l1,0);
+  wrap-shape-mode: right; 
+}</pre>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Regions</h2>
+  <ul class="delayed">
+    <li>
+     <img src=http://busyok.com/wp-content/uploads/2011/04/flow2.jpg>
+    </li>
+    <li>
+      <pre class="brush:css">#article {
+    flow-into: article_flow;
+}
+
+#breakingnews .header, #breakingnews .col, 
+#breakingnews .footer {
+    content: flow-from(article_flow);
+}</pre>
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>How to keep up?</h2>
+  <ul class="delayed">
+    <li>CSS WG Blog: <a href="http://www.w3.org/blog/CSS">www.w3.org/blog/CSS</a><br>Twitter: <a href="http://twitter.com/csswg">@csswg</a>
+    <li>People in the Working Group:  <a href="http://twitter.com/annevk">@annevk</a>  /  <a href="http://twitter.com/erikdahlstrom">@erikdahlstrom</a>  /  <a href="http://twitter.com/tabatkins">@tabatkins</a>  / <a href="http://twitter.com/fantasai">@fantasai</a> /  <a href="http://twitter.com/davidbaron">@davidbaron</a>  /  <a href="http://twitter.com/bz_moz">@bz_moz</a>  /  <a href="http://twitter.com/sgalineau">@sgalineau</a>  /  <a href="http://twitter.com/smfr">@smfr</a>  /  <a href="http://twitter.com/grorgwork">@grorgwork</a>  /  <a href="http://twitter.com/hober">@hober</a>  /  <a href="http://twitter.com/glazou">@glazou</a>  </li>
+    <li>Track messages in <a href=http://lists.w3.org/Archives/Public/www-style/>www-style</a></li>
+    <li>Latest: <a href="http://dev.w3.org/csswg/">dev.w3.org/csswg/</a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Thanks</h2>
+  <ul>
+    <li>
+      <ul>
+        <li>Holler <a href="http://twitter.com/divya">@divya</a></li>
+        <li>Slides: <a href="http://nimbu.in/oslo/">nimbu.in/oslo/1/</a></li>
+      </ul>      
+    </li>
+  </ul>
+</div>
+<footer>
+  <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
+</footer>
+<script src="slideshow.js"></script>
+<script src="syntaxhighlighter/scripts/shCore.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script>
+var slideshow = new SlideShow(document.getElementById('presentation'));
+SyntaxHighlighter.all();
+</script>
+</body>
+</html>

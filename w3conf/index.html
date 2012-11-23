@@ -1,0 +1,424 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Layouts in CSS</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
+       Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
+       for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <header id="intro" class="slide">
+  	<h1>Layouts in CSS</h1>
+  </header>
+
+  <div class="slide single" title="Who am I?">
+  	<h2>Who am I?</h2>
+  	<ul class="delayed">
+  		<li>Web Opener <br> <img src="./img/opera-logo.png" alt="Opera Software"></li>
+  		<li>Core Contributor<br> <a href="http://html5boilerplate.com"><img src="./img/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
+  		<li>Member, CSS WG</li>
+  		<li>Most recently, <a href="http://coding.smashingmagazine.com/2011/11/12/pursuing-semantic-value/">the arsonist of semantic web</a></li>
+  		<li><a href="http://nimbupani.com">nimbupani.com</a> and <a href="http://twitter.com/divya">@divya</a></li>  		
+  	</ul>
+  </div>
+  <div class="slide">
+    <h2>What</h2>
+    <ul class=delayed>
+      <li>Current state of layout</li>
+      <li>What you can expect in the near future</li>
+      <li>What to do in the meanwhile</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Current State of Layout</h2>
+    <ul class="delayed">
+      <li>Floats</li>
+      <li>Positioning</li>
+      <li><code>display: inline-block</code></li>
+      <li>Negative margins</li>
+      <li><code>display: table-cell</code></li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>But most of them have drawbacks</h2>
+    <ul class="delayed">
+      <li>Not content agnostic.</li>
+      <li>Floats require clearing.</li>
+      <li>Vertical Centering impossible</li>
+      <li>Breaks presentation on smaller screens.</li>        
+    </ul>
+  </div>
+  <div class="slide">
+  	<h2>New Layout Proposals</h2>
+    <ul class="delayed">
+      <li>
+        <ul class="sidebyside">
+          <li>Generated Content for Paged Media</li>
+          <li>Multiple Columns</li>
+          <li>Regions</li>
+        </ul>
+        <ul class="sidebyside">
+          <li>Exclusions</li>
+          <li>Grid</li>
+          <li>Flexbox</li>          
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>GCPM</h2>    
+    <ul class="delayed">
+      <li><a href="http://dev.w3.org/csswg/css3-gcpm/">dev.w3.org/csswg/css3-gcpm</a></li>
+      <li>
+        <div class="content">
+        <pre>@media paged {
+  html {
+    height: 100%;
+    overflow-style: paged-x;
+    padding: 5%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}</pre>
+</div></li>
+      <li><pre>@media paged</pre>          
+        <p>Indicate what needs to be split over pages.</p>
+      </li>
+      <li><pre>overflow-style: paged-x | paged-x-controls</pre>          
+        <p>Indicates paging of content with or without paging controls.</p>
+      </li>
+      <li><code>break-before</code>, <code>break-after</code> and <code>break-inside</code> for controlling page breaks.</li>  
+      <li><code>h1, h2 { break-after: avoid; }</code></li>      
+      <li>
+        <div class="content">
+          <h3>API</h3>
+          <ul>
+            <li><code>onpagechange</code> - Page change event</li>    
+            <li><code>currentPage</code> - current page you are on. Updating this triggers <code>onpagechange</code>.</li>
+            <li><code>pageCount</code> - total number of pages</li>
+          </ul>    
+        </div>
+      </li>
+      <li>
+        <h3>Browser Support</h3>
+        <p><b class="op">Labs Build</b></p>
+        <p>More info: <a href="http://people.opera.com/howcome/2011/reader/">people.opera.com/howcome/2011/reader/</a></p>
+      </li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Multiple Columns</h2>
+    <ul class="delayed">
+      <li><a href="http://dev.w3.org/csswg/css3-multicol/">dev.w3.org/csswg/css3-multicol/</a></li>
+      <li><pre>body { column-width: 12em; }</pre></li>
+      <li><code>break-before</code>, <code>break-after</code>, <code>break-inside</code> for controlling breaks within columns.</li>
+      <li><p><code>column-span: all</code> to span columns.</p><p><img src="./img/column-span-all.png" height="350"></p></li>
+      <li><pre>column-fill: auto | balance</pre><p>defaults to <code>balance</code> to balance all columns.</p></li>
+      <li><pre>column-fill: balance</pre><p><img src="./img/column-fill-balance.png"></p></li>
+      <li><pre>column-fill: auto</pre><p><img src="./img/column-fill-auto.png"></p></li>
+      <li>
+        <h3>Browser Support</h3>
+        <p><b class="op">11.1+</b><b class="ff">2+</b><b class="ch">4+</b><b class="sa">3.1+</b><b class="ie">10+</b></p>
+      </li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Regions</h2>
+    <ul class="delayed">
+      <li><p><img src="./img/flow2.jpg" alt="regions metaphor"></p><p><a href="http://dev.w3.org/csswg/css3-regions/">dev.w3.org/csswg/css3-regions/</a></p></li>
+      <li><pre>article.news {
+  flow-into: article_flow;
+}
+
+#main, #sub-topic, #news {
+  flow-from: article_flow;
+}</pre>
+</li>
+<li>  
+  <p><code>article_flow</code> is a named flow.</p>
+</li>
+<li>
+  <p>Selectors using <code>flow-from</code> need to be block containers.</p>
+  <p>They also establish new block formatting contexts and stacking contexts.</p>  
+</li>
+<li><pre>@region #main {
+    #article { color: #0C3D5F; }
+}</pre> 
+<p>Only limited properties can be set with this.</p>  
+</li>
+<li>
+  <h3>API</h3>
+  <ul>
+    <li><code>getNamedFlow</code></li>
+    <li><code>regionLayoutUpdate</code></li>
+  </ul>
+</li>
+<li>
+  <h3><code>getNamedFlow</code></h3>
+  <ul class="smaller">
+    <li><code>overflow</code>: read-only boolean indicating if all content fitted into available regions.</li>
+    <li><code>contentNodes</code>: NodeList of nodes that are part of flow.</li>
+    <li><code>getRegionsByContentNode(node)</code>: return all regions that node is part of flow.</li>
+  </ul>        
+</li>
+<li>
+  <h3><code>regionLayoutUpdate</code></h3>
+  <p>Event triggered when there is an update to the named flow.</p>
+</li>
+<li><h3>Browser Support</h3>
+<p><b class="ch">15+</b><b class="sa">6+</b><b class="ie">10+</b></p>
+</li>
+    </ul>  
+  </div>
+  <div class="slide">
+    <h2>Exclusions</h2>
+    <ul class="delayed">
+      <li><p><img src="./img/exclusions.jpg" alt="demo of exclusions"/></p><p><a href="http://dev.w3.org/csswg/css3-exclusions/">dev.w3.org/csswg/css3-exclusions/</a></p></li>
+      <li><h3>Exclusion element</h3> which has <code>wrap-flow</code> declared on it not set to auto.</li>      
+      <li><h3>Exclusion Area</h3> Defines wrapping for inline content around an exclusion element.</li>
+      <li><pre>wrap-flow: left | right | maximum | both | clear | auto</pre></li>
+      <li><p><pre>wrap-flow: auto</pre></p>
+<p><img src="./img/exclusion_wrap_side_auto.png"></p>
+      </li>
+      <li><p><pre>wrap-flow: right</pre></p>
+<p><img src="./img/exclusion_wrap_side_right.png"></p>
+      </li>
+      <li><p><pre>wrap-flow: both</pre></p>
+<p><img src="./img/exclusion_wrap_side_both.png"></p>
+</li>
+<li><p><pre>wrap-flow: maximum</pre></p>
+<p><img src="./img/exclusion_wrap_side_maximum_L.png"></p>
+</li>
+<li>
+  <p><pre>wrap-flow: clear</pre></p>
+<p><img src="./img/exclusion_wrap_side_clear.png"></p>  
+</li>
+<li>
+<code>wrap-margin</code>: offset inline-content outside of the exclusion element.
+</li>
+<li><code>wrap-padding</code>: offset inline content inside of the exclusion element.</li>
+<li><h3><code>wrap-margin / wrap-padding</code></h3><p><img src="./img/exclusions_padding_margin.png"></p></li>
+<li><h3>Custom Shapes for wrapping</h3>
+<pre>shape-outside: circle(50%, 50%, 50%);</pre>  
+<p><code>shape-outside</code> determines wrapping for inline content outside of the exclusion element.</p>
+</li>
+<li><h3>Shape Inside</h3><pre>shape-inside: url(#path-shape); </pre><p>Determines wrapping for inline content inside of the exclusion element</p></li>
+<li>
+  <h3>Shapes at work</h3>
+  <p><img src="./img/exclusions-shapes.png"></p>
+</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Grid</h2>
+    <ul class="delayed">
+      <li><p><img src="./img/grid.png"></p><p><a href="http://dev.w3.org/csswg/css3-grid-align/">dev.w3.org/csswg/css3-grid-align/</a></p></li>
+      <li><pre>#grid { 
+   display: grid;
+   grid-columns: auto minmax(min-content, 1fr);
+   grid-rows: auto minmax(min-content, 1fr) auto
+}</pre></li>
+      <li>
+<pre>
+  #title { grid-column: 1; grid-row: 1 }
+  #score { grid-column: 1; grid-row: 3 }  
+</pre>        
+      </li>
+      <li><h3>Grid Template</h3>
+<pre>
+  grid-template: "ta"
+                 "sa"
+                 "bb"
+                 "cc";  
+</pre>
+<p>Each new string is a row and each character in the string is a column.</p>
+</li>
+<li>
+  <h3>Grid Templates</h3>
+  <pre>#title { grid-cell: "t" }
+#score { grid-cell: "s" }</pre>
+</li>
+<li>
+  <h3>Spanning Rows and Columns</h3>
+<pre>grid-row-span: 2;
+grid-column-span: 2;
+</pre>  
+</li>
+<li>
+  <h3>Browser Support</h3>
+  <p><b class="ie">10+</b></p>
+</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Flexbox</h2>
+    <ul class="delayed">
+      <li><p><blockquote>The flexible box model determines the way boxes are distributed inside other boxes and the way they share the available space. - <a href="http://hacks.mozilla.org/2010/04/the-css-3-flexible-box-model/">hacks.mozilla.org</a></blockquote></p>
+        <p><a href="http://dev.w3.org/csswg/css3-flexbox/">dev.w3.org/csswg/css3-flexbox/</a></p></li>
+      <li><img src="./img/flexbox.png"></li>
+      <li><pre>body {
+  display: flexbox;
+  flex-pack: center;
+  flex-align: center;
+  width: 100%;height : 100%;
+}</pre></li>
+      <li><p>Flexbox item is one that is a block level child of the <code>body</code>*.</p>        </li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Triggers for various layout modes</h2>
+    <ul class="delayed">
+      <li><h3>Generated Content for paged media</h3> <code>overflow-style: paged-x | paged-x-controls</code></li>
+      <li><h3>Multiple Columns</h3><code>column-width:&lt;value></code> or <br><code>column-count:&lt;value></code> on block/inline-block/table-cell elements</li>
+      <li><h3>Regions</h3> <code>flow-from:&lt;namedflow></code> on block elements</li>
+      <li><h3>Exclusions</h3> <code>wrap-flow:&lt;not auto></code> on block elements</li>
+      <li><h3>Flexbox</h3> <code>display: flexbox | inline-flexbox</code></li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Mix 'n' Match</h2>
+    <ul class="delayed">
+      <li>A region can be an exclusion and have multiple columns.</li>
+      <li>A box can either be a region or a grid or a flexbox.</li>
+      <li>A flexbox or a grid cannot be an exclusion nor have multiple columns.</li>      
+      <li>
+        <table class="checklist">
+          <thead>
+            <th></th>
+            <th>GCPM</th>
+            <th>Multicol</th>
+            <th>Regions</th>
+            <th>Exclusions</th>
+            <th>Grid</th>
+            <th>Flexbox</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>GCPM</th>
+              <td class="yes">✔</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>                                                        
+            </tr>
+            <tr>
+              <th>Multicol</th>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td></td>
+              <td></td>                                                                                    
+            </tr>         
+            <tr>
+              <th>Regions</th>
+              <td></td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td></td>             
+              <td></td>                            
+            </tr>        
+            <tr>
+              <th>Exclusions</th>
+              <td></td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td class="yes">✔</td>
+              <td></td>             
+              <td></td>                            
+            </tr>           
+            <tr>
+              <th>Grid</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="yes">✔</td>              
+              <td></td>                            
+            </tr>     
+            <tr>
+              <th>Flexbox</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="yes">✔</td>                                          
+            </tr>                           
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Beware</h2>
+    <ul class="delayed">
+      <li>Specs are always changing</li>
+      <li>So are the syntaxes</li>
+      <li>Not ready for production, probably not for a year or two.</li>
+      <li>When using, detect features with <a href="http://modernizr.com">modernizr</a> and readable content when layout features are absent.</li>
+    </ul>
+  </div>
+  <div class="slide single">
+    <h2>For Now</h2>
+    <ul class="delayed">
+      <li>Continue present styling mechanisms (also see <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">Stubbornella's post on media blocks</a>).</li>
+      <li>Use <a href="http://isotope.metafizzy.co/">isotope.metafizzy.co</a></li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Help us!</h2>
+    <ul class="delayed">
+      <li>Provide feedback on <a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a></li>
+      <li>Create and submit usecases these layout proposals do not help solve.</li>
+      <li>Experiment and <a href=http://coding.smashingmagazine.com/2011/09/07/help-the-community-report-browser-bugs/>submit bug reports</a>.</li>
+    </ul>
+  </div>
+  <div class="slide">
+    <h2>Thanks</h2>
+    <ul>
+      <li>
+        <ul>
+          <li>Ask <a href="http://twitter.com/divya">@divya</a> / <a href="http://twitter.com/odevrel">@odevrel</a></li>
+        </ul>      
+      </li>
+    </ul>
+  </div>
+  <footer>
+    <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
+  </footer>
+
+  <script src="js/mylibs/slideshow.js"></script>
+  
+  <!-- scripts concatenated and minified via build script -->
+  <script defer src="js/plugins.js"></script>
+  <!-- end scripts -->
+</body>
+</html>

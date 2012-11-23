@@ -1,0 +1,166 @@
+/* line 1, ../src/notes.sass */
+body {
+  margin: 0;
+  padding: 1.0em;
+  background: #333;
+  color: #FFF;
+  font: 2em/1.4em 'Lucida Grande', Verdana, sans-serif;
+}
+
+/* line 9, ../src/notes.sass */
+div.timers {
+  background: #FFF;
+  color: #333;
+  border: 0.08em solid #222;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  float: left;
+  padding: 0.2em;
+  margin: 0 0 0.5em;
+  position: relative;
+}
+/* line 20, ../src/notes.sass */
+div.timers h1 {
+  text-align: left;
+  font-size: 0.6em;
+  line-height: 1.4em;
+  background-color: #FF9;
+  padding: 0 0.75em;
+  margin: 0.25em 0 0;
+  border: 1px solid #EE8;
+}
+/* line 29, ../src/notes.sass */
+div.timers div.controls {
+  position: absolute;
+  right: 0.25em;
+  top: 0.1em;
+  line-height: 1em;
+}
+/* line 35, ../src/notes.sass */
+div.timers h1 a {
+  text-decoration: none;
+  color: #000;
+}
+/* line 39, ../src/notes.sass */
+div.timers div.controls a {
+  font-size: 0.5em;
+  padding: 0;
+  color: #330;
+}
+/* line 44, ../src/notes.sass */
+div.timers a.control {
+  position: absolute;
+  text-decoration: none;
+  padding: 0 0.25em;
+  color: #AAA;
+  outline: 0;
+}
+
+/* line 52, ../src/notes.sass */
+#minus {
+  left: 0.25em;
+}
+
+/* line 56, ../src/notes.sass */
+#plus {
+  right: 0.25em;
+}
+
+/* line 60, ../src/notes.sass */
+.overtime {
+  background: yellow;
+  color: red;
+  border: 3px solid;
+  padding: 0.1em 0.25em;
+  font-weight: bold;
+}
+
+/* line 70, ../src/notes.sass */
+div.timers h2 {
+  font-size: 0.6em;
+  line-height: 1.0em;
+  font-weight: normal;
+  margin: 0 0 -0.25em;
+  padding-top: 0.5em;
+  color: #666;
+}
+/* line 78, ../src/notes.sass */
+div.timers p {
+  margin: 0;
+  padding: 0 0.5em;
+}
+/* line 82, ../src/notes.sass */
+div.timers form {
+  margin: 0;
+}
+/* line 85, ../src/notes.sass */
+div.timers span.clock {
+  font-family: monospace;
+}
+/* line 88, ../src/notes.sass */
+div.timers ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 93, ../src/notes.sass */
+div.timers li {
+  float: left;
+  width: 5em;
+  margin: 0;
+  padding: 0 0.5em;
+  text-align: center;
+}
+/* line 100, ../src/notes.sass */
+div#elapsed {
+  width: 12.1em;
+}
+/* line 103, ../src/notes.sass */
+div#remaining {
+  clear: left;
+  width: 12.1em;
+}
+/* line 107, ../src/notes.sass */
+div#remaining p {
+  text-align: center;
+}
+
+/* line 111, ../src/notes.sass */
+#slide, #next, #notes, #nextnotes {
+  font-size: 0.75em;
+  line-height: 1.4em;
+  clear: left;
+  text-shadow: 0.1em 0.1em 0.1em #111;
+}
+
+/* line 118, ../src/notes.sass */
+#next {
+  margin-top: 2.5em;
+  color: #999;
+  font-size: 0.66em;
+}
+
+/* line 124, ../src/notes.sass */
+#nextnotes {
+  color: #999;
+  font-size: 0.66em;
+}
+
+/* line 129, ../src/notes.sass */
+em.disclaimer {
+  color: #666;
+}
+
+/* line 134, ../src/notes.sass */
+div.collapsed h1 {
+  display: block;
+  font-size: 0.33em;
+}
+/* line 138, ../src/notes.sass */
+div.collapsed h1 a {
+  display: inline;
+}
+/* line 141, ../src/notes.sass */
+div.collapsed * {
+  display: none;
+}

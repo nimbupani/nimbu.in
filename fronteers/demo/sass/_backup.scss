@@ -1,0 +1,63 @@
+@function omg($clr) {
+  $output: '';
+  $end: 25;
+  $radius: 50;
+  @for $i from 1 through $end {
+    $color: $clr;
+    $position: 360 / $end * $i;
+    $cos: cos($position * (pi() / 180));
+    $x-position: $radius * $cos;
+    $sin: sin($position * (pi() / 180));
+    $y-position: $radius * $sin;
+     $output: $output + '#{$color} #{$x-position}px #{$y-position}px 2px';
+     @if $i < $end {
+       $output: $output + ', ';
+     }
+  }
+  @return unquote($output);
+}
+ 
+$icon-spacing: 20px;
+$icon-sprite-dimensions: true;
+$icons: sprite-map("icon/*.png");
+
+@import "icon/*.png";
+
+.icons {
+  .rss { @include icon-sprite(rss); }
+  .share { @include icon-sprite(share); }
+  .spin { @include icon-sprite(spin); } 
+  a { @extend .ir;  display: inline-block; } 
+}
+
+$icon-sprite-dimensions: false;
+
+.omgtextshadow {
+  font-size: 3.05em;
+  letter-spacing: 2em;
+  line-height: 1.12em;
+  margin-bottom: 1.71em;  
+  @include text-shadow(omg(#bada55));   
+}
+
+.icons-noir {
+  .rss { @include icon-sprite(rss); }
+  .share { @include icon-sprite(share); }
+  .spin { @include icon-sprite(spin); } 
+  a { 
+    display: inline-block; padding: 0 image-width(sprite-file($icons, rss)) + 5px; color: white; text-decoration: none; font-size: 0.9em; line-height: image-height(sprite-file($icons, rss)); 
+    
+    &:hover { color: khaki; }
+  } 
+}
+
+.icons-omg {
+  a { display: block; @extend .omgtextshadow; color: darken(aqua, 40%); }
+}
+
+html {
+  background-color: #345;
+  @include linear-gradient(color-stops(#345, #234), top, url('icon/feed.png'));
+  color: #fff;
+  height: 100%;
+}

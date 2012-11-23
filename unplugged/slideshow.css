@@ -1,0 +1,315 @@
+/**
+	Basic CSS so that the slideshow script functions as a slideshow
+	@author Lea Verou
+	@version 1.0
+ */
+ @font-face {
+     font-family: 'PacificoRegular';
+     src: url('Pacifico-webfont.eot');
+     src: url('Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+          url('Pacifico-webfont.woff') format('woff'),
+          url('Pacifico-webfont.ttf') format('truetype'),
+          url('Pacifico-webfont.svg#PacificoRegular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+  
+ body {
+   overflow-x: hidden;
+ }
+ 
+ .slide {
+ 	position:absolute;
+ 	top:0;
+ 	left:0;
+ 	right: 0;
+ 	bottom: 0; 	
+ 	z-index: 0;
+ 	display: none;
+ 	font-size:250%;
+ 	line-height:1.6; 	 	
+ 	counter-increment: slide;
+ }
+ 
+ .slide:target {
+ 	z-index:100;
+  display: block;
+ 	overflow: visible;
+}
+
+/**
+	Slide numbers
+ */ 
+
+/* If there's nothing selected, show the first */
+.slide:first-child {
+	z-index:2;
+}
+
+/* Delayed items that are shown incrementally after the slide is */
+.slide .delayed,
+.slide h2,
+.slide p {
+	opacity: 0;	
+	-webkit-transition:.7s opacity;
+	-moz-transition:.7s opacity;
+	-o-transition:.7s opacity;
+	transition:.7s opacity;
+}
+
+.slide .delayed.displayed {
+	opacity: 0;
+}
+
+.slide .delayed.current,
+.slide .delayed.displayed.non-dismissable,
+.slide:target h2,
+.slide:target p {
+	opacity: 1;
+}
+
+
+/**
+	CSSS Nimbu Theme
+	
+	@author Divya Manian
+	@version 1.0
+*/
+
+* {
+	padding:0;	
+	margin:0;
+	font:inherit;
+	color:inherit;
+}
+
+html { background-color: #000; }
+
+body {
+	background:black;
+	font: 150%/1.5 Helvetica, Arial, sans-serif;	
+}
+
+button {
+	padding:.2em .5em;
+}
+
+a { color: skyblue; text-decoration: none; }
+a:hover { color: hsl(26,75%,51%); }
+
+code, pre, style {
+	font-family: Consolas, 'Andale Mono', 'Courier New', monospace;	
+}
+
+code {
+	padding:.2em .2em .1em;
+	white-space: nowrap;
+	border-radius:.2em;
+	box-shadow:.05em .05em .3em black;
+	
+	border: 1px solid rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.25);
+
+	box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 12px rgba(255,255,255,0.15), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+strong, b {
+	font-weight:bold;	
+}
+
+.slide {
+	padding:8em 2% 0;
+	background-clip: padding-box;
+	bottom: 2em;
+	font-size: 1em;
+	color: white;
+}
+
+.slide:target::before {
+	background: rgba(255, 255, 255, .6);
+	color: black;
+	text-shadow: .03em .03em .1em white;
+}
+
+	.slide p,
+	.slide li {
+		font-weight: bold;
+		letter-spacing: -.03em;
+		margin-left: 2em;
+	}
+		
+	.slide > ul {
+		list-style:none;
+	}
+	
+	.slide ol {
+		margin-left:2em;	
+	}
+		
+		.slide li {
+			margin:.2em 0;
+			vertical-align: middle;
+			text-align: center;
+		}
+		
+
+.slide .emphasis {
+	padding: .4em .5em .3em;
+	margin: .3em 0;
+	background: #f80;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fa0), to(#f80));
+	background: -moz-linear-gradient(#fa0, #f80);
+	background: -o-linear-gradient(#fa0, #f80);	
+	background: -ms-linear-gradient(#fa0, #f80);	
+	color: white;
+	font-weight: bold;
+	letter-spacing: -.05em;
+	line-height: .85;
+	text-shadow: .05em .05em .1em rgba(0,0,0,.4);
+	border-radius: .3em;	
+	box-shadow:.1em .1em .5em black;
+}
+
+.light.slide .emphasis {
+	-moz-box-shadow:.1em .1em .5em rgba(0,0,0,.4);
+	-webkit-box-shadow:.1em .1em .5em rgba(0,0,0,.4);
+	box-shadow:.1em .1em .5em rgba(0,0,0,.4);
+}
+
+.slide .emphasis::before {
+	content: '\279C';
+	color: rgba(255,255,255,.5);
+	float: left;	
+	width: .75em;
+	height: 0;
+	padding: .45em 0 .3em;
+	margin: -.2em .2em 0 -.25em;
+	border: .12em solid;
+	text-align: center;
+	line-height: 0;
+	font-size: 120%;
+	font-family: inherit;
+	text-shadow: none;
+	
+	border-radius:50%;
+	
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+footer {
+	color: white;
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	bottom: 1em;
+	padding: .5em 1em;
+	font-size: 0.5em;
+	text-shadow: .05em .05em .1em black;
+}
+
+html, body { height: 100%; }
+body { background: 99% 99% url(./img/opera-logo.png) no-repeat; background-size: 140px auto;}
+
+#intro h1 {
+	width: 60%;
+	margin: -1.5em auto 0;
+  font-size: 3em;
+}
+
+#intro h1,
+.slide h2 {
+  font-family: 'PacificoRegular', arial, serif;  
+  text-shadow: hsl(26,75%,51%) 1px 1px, hsl(26,75%,51%) 2px 2px, hsl(26,75%,51%) 3px 3px, hsl(26,75%,51%) 4px 4px, hsl(26,75%,51%) 5px 5px, hsl(26,75%,51%) 6px 6px, hsl(26,75%,51%) 7px 7px, hsl(26,75%,51%) 8px 8px, hsl(26,75%,51%) 9px 9px;  
+}
+
+#intro .attribution { text-align: center; }
+
+iframe {
+  width: 96%;
+  height: 500px;  
+  border: 0;
+}
+
+.codeexplained { position: relative; }
+.codeexplained b { display: none; position: absolute; top: -3em; left: 0; right: 0; border-radius: 10px; background: hsl(26,75%,51%); padding: 0.25em; text-align: center; }
+.codeexplained code:hover b { display: block; }
+.slide { font-size: 1.2em; }
+.slide h2 { font-size: 200%; padding-left: 1em; position: absolute; top: 0; left: 0; right: 0; }
+.slide h3, #slide44 h3 { margin-bottom: 3em; margin-top: -3em; text-transform: uppercase; } 
+.slide li h3 { margin-top: 1em; margin-bottom: 0; }
+.slide li p { margin-left: 0; }
+.slide.list li { text-align: left; margin-bottom: 1em; }
+.slide.single > ul {  width: 100%; height: 100%; position: relative; }
+.slide.single li { position: absolute; left: 0; right: 0; }
+
+.slide.iframe { padding-top: 0; }
+.slide.center.iframe { padding-top: 2%; }
+.slide.code,
+#slide56, #slide57 { padding-top: 12%; }
+.slide.center.iframe img { max-height: 96%; }
+
+.slide .delayed.current {
+	opacity: 1;
+}
+
+.slide.center { text-align: center; padding: 5em 0 0 0;}
+.slide.single li { top: 50%; margin-top: -4em; text-align: center; }
+.slide.center iframe { position: absolute; top: 1%; left: 2%; }
+
+.syntaxhighlighter code { box-shadow: none; border-radius: 0; }
+#slide19 .syntaxhighlighter,
+#slide32 .syntaxhighlighter,
+#slide42 .syntaxhighlighter { font-size: 0.8em !important; }
+
+#slide57 { font-size: 1em; }
+
+/* CODE SLIDES */
+.slide.code { background: white; color: silver; }
+.slide.code:not(.twocol) .syntaxhighlighter { -webkit-transform: scale(0.70); -webkit-transform-origin: 0 0; }
+
+.slide.code h2 { color: tan; }
+
+
+/* Slide Backgrounds */
+.slide:not(.code):not(.iframe) { background:
+  -webkit-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,
+  -webkit-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,
+  -webkit-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
+  -webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background:
+-moz-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,           
+-moz-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,       
+-moz-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,       
+-moz-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;  
+background:
+-o-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,
+-o-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,
+-o-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
+-o-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;    
+background:
+  -ms-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,
+  -ms-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,
+  -ms-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
+  -ms-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;      
+background-color:#222;
+background-size:16px 16px; }
+
+
+.slide.twocol ul { font-size: 50%; }
+.slide.twocol.dont-resize ul { font-size: 50%; }
+.slide.twocol ul { overflow: hidden; }
+.slide.twocol li { width: 50%; float: left; }
+.slide.twocol pre,
+.slide.twocol .syntaxhighlighter .line { word-wrap: break-word; white-space: pre-line !important; }
+
+#slide22 h3, #slide22 p,
+#slide34 h3, #slide34 p { margin: 1em 0; text-align: center; }
+#slide58 { font-size: 1em; }
+.slide ul.multicol li { width: 48%; display: inline-block; }
+.slide ul.multicol li img { vertical-align: middle; margin: 0 0.5em 0 0; box-shadow: 0 0 0.5em #666; }

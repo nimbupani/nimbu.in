@@ -1,0 +1,214 @@
+/* ============= */
+/* = RESET CSS = */
+/* ============= */
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, a,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, menu, nav, section,
+time, mark, audio, video {
+        margin:0;
+        padding:0;
+        border:0;
+        outline:0;
+        font-size:100%;
+        vertical-align:baseline;
+        background:transparent;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+}                     
+
+body {
+        line-height:1;
+}
+
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section {
+        display:block;
+}
+
+blockquote, q {
+        quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content:'';
+        content:none;
+}
+
+ins, mark {
+        text-decoration:none;
+}
+
+del {
+        text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+        border-bottom:1px dotted;
+        cursor:help;
+}
+
+table {
+        border-collapse:collapse;
+        border-spacing:0;
+}
+
+input, select {
+        vertical-align:middle;
+}
+
+/* ========== */
+/* = LAYOUT = */
+/* ========== */
+body {
+  background: #e8e4cc url("images/bkg-bdy.png") top left repeat-x;
+  text-align:center;  
+}
+
+header,section {
+  width:520px;
+  margin:0 auto;
+} 
+
+/* ================== */
+/* = SECTION STYLES = */
+/* ================== */  
+
+/* LOGO STYLE */
+.logo {
+  width: 129px;
+  height: 129px;    
+  margin:0 auto;
+  text-indent:-1000em;
+  overflow:hidden;  
+  background:url("images/nimbupani-logo.png") no-repeat;
+}   
+ 
+h1 {
+  margin-bottom:16px;
+}                   
+               
+body {
+  position:relative;
+}                  
+
+header {
+  margin-top:156px; 
+}
+
+section {
+  margin-top: 65px;  
+  text-align:left;
+}  
+
+aside {
+  width: 180px;
+  position:absolute;
+  top:310px;
+  text-align:right;
+  left:50%;
+  margin-left:-480px;
+}                
+ 
+p {
+  margin-bottom:16px;  
+  text-indent: 16px;
+}  
+
+li {
+  margin-bottom:8px;
+}   
+
+a {
+  text-decoration:none;
+}                     
+
+h2 {
+  margin-bottom:16px;
+}                   
+
+aside p {
+  margin-bottom:8px; 
+  margin-left:60px;   
+  opacity: 0.8;
+}             
+
+aside small {
+  opacity: 0.6;
+}
+
+footer {
+  margin-top:48px;
+}
+footer p {
+  padding:11px 0;       
+  margin-bottom:0;
+}       
+
+/* ============== */
+/* = TYPOGRAPHY = */
+/* ============== */ 
+body {
+  font:16px/24px helvetica, arial, sans-serif;
+} 
+
+h1 {
+  font-size:40px;
+  line-height:48px; 
+  font-family: "Hoefler Text", "Garamond", georgia, times, serif; 
+}
+
+h2 {
+  font-size:18px;                                                 
+  font-family: "Hoefler Text", "Garamond", georgia, times, serif;   
+}                  
+   
+aside, footer {
+  font-size:12px;
+  line-height:16px;
+}  
+
+p.focus {
+  font-style:italic;
+}                
+
+/* ========== */
+/* = COLORS = */
+/* ========== */
+body {
+  color: #1b1818;
+}                
+              
+p.focus {
+  color: #003441;
+}
+a {
+  color: #00867b;
+}                
+   
+a:visited {
+  color:#5daa9c;
+}  
+     
+footer { 
+  border-top:5px solid #65b9aa;
+}       
+
+footer p {
+    background: #003441; 
+    border-top:5px solid #00867b;
+    color: #e8e4cc;
+}
+                         
+/*   color: #00707b; */
+/*   color: #d1586d;   */

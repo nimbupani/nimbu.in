@@ -1,0 +1,54 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>CSS Slideshow</title>   
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="zoomparty.css">  
+  <style>    
+    .party { 
+      -webkit-animation: random 10s linear infinite;
+      -moz-animation: random 10s linear infinite;
+    }
+
+    @-webkit-keyframes random {
+        50% { font-size: 120px; }
+    }    
+
+    @-moz-keyframes random {
+        50% { font-size: 120px; }
+    }    
+  </style>  
+</head> 
+<body>
+  <pre>.party { animation: random 10s linear infinite; }
+@keyframes random { 50% { font-size: 120px; } }</pre> 
+  <section class="party">
+  </section>
+<script>
+(function() {
+    var styles = [],
+      style = document.createElement('style'),
+      fragment = document.createDocumentFragment(),
+      elmtxt, elm;
+
+  for (var i = 0, l = 50; i < l; i++) {
+      elm = document.createElement('b');
+      elmtxt = document.createElement('i');
+      elmtxt.textContent = i;
+      elm.appendChild(elmtxt);
+      fragment.appendChild(elm);
+      styles.push('b:nth-of-type(' + (i + 1) + ') { left: ' + Math.random() * 10 + 'em; top: '+ Math.random() * 10 + 'em; }');
+      fragment.appendChild(elm);
+  }
+
+  style.textContent = styles.join('');
+
+  document.head.appendChild(style);
+  document.querySelector('.party').appendChild(fragment);  
+})();
+</script>
+</body> 
+</html> 

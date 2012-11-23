@@ -1,0 +1,46 @@
+!footerheight = 4em
+
+.slide
+  width: 100%
+  top: 0
+  left: 0
+
+
+#footer
+  width: 100%
+  top: auto
+  bottom: 0
+  height = !footerheight 
+  line-height = !footerheight 
+  z-index: 5
+
+
+.slide
+  top: 0
+  width: 92%
+  padding: 3em 4% 4%
+  z-index: 2
+  list-style: none
+
+
+div#controls
+  z-index: 100
+
+  form
+    text-align: right
+    width: 100%
+    margin: 0
+
+
+#currentSlide
+  position: absolute
+  width: 10%
+  left: 45%
+  bottom: 0
+  z-index: 10
+  height = !footerheight     
+  line-height = !footerheight   
+
+
+html>body #currentSlide
+  position: fixed

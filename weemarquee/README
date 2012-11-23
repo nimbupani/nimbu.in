@@ -1,0 +1,4 @@
+Wee! Marquee!
+====
+
+A plugin that generates the marquee effect. If the text is larger than the marquee viewport it adjusts itself to render like the TV marquees. 

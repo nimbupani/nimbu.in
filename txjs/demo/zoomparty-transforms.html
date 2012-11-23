@@ -1,0 +1,102 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <title>Animation using transforms</title>   
+  <style type='text/css'> 
+html, body { height: 100%; }
+body { font-family: sans-serif; overflow: hidden; }
+div { font-size: 12px; left: 0%; top: 0%; height: 10em; width: 10em; margin: -5em 0 0 -5em; position: relative; }
+b { position: absolute; width: 50px; height: 50px; border-radius: 50px; line-height: 50px;  background-color: hsla(0, 53%, 58%, 0.8); color: white; display: block; text-align: center; }
+
+b i { font-size: 12px; font-style: normal; position: absolute; left: 0; right: 0; }
+
+div { 
+  -webkit-animation: random 10s linear infinite;
+  -moz-animation: random 10s linear infinite;
+  -webkit-transform: translateZ(0, 0, 0);
+}
+
+div b { 
+  -webkit-animation: antirandom 10s linear infinite; 
+  -moz-animation: antirandom 10s linear infinite;     
+}
+
+div:hover,
+div:hover b { -webkit-animation-play-state: paused; -moz-animation-play-state: paused; }
+
+@-webkit-keyframes random {
+    10% { -webkit-transform: scale(2); }
+    20% { -webkit-transform: scale(4); }
+    30% { -webkit-transform: scale(6); }
+    40% { -webkit-transform: scale(8); }
+    50% { -webkit-transform: scale(10); }
+    60% { -webkit-transform: scale(8); }
+    70% { -webkit-transform: scale(6); }
+    80% { -webkit-transform: scale(4); }
+    90% { -webkit-transform: scale(2); }
+}    
+ 
+@-webkit-keyframes antirandom {   
+    10% { -webkit-transform: scale(0.5); }
+    20% { -webkit-transform: scale(0.25); }
+    30% { -webkit-transform: scale(0.17); }
+    40% { -webkit-transform: scale(0.125); }
+    50% { -webkit-transform: scale(0.1); }
+    60% { -webkit-transform: scale(0.125); }
+    70% { -webkit-transform: scale(0.17); }
+    80% { -webkit-transform: scale(0.25); }
+    90% { -webkit-transform: scale(0.5); }
+}    
+ 
+@-moz-keyframes random {
+    10% { -moz-transform: scale(2); }
+    20% { -moz-transform: scale(4); }
+    30% { -moz-transform: scale(6); }
+    40% { -moz-transform: scale(8); }
+    50% { -moz-transform: scale(10); }
+    60% { -moz-transform: scale(8); }
+    70% { -moz-transform: scale(6); }
+    80% { -moz-transform: scale(4); }
+    90% { -moz-transform: scale(2); }
+}    
+ 
+@-moz-keyframes antirandom {   
+    10% { -moz-transform: scale(0.5); }
+    20% { -moz-transform: scale(0.25); }
+    30% { -moz-transform: scale(0.17); }
+    40% { -moz-transform: scale(0.125); }
+    50% { -moz-transform: scale(0.1); }
+    60% { -moz-transform: scale(0.125); }
+    70% { -moz-transform: scale(0.17); }
+    80% { -moz-transform: scale(0.25); }
+    90% { -moz-transform: scale(0.5); }
+}     
+  </style>   
+</head> 
+<body> 
+  <div></div>   
+    <script type='text/javascript'> 
+      var styles = [],
+        style = document.createElement('style'),
+        fragment = document.createDocumentFragment(),
+        elmtxt, elm;
+
+      for (var i = 0, l = 50; i < l; i++) {
+          elm = document.createElement('b');
+          elmtxt = document.createElement('i');
+          elmtxt.textContent = i;
+          elm.appendChild(elmtxt);
+          fragment.appendChild(elm);
+          styles.push('b:nth-of-type(' + i + ') { left: ' + Math.random() * 10 + 'em; top: '+ Math.random() * 10 + 'em; }');
+          fragment.appendChild(elm);
+      }
+
+      style.textContent = styles.join('');
+
+      document.head.appendChild(style);
+      document.querySelector('div').appendChild(fragment);
+    </script>  
+</body>  
+</html> 

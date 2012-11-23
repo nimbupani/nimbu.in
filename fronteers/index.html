@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The New Developer Workflow</title>
+	<link href="slideshow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./syntaxhighlighter/styles/shCoreDefault.css"/>  
+</head>
+<body>
+
+<header id="intro" class="slide">
+	<h1>The New Developer Workflow</h1>
+</header>
+
+<div class="slide single" title="Who am I?">
+	<h2>Who am I?</h2>
+	<ul class="delayed">
+		<li>Web Opener <br> <img src="./img/opera-logo.png" alt="Opera Software"></li>
+		<li>Core Contributor<br> <a href="http://html5boilerplate.com"><img src="./img/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
+		<li>Member, CSS WG</li>
+		<li><a href="http://nimbupani.com">nimbupani.com</a> and <a href="http://twitter.com/divya">@divya</a></li>
+	</ul>
+</div>
+<div class="slide">
+    <ul><li><h3>A story</h3></li></ul>
+</div>
+<div class="slide">
+  <ul>
+    <li>
+    </li>
+  </ul>
+</div>
+<div class="slide">
+	<h2>2000</h2>
+  <ul class="delayed">
+    <li>CSS + HTML = Web</li>
+    <li>static</li>
+    <li>XHTML</li>
+    <li>worst problem was choosing the right element</li>
+  </ul>
+</div>
+<div class="slide">
+	<h2>2011</h2>  
+  <ul class="delayed">
+    <li>CSS + Webfonts + SVG + Canvas + HTML + JavaScript + DOM APIs + WebGL + &lt;kitchensink> = Web</li>
+    <li>dynamic</li>
+    <li>HTML is just one of the results</li>
+    <li>the easiest problem is choosing the right element</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Workflow 2000</h2>
+  <ul class="delayed">
+    <li>Cut up photoshop</li>
+    <li>Chat on IRC</li>
+    <li>Use old project as starting point. ^H*&infin;</li>
+    <li>Read Slashdot</li>
+    <li>Write markup. Write CSS.</li>
+    <li>Check in current browser.</li>
+    <li>Submit to client</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Workflow 2011</h2>
+  <ul class="delayed">
+    <li>Cut up photoshop</li>
+    <li>Read reddit</li>
+    <li>Use old project as starting point. ^H*∞</li>
+    <li>Write markup. Write CSS.</li>
+    <li>Google for jQuery plugins</li>
+    <li>Check in current browser.</li>
+    <li>Submit to client</li>          
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Buttttttt&hellip;</h2>
+  <ul class="delayed">
+    <li>not just visual</li>
+    <li>Requirements of the web exceeds what photoshop mockups provide</li>
+    <li>interactions</li>
+    <li>impatient users</li>
+    <li>complexity</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Why does it matter?</h2>
+  <ul class="delayed">
+    <li>Abstract the obvious</li>
+    <li>Cut away the tedious</li>
+    <li>Work on what matters</li>
+  </ul>  
+</div>
+<div class="slide">
+  <h2>2012 Workflow</h2>
+  <h3>You will use</h3>
+  <ul class="delayed">
+    <li>Developer Tools</li>
+    <li>Version Control Systems</li>
+    <li>Deliberate design choices based on feature support</li>
+    <li>Polyfill policy</li>
+    <li>Preprocessors</li>
+    <li>&hearts; specs</li>
+    <li>Active learning</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Developer Tools</h2>
+  <ul class="delayed">
+    <li>Not just for CSS/JS debugging</li>
+    <li>Test for devices</li>
+    <li>Remote Debugging</li>
+    <li>Documentation: <a href="http://www.opera.com/dragonfly/documentation/">www.opera.com/dragonfly/documentation/</a></li>
+    <li>Master one, be proficient in all.</li>    
+  </ul>
+</div>
+<div class="slide">
+  <h2>Version Control</h2>
+  <ul class="delayed">
+    <li>Learn to use one: Hg / Git</li>
+    <li>Git is what cool kids use</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Learning Git</h2>
+  <ul>
+    <li>
+        <ul>
+          <li><a href="http://gitimmersion.com/">gitimmersion.com</a> / <a href="http://progit.org/book/">progit.org</a></li>
+          <li>Just contribute to open source projects on github (hint: <a href="http://github.com/paulirish/html5-boilerplate">html5boilerplate</a>)</li>          
+        </ul>
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Deliberate Design Choices</h2>
+  <ul class="delayed">
+    <li>This is 2011</li>
+    <li>CSS + Webfonts + SVG + Canvas + HTML + JavaScript + … + DOM APIs + WebGL = Web</li>
+    <li>What features will you use for your webpage?</li>
+    <li>How well are they supported?</li>
+    <li>What do browsers lacking these features render?</li>
+    <li>What do browsers lacking ALL these features render?</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Polyfill Policy</h2>
+  <ul class="delayed">
+    <li>What features are you willing to polyfill?</li>
+    <li>Which features when implemented will break on unsupported browsers?</li>
+    <li><h3>Bad</h3>
+      <ul>
+        <li>Text-shadow</li>
+        <li>Gradients</li>
+        <li>Box-shadow</li>
+        <li>Border-radius</li>
+      </ul>
+    </li>
+    <li><h3>Good</h3>
+      <ul>
+        <li>Animations</li>
+        <li>Canvas</li>
+        <li>Web Storage</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Study: Isotope</h2>
+  <ul class="delayed">
+    <li><a href="isotope.metafizzy.co">isotope.metafizzy.co</a> by <a href="http://twitter.com/desandro">@desandro</a></li>
+    <li>Test for keyframe 3D/2D transforms, perspective, transitions.</li>
+    <li>Provides best experience based on features supported.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Vendor Prefixes</h2>
+  <ul class="delayed">
+    <li>Love to Hate</li>
+    <li>Use all, if you must (or use <a href="http://prefixr.com/">prefixr</a>)</li>
+    <li><h3>life-cycle of a prefix</h3>
+      <ul>
+        <li>First implementation of features in Working Drafts</li>
+        <li><b>or</b>, third-party features</li>        
+        <li>Prefixless for features in Candidate Recommendations</li>
+        <li><a href="http://wiki.csswg.org/spec/vendor-prefixes">wiki.csswg.org/spec/vendor-prefixes</a></li>
+      </ul>
+    </li>
+    
+    <li>
+      <h3>dont use prefix for</h3>
+      <ul>
+        <li>box-shadow</li>
+        <li>border-radius</li>
+        <li>background-clip</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Preprocessors</h2>
+  <ul class="delayed">
+    <li>Quick</li>
+    <li>Not tied to legacy syntax</li>
+    <li>Catch syntax errors</li>
+    <li>Abstracts the manual labor</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>CSS Preprocessors</h2>
+  <ul class="delayed">
+    <li><a href="http://sass-lang.com">Sass</a> (or <a href="http://lesscss.org/">Less</a>)</li>
+    <li>Sass & <a href="http://compass-style.org">Compass</a>!</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Magic</h2>
+  <ul class="delayed">
+    <li><a href="http://compass-style.org/help/tutorials/spriting/">Sprites</a></li>
+    <li>@extend</li>
+    <li>Maths! <a href="https://github.com/nimbupani/compass-demos">github.com/nimbupani/compass-demos</a></li>
+    <li>Colors</li>
+    <li>Vendor prefixes</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Build Scripts</h2>
+  <ul class="delayed">
+    <li>Optimize resources for faster performance.</li>
+    <li>Maintainability of assets</li>
+    <li><ul>
+      <li>Automate creation of manifest files</li>
+      <li>optimizing images</li>
+      <li>concat/minify script files</li>
+      <li>deploy to production</li>
+    </ul></li>
+    <li>Example: <a href="https://github.com/paulirish/html5-boilerplate/blob/master/build/build.xml">H5BP Build Script</a>.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>References</h2>
+  <ul class="delayed">
+    <li><a href="http://h5bp.com/docs">h5bp.com/docs</a></li>
+    <li><a href="http://caniuse.com">caniuse.com</a></li>
+    <li><a href="http://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills</a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Learn to love specs</h2>
+  <ul class="delayed">
+    <li><a href="http://dev.w3.org/csswg/">dev.w3.org/csswg/</a> | <a href="http://html5.org/">html5.org/</a></li>
+    <li><h3>Read</h3>
+      <ul>
+        <li><a href="http://dev.opera.com">dev.opera.com</a></li>
+        <li><a href="http://html5rocks.com">html5rocks.com</a></li>
+        <li><a href="http://hacks.mozilla.org">hacks.mozilla.org</a></li>
+      </ul>
+    </li>
+    <li><h3>Ask</h3><a href="http://webchat.freenode.net/?channels=html5&uio=d4">#html5</a> on freenode</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Expert Level</h2>  
+  <ul class="delayed">
+    <li>Submit bug reports to browsers<br> <a href="http://coding.smashingmagazine.com/2011/09/07/help-the-community-report-browser-bugs/">coding.smashingmagazine.com/2011/09/07/help-the-community-report-browser-bugs/</a></li>
+    <li>Participate in spec discussions: <a href="http://lists.w3.org/Archives/Public/public-fx/">public-fx</a> / <a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a> / <a href="http://whatwg.org/mailing-list">whatwg.org/mailing-list</a></li>
+    <li>Submit suggestions to the editors<br> <a href="http://usenix.org/events/sec11/stream/jackson/index.html">usenix.org/events/sec11/stream/jackson/index.html</a></li>  
+  </ul>
+</div>
+<div class="slide">
+  <h2>Tools</h2>
+  <ul class="delayed">
+    <li>
+      <ul>
+        <li><a href="http://jsfiddle.net">jsfiddle.net</a></li>
+        <li><a href="http://jsbin.com">jsbin.com</a></li>
+        <li><a href="http://gist.github.com">gist.github.com</a></li>
+        <li><a href="http://gist.github.com/bca5bd4747a727c3d4e2">End-to-end Gist/jsfiddle solution</a> by <a href="http://twitter.com/mklabs">@mklabs</a></li>
+      </ul>
+    </li>
+    <li><a href="http://dropbox.com">&lt;dropbox folder>/public/&lt; your test folder></a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>In Summary</h2>
+  <ul class="delayed">
+    <li>Start mastering developer tools, test in devices, use version control.</li>
+    <li>Use polyfills, vendor prefixes responsibly, bootstrap with preprocessors.</li>
+    <li>Submit bug reports, keep up with the latest features, be an active web developer.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Thanks</h2>
+  <ul>
+    <li>
+      <ul>
+        <li>Holler <a href="http://twitter.com/divya">@divya</a> / <a href="http://twitter.com/odevrel">@odevrel</a></li>
+        <li>Slides: <a href="http://nimbu.in/txjs/">nimbu.in/fronteers/</a></li>
+      </ul>      
+    </li>
+  </ul>
+</div>
+<footer>
+  <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
+</footer>
+<script src="classList.js"></script>
+<script src="slideshow.js"></script>
+<script>var slideshow = new SlideShow(document.getElementById('presentation'));</script>
+</body>
+</html>

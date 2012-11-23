@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Taking presentation out of JavaScript one setInterval at a time</title>
+
+	<link href="slideshow.css" rel="stylesheet" type="text/css" />
+  <link type="text/css" rel="stylesheet" href="./syntaxhighlighter/styles/shCoreDefault.css"/>  
+</head>
+<body>
+
+<header id="intro" class="slide">
+	<h1>Taking presentation out of JavaScript one setInterval at a time</h1>
+</header>
+
+<div class="slide single" title="Today">
+  <ul><li>Wha…?</li></ul>
+</div>
+
+<div class="slide single" title="Who am I?">
+	<h2>Who am I?</h2>
+	<ul class="delayed">
+		<li>Web Opener <br> <img src="./img/opera-logo.png" alt="Opera Software"></li>
+		<li>Core Contributor<br> <a href="http://html5boilerplate.com"><img src="./img/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
+		<li><a href="http://html5readiness.com"><img src="./img/html5readiness.png" alt="html5readiness.com" width="480"></a><a href="http://w3fools.com"><img src="./img/w3fools.png" alt="w3fools.com" width="480" height="271"></a></li>
+		<li><a href="http://nimbupani.com">nimbupani.com</a> and <a href="http://twitter.com/divya">@divya</a></li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Quick History</h2>
+  <ul class="delayed">
+    <li>
+      <pre class="brush:js">
+var marqueecontents='<font face="Arial">
+  <strong><big>Thank you for visiting 1996. Enjoy your stay!</big></strong></font>';    
+document.write('<marquee 
+  direction="up" 
+  scrollAmount='+speed+' 
+  style="width:'+marqueewidth+';height:'+marqueeheight+'">'+marqueecontents+'</marquee>');
+setTimeout("window.onresize=regenerate",450);    
+      </pre>
+      <script language="JavaScript1.2">
+
+      /*
+      Cross browser Marquee script- © Dynamic Drive (www.dynamicdrive.com)
+      For full source code, 100's more DHTML scripts, and Terms Of Use, visit http://www.dynamicdrive.com
+      Credit MUST stay intact
+      */
+
+      //Specify the marquee's width (in pixels)
+      var marqueewidth="900px"
+      //Specify the marquee's height
+      var marqueeheight="1.5em"
+      //Specify the marquee's marquee speed (larger is faster 1-10)
+      var marqueespeed=2
+      //configure background color:
+      var marqueebgcolor="transparent"
+      //Pause marquee onMousever (0=no. 1=yes)?
+      var pauseit=1
+
+      //Specify the marquee's content (don't delete <nobr> tag)
+      //Keep all content on ONE line, and backslash any single quotations (ie: that\'s great):
+
+      var marqueecontent='<nobr><font face="Arial">Thank you for visiting 1996! Enjoy your stay!</font></nobr>'
+
+
+      ////NO NEED TO EDIT BELOW THIS LINE////////////
+      marqueespeed=(document.all)? marqueespeed : Math.max(1, marqueespeed-1) //slow speed down by 1 for NS
+      var copyspeed=marqueespeed
+      var pausespeed=(pauseit==0)? copyspeed: 0
+      var iedom=document.all||document.getElementById
+      if (iedom)
+      document.write('<span id="temp" style="visibility:hidden;position:absolute;top:-100px;left:-9000px">'+marqueecontent+'</span>')
+      var actualwidth=''
+      var cross_marquee, ns_marquee
+
+      function populate(){
+      if (iedom){
+      cross_marquee=document.getElementById? document.getElementById("iemarquee") : document.all.iemarquee
+      cross_marquee.style.left=parseInt(marqueewidth)+8+"px"
+      cross_marquee.innerHTML=marqueecontent
+      actualwidth=document.all? temp.offsetWidth : document.getElementById("temp").offsetWidth
+      }
+      else if (document.layers){
+      ns_marquee=document.ns_marquee.document.ns_marquee2
+      ns_marquee.left=parseInt(marqueewidth)+8
+      ns_marquee.document.write(marqueecontent)
+      ns_marquee.document.close()
+      actualwidth=ns_marquee.document.width
+      }
+      lefttime=setInterval("scrollmarquee()",20)
+      }
+      window.onload=populate
+
+      function scrollmarquee(){
+      if (iedom){
+      if (parseInt(cross_marquee.style.left)>(actualwidth*(-1)+8))
+      cross_marquee.style.left=parseInt(cross_marquee.style.left)-copyspeed+"px"
+      else
+      cross_marquee.style.left=parseInt(marqueewidth)+8+"px"
+
+      }
+      else if (document.layers){
+      if (ns_marquee.left>(actualwidth*(-1)+8))
+      ns_marquee.left-=copyspeed
+      else
+      ns_marquee.left=parseInt(marqueewidth)+8
+      }
+      }
+
+      if (iedom||document.layers){
+      with (document){
+      document.write('<table width="100%" border="0" cellspacing="0" cellpadding="0"><td>')
+      if (iedom){
+      write('<div style="position:relative;width:'+marqueewidth+';height:'+marqueeheight+';overflow:hidden">')
+      write('<div style="position:absolute;width:'+marqueewidth+';height:'+marqueeheight+';background-color:'+marqueebgcolor+'" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">')
+      write('<div id="iemarquee" style="position:absolute;left:0px;top:0px"></div>')
+      write('</div></div>')
+      }
+      else if (document.layers){
+      write('<ilayer width='+marqueewidth+' height='+marqueeheight+' name="ns_marquee" bgColor='+marqueebgcolor+'>')
+      write('<layer name="ns_marquee2" left=0 top=0 onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed"></layer>')
+      write('</ilayer>')
+      }
+      document.write('</td></table>')
+      }
+      }
+      </script>      
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <ul>
+    <li><img src="./img/zeldman.jpg"></li>
+  </ul>
+</div>
+<div class="slide">
+  <ul>
+    <li><img src="./img/csszen.png"></li>
+  </ul>
+</div>
+<div class="slide">
+  <style>
+  .yellowshadow { 
+    position: absolute; 
+    left: 50%; 
+    top: 50%;
+    width: 430px;
+    height: 396px;
+    margin: -198px 0 0 -215px;
+  }
+  .yellowshadow img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+  }
+  .yellowshadow img:last-child { 
+    -webkit-transition: opacity 1s linear 1s; 
+    -o-transition: opacity 1s linear 1s;     
+    -moz-transition: opacity 1s linear 1s;     
+    transition: opacity 1s linear 1s;     
+  }
+  
+  .yellowshadow:hover img:not(:first-child) {
+    opacity: 0;
+  }  
+  </style>
+  <div class="yellowshadow">
+    <img src="./img/yellow_fade5.gif">
+    <img src="./img/yellow_fade3.gif">    
+  </div>
+</div>
+<div class="slide single">
+  <h2>Thanks to…</h2>
+  <ul class="delayed">
+    <li>Script.aculo.us</li>
+    <li>Prototype</li>
+    <li>jQuery</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Now</h2>
+  <ul class="delayed">
+    <li>
+      <pre class="brush:js">
+      $('#slidingdiv').hover(function(){
+        $(this).addClass('hover');
+        $(this).css({opacity: 0.7});        
+      });
+      </pre>      
+    </li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Visual Effects don't belong in JS because</h2>
+  <ul class="delayed">
+    <li>We now have options!</li>
+    <li>No need to torture old browsers! Just <del>crash</del> enhance one!</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>CSS Animations</h2>
+  <ul class="delayed">
+    <li>CSS animations are native</li>
+    <li>More accurate</li>
+    <li>Browsers can optimize</li>        
+    <li>Hardware Accelerated!</li>
+    <li>Cleaner code</li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>CSS Animations</h2>
+  <ul class="delayed">
+    <li>Transitions</li>
+    <li>Keyframed Animations</li>
+  </ul>  
+</div>
+<div class="slide">
+  <h2>Browser Support</h2>
+  <ul class="delayed">
+    <li><h3>Transitions</h3><p><img src="./img/opera.png" width="64"><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/firefox.png" width="64"><img src="./img/ie9.png" width="64"></p></li>
+    <li><h3>Keyframe Animations</h3><p><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/firefox.png" width="64"></p></li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Which means…</h2>
+  <ul class="delayed">
+    <li>Prefixes!</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Transitions</h2>
+  <ul>
+    <li><p class="codeexplained"><code>transition:</code> <code>opacity<b>CSS property to apply on</b></code> <code>1s<b>Time transition should take</b></code><code>linear<b>Timing Function</b></code></p></li>
+  </ul>
+</div>
+<div class="slide" id="slide-tween">
+  <h2>Timing Function</h2>  
+  <ul>
+    <li>
+      <div class="logo"><img src="./img/opera-tween.png"></div>
+      <select>
+        <option selected="">linear</option>
+        <option>cubic-bezier</option>
+        <option>ease-in</option>
+        <option>ease-out</option>
+        <option>ease-in-out</option>
+      </select>
+      <button>Animate</button> <br>      
+      <canvas width="300" height="300"></canvas> 
+      <pre>cubic-bezier(<span class="val lit">0.9</span>, <span class="val lit">0.1</span>, <span class="val lit">0.1</span>, <span class="val lit">0.9</span>);</pre>       
+      <p>Stolen from <a href="http://htmlfivewow.com">htmlfivewow.com</a></p>      
+    </li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Transition Events</h2>
+  <ul class="delayed">
+    <li><code>transitionend</code></li>
+    <li><code>OTransitionEnd</code><br><code>webkitTransitionEnd</code></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Uncool things about Transitions</h2>
+  <ul class="delayed">
+    <li>Cannot transition from keywords, e.g. from <code>auto</code> to <code>100%</code></li>
+    <li>Not all properties can be transitioned. <a href="http://www.w3.org/TR/css3-transitions/#animatable-properties-">bit.ly/animatablecss</a></li>    
+    <li>If another transition cancels existing transition, existing transition never fires a <code>transitionend</code>.</li>
+    <li><code>transitionEnd</code> fires for each property that changes if <code>all</code> properties are transitioned.</li>
+    <li><code>event.target.removeEventListener(event.type, transCallback, false);</code></li>    
+    <li><code>transition-delay</code> applies differently across browsers <a href="http://jsfiddle.net/p5ztz/">jsfiddle.net/p5ztz/</a></li>
+    <li>Changing styles in JavaScript won't trigger transitions.</li>
+    <li><pre>node.style.backgroundColor ="red";
+node.style.backgroundColor = "blue";</pre>
+    </li>
+    <li><h3>Trigger reflow</h3>
+      <pre>
+node.style.backgroundColor ="red"; 
+document.body.offsetWidth; 
+node.style.backgroundColor = "blue";</pre>
+    </li>
+    <li>
+      <h3>Delay setting second style</h3>
+      <pre>
+  window.setTimeout(function() { 
+  node.style.backgroundColor = "blue"; }, 0);</pre>
+      </li>    
+  </ul>
+</div>
+<div class="slide single">
+  <h2>CSS Animations</h2>
+  <ul>
+    <li>
+        <pre>div { animation: animation-name 6s linear infinite; }
+@keyframes animation-name { 50% { opacity: 0.5; } }</pre>
+    </li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>CSS Animations</h2>
+  <ul class="delayed">
+    <li>Does not need any change of property to get triggered. </li>
+  </ul>
+</div>
+<div class="slide single">
+  <h2>Animation Events</h2>
+  <ul class="delayed">
+    <li><code>animationstart</code></li>
+    <li><code>webkitAnimationStart</code></li>
+    <li><code>animationend</code></li>
+    <li><code>webkitAnimationEnd</code></li>
+    <li><code>animationiteration</code></li>
+    <li><code>webkitAnimationIteration</code></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Uncool things about Animations</h2>
+  <ul class="delayed">
+    <li>Like transitions, only animate certain properties.</li>
+    <li>Like transitions, cannot animate between keywords and units.</li>
+    <li>Firefox does not fire animation start event if there is no <code>animation-delay</code> set.</li>
+    <li>No events to know when a keyframe is passed. </li>
+    <li>Temporary solution: <a href="http://blog.joelambert.co.uk/2011/05/20/css-animation-keyframe-events-javascript-solution/">bit.ly/keyframeevents  </a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>When to use what?</h2>
+  <ul class="delayed">
+    <li>Transitions and animations can be used to mimic similar effects.</li>
+    <li>Transitions work in more browsers, but require JavaScript triggers.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Example</h2>
+  <ul>
+    <li>
+      <iframe class="sidebyside" src="./demo/zoomparty-transitions.html"></iframe>                  
+      <iframe class="sidebyside" src="./demo/zoomparty.html"></iframe>    
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Differences</h2>  
+  <ul class="delayed">
+    <li>
+      <div class="sidebyside">
+        <h3>Transitions</h3>
+        <ul>
+          <li>Triggered when property values change</li>
+          <li>Cannot repeat unless via JavaScript</li>          
+        </ul>
+      </div>      
+      <div class="sidebyside">
+        <h3>Animations</h3>
+        <ul>
+          <li>Triggered when element is put in to animating state</li>
+          <li>Can be repeated via <code>animation-iteration-count</code></li>          
+          <li>Keyframe control</li>          
+        </ul>
+      </div>
+    </li>  
+  </ul>
+</div>
+<div class="slide">
+  <h2>Differences (CPU usage)</h2>
+  <ul>
+    <li>
+      <div class="sidebyside">
+        <h3>Transitions</h3>
+        <img src="./img/transition.png">        
+      </div>
+      <div class="sidebyside">
+        <h3>Animations</h3>
+        <img src="./img/animation.png">
+      </div>      
+    </li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Comparison to JavaScript animation</h2>
+  <ul class="delayed">
+    <li>Trigger similar animation in JS</li>
+    <li>Compare CPU usage</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Performance of CSS vs JS animations?</h2>
+  <ul>
+    <li>
+      <iframe class="sidebyside" src="./demo/zoomparty.html"></iframe>    
+      <iframe class="sidebyside" src="./demo/zoomparty-js.html"></iframe>            
+    </li>
+  </ul>
+</div>
+<div class="slide graphs">
+  <h2>Performance</h2>
+  <ul class="delayed">
+    <li>
+      <div class="sidebyside">
+        <h3>CSS</h3>
+<p><b>Chrome:</b><img src="./img/chrome-fontsize.png"></p>
+<p><b>Firefox:</b><img src="./img/firefox-fontsize.png"></p>
+      </div>
+      <div class="sidebyside">
+        <h3>JavaScript</h3>
+<p><b>Chrome:</b><img src="./img/chrome-js-fontsize.png"></p>
+<p><b>Firefox:</b><img src="./img/firefox-js-fontsize.png"></p>
+      </div>
+    </li>    
+  </ul>
+</div>
+<div class="slide">
+  <h2>In Summary</h2>
+  <ul class="delayed">
+    <li>CSS Animations are great replacements for simple JS animations.</li>
+    <li>Performance is comparable to JS-based animations. </li>
+    <li>Can only become better.</li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Using it now</h2>
+  <ul class="delayed">
+    <li>
+      <p>jQuery Animation Enhanced: <a href="http://playground.benbarnett.net/jquery-animate-enhanced/">playground.benbarnett.net/jquery-animate-enhanced/</a></p>
+      <p>jQuery Transition: <a href="http://github.com/louisremi/jquery.transition.js">github.com/louisremi/jquery.transition.js</a></p>
+      <p>Scripty2: <a href="http://scripty2.com/">scripty2.com</a></p>
+    </li>
+    <li>Must read: <a href="http://www.html5rocks.com/tutorials/speed/html5/">www.html5rocks.com/tutorials/speed/html5/</a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>requestAnimationFrame</h2>
+  <ul class="delayed">
+    <li>Implemented as: <code>webkitRequestAnimationFrame</code> & <code>mozRequestAnimationFrame</code></li>
+    <li>Browser in control of the repaint frame-rate. </li>
+    <li>Syncs declarative (CSS) and scripted animations.</li>
+    <li>Great way to fire custom events based on CSS animations (e.g. <code>transitionstarted</code>, <code>CSSAnimationKeyframe</code>).</li>
+    <li><a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/">bit.ly/requestanimationframe</a> & <a href="http://www.nczonline.net/blog/2011/05/03/better-javascript-animations-with-requestanimationframe/">bit.ly/requestanimationframestory</a></li>
+    <li>Working Draft: <a href="http://www.w3.org/TR/animation-timing/">www.w3.org/TR/animation-timing/</a></li>
+  </ul>
+</div>
+<div class="slide">
+  <h2>Thanks</h2>
+  <ul>
+    <li>
+      <ul>
+        <li>Holler <a href="http://twitter.com/divya">@divya</a></li>
+        <li>Slides: <a href="http://nimbu.in/txjs/">nimbu.in/txjs/</a></li>
+        <li>Demos: <a href="http://jsfiddle.net/user/nimbu">jsfiddle.net/user/nimbu</a></li>
+        <li>Rate: <a href="http://speakerrate.com/talks/7477">spkr8.com/t/7477</a></li>        
+      </ul>      
+    </li>
+  </ul>
+</div>
+<footer>
+  <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
+</footer>
+<script src="classList.js"></script>
+<script src="slideshow.js"></script>
+<script>
+var slideshow = new SlideShow(document.getElementById('presentation'));
+window.requestAnimFrame = (function(){
+     return  window.requestAnimationFrame       || 
+             window.webkitRequestAnimationFrame || 
+             window.mozRequestAnimationFrame    || 
+             window.oRequestAnimationFrame      || 
+             window.msRequestAnimationFrame     || 
+             function(/* function */ callback, /* DOMElement */ element){
+               window.setTimeout(callback, 1000 / 60);
+             };
+   })();      
+</script>
+<script src="./syntaxhighlighter/scripts/shCore.js"></script>
+<script src="./syntaxhighlighter/scripts/shBrushCSS.js"></script>
+<script src="./syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script src="./syntaxhighlighter/scripts/shBrushXML.js"></script>
+<script src="./syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.all();
+
+// Shamelessly ripped from HTMLFiveWow but also fixed cross-browserly, SO THERE 
+/*******************************************************************************
+ * TWEENING
+ ******************************************************************************/
+function TweenSlide(w, h, slide) {
+  this.domSlide = slide;
+  this.domPre = slide.querySelector('pre');  
+  this.domCanvas = slide.querySelector('canvas');
+  this.domLogo = slide.querySelector('.logo');
+  this.domButton = slide.querySelector('button');
+  this.domSelect = slide.querySelector('select');
+
+  this.duration = 3; // Seconds
+  this.elapsed = 0;
+  this.started = 0;
+  this.padding = 8.5;
+  this.domCanvas.width = w;
+  this.domCanvas.height = h;
+  var self=this; 
+
+  this.domCanvas.addEventListener('mousedown', function(ev) { self.onMouseDown.call(self, ev); }, 
+      false);
+  this.domCanvas.addEventListener('selectstart', this.onSelectStart, false);
+  this.domSlide.addEventListener('mouseup', function(ev) { self.onMouseUp.call(self, ev); }, false);
+  this.domButton.addEventListener('click', function(ev) { self.onClick.call(self, ev); }, false);
+  this.domSelect.addEventListener('change', function(ev) { self.onSelect.call(self, ev); }, false);
+
+  this.dragging = 0;
+  this.moveListener = this.onMouseMove.bind(this);
+  this.w = this.domCanvas.width - (2 * this.padding);
+  this.h = this.domCanvas.height - (2 * this.padding);
+};
+
+TweenSlide.prototype.onSelect = function(evt) {
+  switch (evt.target.value) {
+    case 'linear':
+      this.setBezier(0.0, 0.0, 1, 1);
+      break;
+    case 'cubic-bezier':
+      this.setBezier(1, 0, 0, 1);
+      break;
+    case 'ease-in':
+      this.setBezier(0.42, 0, 1, 1);
+      break;
+    case 'ease-out':
+      this.setBezier(0, 0, 0.58, 1);
+      break;
+    case 'ease-in-out':
+      this.setBezier(0.42, 0, 0.58, 1);
+      break;
+  }
+};
+
+TweenSlide.prototype.stopAnimation = function() {
+  this.started = 0;
+  this.elapsed = 0;
+  this.domLogo.style.webkitAnimation = '';
+  this.domLogo.style.MozAnimation = '';
+};
+
+TweenSlide.prototype.onClick = function(evt) {
+  this.stopAnimation();
+  var self = this;
+  window.setTimeout(function() {
+    var animation = [
+      'operalogo-spin ', self.duration, 's 1 cubic-bezier(',
+      self.x1, ', ', self.y1, ', ', self.x2, ', ', self.y2, ')'
+    ].join('');
+    self.domLogo.style.webkitAnimation = animation;
+    self.domLogo.style.MozAnimation = animation;
+    self.started = new Date().getTime();
+    self.animate();
+  }, 0);
+};
+
+TweenSlide.prototype.onSelectStart = function(evt) {
+  evt.preventDefault();
+};
+
+TweenSlide.prototype.onMouseMove = function(evt) {
+  var offsetX = evt.offsetX ? evt.offsetX : (evt.layerX - evt.target.offsetLeft),
+      offsetY = evt.offsetY ? evt.offsetY : (evt.layerY - evt.target.offsetTop);
+  
+  var x = (offsetX - this.padding) / this.w;
+  var y = (this.h - offsetY + this.padding) / this.h;
+
+  this.domSelect.selectedIndex = 1; // Cubic bezier
+  if (this.dragging == 1) {
+    this.setBezier(x, y, this.x2, this.y2);
+  } else {
+    this.setBezier(this.x1, this.y1, x, y);
+  }
+};
+
+TweenSlide.prototype.onMouseDown = function(evt) {
+  var x = evt.offsetX ? evt.offsetX : (evt.layerX - evt.target.offsetLeft);
+  var y = evt.offsetY ? evt.offsetY : (evt.layerY - evt.target.offsetTop);
+  if (x >= this.mx1 - this.padding &&
+      x <= this.mx1 + this.padding &&
+      y >= this.my1 - this.padding &&
+      y <= this.my1 + this.padding) {
+    this.dragging = 1;
+  }
+  if (x >= this.mx2 - this.padding &&
+      x <= this.mx2 + this.padding &&
+      y >= this.my2 - this.padding &&
+      y <= this.my2 + this.padding) {
+    this.dragging = 2;
+  }
+
+    if (this.dragging > 0) {
+    this.domCanvas.addEventListener('mousemove', this.moveListener, false);
+  }
+};
+
+TweenSlide.prototype.onMouseUp = function(evt) {
+  this.dragging = 0;
+  this.domCanvas.removeEventListener('mousemove', this.moveListener, false);
+};
+
+TweenSlide.prototype.clamp = function(val) {
+  return Math.round(100.0 * Math.min(1.0, Math.max(0.0, val))) / 100.0;
+};
+
+TweenSlide.prototype.clear = function(ctx) {
+  ctx.clearRect(0, 0, this.domCanvas.width, this.domCanvas.height);
+  ctx.beginPath()
+  ctx.strokeStyle = '#b1a8d6';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(this.padding, this.padding, this.w, this.h);
+  ctx.closePath();
+};
+
+TweenSlide.prototype.setBezier = function(x1, y1, x2, y2) {
+  this.stopAnimation();
+  this.x1 = this.clamp(x1);
+  this.x2 = this.clamp(x2);
+  this.y1 = this.clamp(y1);
+  this.y2 = this.clamp(y2);
+
+  this.domValues = this.domPre.querySelectorAll('.val');
+  this.domValues[0].textContent = this.x1;
+  this.domValues[1].textContent = this.y1;
+  this.domValues[2].textContent = this.x2;
+  this.domValues[3].textContent = this.y2;
+
+  this.mx1 = this.x1 * this.w + this.padding;
+  this.my1 = (1 - this.y1) * this.h + this.padding;
+  this.mx2 = this.x2 * this.w + this.padding;
+  this.my2 = (1 - this.y2) * this.h + this.padding;
+
+  this.draw();
+};
+
+TweenSlide.prototype.animate = function() {
+  this.elapsed = new Date().getTime() - this.started;
+  if (this.elapsed < this.duration * 1000) {
+    this.draw();
+    window.requestAnimFrame(this.animate.bind(this));
+  } else {
+    this.stopAnimation();
+  }
+};
+
+TweenSlide.prototype.draw = function() {
+  var ctx = this.domCanvas.getContext('2d');
+
+  var boxD = this.padding * 2;
+  var progress = this.elapsed / (this.duration * 1000);
+  var progressX = progress * this.w + this.padding;
+
+  this.clear(ctx);
+
+  ctx.beginPath();
+  ctx.moveTo(this.padding, this.h + this.padding);
+  ctx.strokeStyle = '#5850b3';
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  ctx.bezierCurveTo(this.mx1 + this.padding, this.my1 + this.padding,
+                    this.mx2 + this.padding, this.my2 + this.padding,
+                    this.w + this.padding, this.padding);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#5370cd';
+  ctx.fillStyle = '#5370cd';
+  ctx.lineWidth = 1;
+  ctx.moveTo(this.padding, this.h + this.padding);
+  ctx.lineTo(this.mx1, this.my1);
+  ctx.moveTo(this.w + this.padding, this.padding);
+  ctx.lineTo(this.mx2, this.my2);
+  ctx.fillRect(this.mx1 - this.padding, this.my1 - this.padding, boxD, boxD);
+  ctx.fillRect(this.mx2 - this.padding, this.my2 - this.padding, boxD, boxD);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#f73cbd';
+  ctx.lineWidth = 1;
+  ctx.moveTo(progressX, 0);
+  ctx.lineTo(progressX, this.domCanvas.height);
+  ctx.stroke();
+};
+  var slide = document.querySelector('#slide-tween > ul li');
+  var handler = new TweenSlide(300, 200, slide);
+  handler.setBezier(0, 0, 1, 1);
+</script>
+</body>
+</html>

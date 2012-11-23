@@ -1,0 +1,125 @@
+
+======================
+Divya Manian
+Open Web Vigilante – Making the web a better place for users, 1rem at a time.
+======================
+
+
+divya.manian@gmail.com 
+nimbupani.com 
++1 206.607.7908 
+
+Code repository @ Github  •  Design snippets @ Dribble • References @ LinkedIn • Serious Tweets Fun Tweets 
+
+
+Accomplishments
+=================
+
+Serious
+-------
+
+- Co-created and designed HTML5 Boilerplate which has been used on websites of Barack Obama, Jerry Seinfeld, Open NASA Project, Financial Crisis Enquiry Commission and more. 
+
+- Designed the HTML5Readiness chart written about on Gizmodo, Ajaxian, Flowing Data & Infosthetics. It was also highlighted in a WWDC talk on Safari Integrated Tools and at Google I/O 2011.
+Co-designed and created content for Move the Web Forward to inform web developers how they can contribute actively to move the web forward. (covered by Smashing Magazine and the Web Standards Project).
+
+- Contributed to the HTML5 Specification.
+
+- Acknowledged as one of the “People of HTML5” in a video interview.
+
+- Invited Expert to judge Web Standards Dev Derby and to select final winners for the 2011 .net awards.
+
+- Member of the W3C, the standards organization for the World Wide Web (www), working specifically on the standards for Stylesheets.
+
+- Published articles on premier web development journals: .net Magazine (1, 2) and Smashing Magazine (1 2).
+
+- Invited to speak at several conferences: W3Conf (Seattle), Web Directions South 2010 (Sydney), Fronteers 2011 (Amsterdam), TxJS (Austin), Geekup (Bangalore) and more.
+
+- Researched technologies around HTML5 leading to wider adoption of new techniques using SVG web fonts, CSS Namespaces and HTML5.
+
+- Currently writing a book on HTML5Boilerplate to be published by Packt Publishers. 
+
+- Featured in the “The Word It Book” Book published by HOW Books in Spring 2007
+
+- Paper presented at 2004 IEEE International Symposium on Consumer Electronics, on J2ME based digital map system.
+
+- Won full scholarship for undergraduate studies in Singapore awarded to the top 0.5% of applicants in India.
+
+Fun
+----
+
+- W3fools — Designed this site to mitigate disinformation on w3schools.com
+
+- Wee Marquee — Twitter marquee for the masses.
+
+- Mblax — a one-page site that displays the upcoming events of select West African Musicians.
+
+- Chart Generator — A web app to create instant HTML bar charts written for the 10K apart contest. 
+
+- HTML5 Homies — Quick bada$$ design for this project created by Jonathan Neal.
+
+- Standards Gandhi — Gandhi’s words of wisdom translated for web developers 
+
+
+===============
+Work Experience
+===============
+
+Opera Software
+--------------
+
+- Web Opener, Feb 2011 – Present
+  - Developer Advocate and Web Opener for World’s most popular mobile browser.
+  - Liaise with web developers to find out what is missing in the product and make it more useful for the community.
+
+Microgroove LLC
+---------------
+
+- Web Application Developer, 2009 – 2010
+  - Primary front-end web development for large-scale portals of Universal Music Australia, Verve Music Group & Universal Music Canada.
+  - Introduced web standards & best practices into the commercial content management product.
+  - Spearheaded the adoption of jQuery, Sass, HTML5 & CSS3 standards leading to faster turnover on client websites.
+
+Nimbupani Designs
+------------------
+
+- Owner, 2006 – Present
+  - Worked on Graphic & Webdesign projects for startups and record labels.
+  - Managed and launched projects for Ministry of Education, Singapore, Volans, Knight Foundation, and Aviva Singapore. 
+  - Initial Interface design and development for Singapore startup SharedCopy.
+
+MatrixView Limited
+------------------
+
+- In-house Designer/Copywriter, 2004 – 2006
+  - Established & managed the company intranet for more efficient inter-team communication and documentation.
+  - Trained the Management and Chairman on corporate communication and usage of intranet tools.
+  - Drafted white papers and product brochures for international marketing campaigns.
+  - Academic Qualifications
+
+=========
+Education
+=========
+
+Bachelor of Engineering, Computer Engineering
+---------------------------------------------
+Nanyang Technological University, Singapore, 2004
+- Member of Carnatic Music group Shrutilaya
+- Director of Publications, Students’ Union.
+- Hon. Gen. Secretary, NTU IEEE Chapter
+
+A-levels
+--------
+Shri B. S. Mootha Senior Secondary School, 2000
+- Among top 1% of qualifying students.
+- Merit scholarship awarded from the Indian Government for top scores in Maths, Physics, & Chemistry.
+- President of the Students’ Council.
+
+
+====================
+Buzzword Compliance
+====================
+
+HTML • CSS • JavaScript • Sass • Node • Backbone • Photoshop • Git • SVN • Jekyll • Wordpress • Drupal • MediaWiki • Illustrator • InDesign • Ruby on Rails & .NET templates
+
+

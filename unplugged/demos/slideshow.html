@@ -1,0 +1,81 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>CSS Slideshow</title>   
+  <link rel="stylesheet" href="../reset.css">
+  <style>    
+    html, body { height: 100%; overflow: hidden; }
+    .slideshow nav,
+    .cssanimations .slideshow nav { display: none; }
+    
+    @-webkit-keyframes fade {
+    	 4% { opacity: 1; }
+    	33% { opacity: 1; }      	
+    	37% { opacity: 0; }
+    	}
+
+    	@-moz-keyframes fade {
+      	 4% { opacity: 1; }
+      	33% { opacity: 1; }      	
+      	37% { opacity: 0; }
+    	}
+    
+      .slideshow article { padding: 1em; border-bottom: 1px dotted; overflow: hidden; }
+      .slideshow article:last-of-type { border-bottom: 0; }      
+      .slideshow img { float: left; width: 100px; vertical-align: top; margin: 0 1em 0 0; padding: 5px; box-shadow: 0 0 5px #000; background: #fff; }      
+    
+    @media screen and (min-width: 800px) {
+      .slideshow { position: absolute; top: 50%; left: 50%; margin: -150px 0 0 -250px; }    
+      .slideshow { display: inline-block; width: 500px; height: 300px; box-shadow: 0 0 1em #000; background: silver; }
+      .slideshow article { padding: 0; border: 0; position: absolute; top: 0.5em; left: 0.5em; right: 0.5em; bottom: 0.5em; }
+
+      .slideshow img { float; none; width: auto; margin: 0; padding: 0; box-shadow: none; }
+      .slideshow h3 { bottom: 0; top: auto; left: 0; right: 0; position: absolute; background: rgba(0, 0, 0, 0.5); color: #fff; padding: 1em; }
+      .slideshow a { color: skyblue; text-shadow: 1px 1px 1px #000; }      
+      
+
+      .slideshow nav a { color: inherit; }
+      .slideshow nav a:active,
+      .slideshow nav a:hover { color: skyblue; }
+
+      .slideshow nav { text-align: center; margin-top: -2em; font-size: 2em;  display: block; }      
+      .slideshow article { opacity: 0; -webkit-transtion: opacity 1s; -moz-transition: opacity 1s; -o-transition: opacity 1s; -ms-transition: opacity 1s; transition: opacity 1s; }
+      .slideshow article:first-of-type,
+      .slideshow article:target { opacity: 1; }
+
+      .cssanimations .slideshow article { opacity: 0; -webkit-animation: fade 6s linear infinite; -moz-animation: fade 6s linear infinite; }
+      .cssanimations .slideshow article:nth-of-type(2) { -webkit-animation-delay: 2s; -moz-animation-delay: 2s; }      
+      .cssanimations .slideshow article:last-of-type { -webkit-animation-delay: 4s; -moz-animation-delay: 4s; }                  
+      .cssanimations .slideshow:hover article {
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;        
+      }            
+    }
+  </style>  
+  <script src="https://github.com/Modernizr/Modernizr/raw/master/modernizr.js"></script>  
+</head> 
+<body> 
+  <section class="slideshow">
+    <nav>
+      <a href="#one" title="View First Friend Update">●</a>
+      <a href="#two" title="View Second Friend Update">●</a>
+      <a href="#three" title="View Third Friend Update">●</a>
+    </nav>
+		<article id="one"> 
+		  <img src="http://placekitten.com/500/301" alt="Slide One of Our App">
+		  <h3>Chee Liam has checked in Barcelona! <a href="#">See what places he has been to</a></h3>
+		</article>
+		<article id="two">
+		  <img src="http://placekitten.com/500/300" alt="Slide Two of Our App"> 		      
+		  <h3>Julia has partied at Sentosa! <a href="#">See where else you can party</a></h3>		  
+		</article>
+		<article id="three">
+		  <img src="http://placekitten.com/500/302" alt="Slide Three of Our App"> 		      
+		  <h3>Radha is slunking at Kuala Lumpur <a href="#">Catch him here!</a></h3>		  
+		</article>
+  </section>
+</body> 
+</html> 

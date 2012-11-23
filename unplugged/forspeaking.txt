@@ -1,0 +1,36 @@
+Slide 10
+Need to explain why I am using CSS3 to solve the problem of styles in a webapp Maybe in a new slide
+
+Slide 15
+Generated Content: Not supported by IE7 use modernizr to provide fallback
+
+
+Slide 21
+Need an image to show the frame of a photo with pseudo-elements
+
+
+
+
+Slide 28 (go to 26)
+Pointer Events: Allows you to control if an element can be target of a mouse event.
+Support: Webkit (Safari, Chrome) and Gecko - Firefox
+
+Slide 31
+What are keyframes? Why do we need keyframes?
+How many easing functions exist?
+
+Slide 37
+Pseudo-elements not clipped by border radius of the parent?
+
+
+Can use object fit for slideshow
+Object Fit Should I mention? 
+
+
+TODO
+
+1. Add twitter avatars to each of the twitter accounts
+2. Change background patterns per slide (every 4 slides)
+3. Add code for each of the "What's interesting to revisit"
+4. Explain what are the 3 scenarios for the slideshow
+4. Fix progress element slides

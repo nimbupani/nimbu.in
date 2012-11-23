@@ -1,0 +1,87 @@
+
+HTML5 Boilerplate
+
+
+IDEALS of H5BP:
+1. Cross browser
+2. Best defaults for developer
+3. Used by: some big names (who?)
+4. Show the file structure of master h5bp
+    a. index.html
+    b. style.css
+    c. js folder
+        i. script.js - 
+        ii. plugins
+        iii. libs
+        
+    d. robots.txt
+    e. humans.txt
+5. index.html
+  a. Conditional comments
+  b. IE X-UA-Compatible
+      a. Sample htaccess for apache
+      b. More at h5bp.com/configs
+  c. Meta Charset
+      Before: <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      Browsers parsed loosely coz people leave out quotes, and only looked for meta and charset. Standardizing browser implementations.
+      After: <meta charset="utf-8">
+
+  k. Favicons
+              
+  d. jQuery include
+      Minimized
+      Protocol Relative URL - need to use server otherwise will not work. 
+      http and https
+      Fallback slution
+  e. Viewport
+      i. Mobile experts
+      
+  e. overflow-y
+  
+  l. normalize.css (show the picture)
+  m. Helper classes 
+    i. Image Replacement (dir: ltr to force ltr in right aligned text layout)
+    ii. Hidden
+    iii. Visuallyhidden ( accessible )
+    iv. Clearfix
+        a. overflow: hidden
+        b. div class=clear
+        
+        using a dot causes an extra space
+    
+  g. Print styles
+      i. Media = none, media = all in style. 
+      ii. @media print works everywhere (IE 6)
+      iii. Print stylesheets are also downloaded when browsers load stylesheets, so stop multiple network requests.
+       
+  h. Respond.js
+      i. Media queries for IE
+      ii. Desktop sites to be slightly more optimal.
+      iii. 
+  i. Modernizr.js
+      - html5shiv
+      - no-js and js
+      - other helper classes
+      
+  j. Build Script
+
+  n. Clearfix
+  
+  o. .htaccess
+      i. gzip, mimetypes
+      ii. detect when the header is mangled and then force gzip (10-15% of users)
+      iii. Expires headers so asserts are cached
+      
+  p. Build Script
+      i. read docs and summarize.
+      ii. Split CSS/Join CSS
+      iii. Automatic Manifest creation
+      iv. Minify HTML
+
+  q. Found in frameworks?
+  
+  r. Docs / Links
+  
+1. Browser does not care about the doctype, except there should be one, and about quirks mode.
+
+2.

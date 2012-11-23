@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Zooming with JavaScript</title>
+  <link rel="stylesheet" href="../reset.css">  
+  <link rel="stylesheet" href="zoomparty.css">
+</head> 
+<body>
+  <pre>
+
+  function animateNow() {
+    if (!contract && (count < 240)) {
+        count+=5;
+        parent.style.fontSize = count + unit;
+    } else {
+        contract = true;
+        if (count > base) {
+            count-=5;
+            parent.style.fontSize = count + unit;
+        } else {
+            contract = false;
+        }
+    }
+    requestAnimFrame(animateNow);
+  }
+
+</pre> 
+  <div></div>   
+</body> 
+<script type='text/javascript'> 
+  window.onload = function() {
+      // shim layer with setTimeout fallback by Paul Irish
+      window.requestAnimFrame = (function() {
+          return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+          function(
+          /* function */
+          callback,
+          /* DOMElement */
+          element) {
+              window.setTimeout(callback, 1000 / 60);
+          };
+      })();
+
+
+      var styles = [],
+      style = document.createElement('style'),
+      fragment = document.createDocumentFragment(),
+      parent = document.querySelector('div'),
+      parentstyles = /([0-9]+)([a-zA-Z]*)$/.exec(window.getComputedStyle(parent, null).getPropertyValue("font-size")),
+      count = base = parentstyles[1],
+      unit = parentstyles[2],
+      elmtxt,
+      elm,
+      contract = false;
+
+      for (var i = 0, l = 50; i < l; i++) {
+          elm = document.createElement('b');
+          elmtxt = document.createElement('i');
+          elmtxt.textContent = i;
+          elm.appendChild(elmtxt);
+          fragment.appendChild(elm);
+          styles.push('b:nth-of-type(' + (i + 1) + ') { left: ' + Math.random() * 10 + 'em; top: ' + Math.random() * 10 + 'em; }');
+          fragment.appendChild(elm);
+      }
+
+      style.textContent = styles.join('');
+
+      document.head.appendChild(style);
+      parent.appendChild(fragment);
+
+      (function animateNow() {
+          if (!contract && (count < 240)) {
+              count = +count + 5;            
+              parent.style.fontSize = count + unit;
+          } else {
+              contract = true;
+              if (count > base) {
+                  count-=5;
+                  parent.style.fontSize = count + unit;
+              } else {
+                  contract = false;
+              }
+          }
+          requestAnimFrame(animateNow);
+      })();
+  }
+</script> 
+ 
+</html> 

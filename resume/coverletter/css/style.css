@@ -1,0 +1,160 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+article, aside, figure, footer, header, 
+hgroup, nav, section { display:block; }
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+
+body { font:13px/1.8 arial, helvetica, sans-serif;  }
+
+table { font-size:inherit; font:100%; }
+
+select, input, textarea { font:99% arial,helvetica,"Nimbus Sans L", "Bitstream Vera Sans", sans-serif; }
+
+code, pre { font-family: "Courier New", monospace, serif; font-size: 1em; }
+ 
+body, select, input, textarea { color: #060807; }
+
+h1,h2,h3,h4,h5,h6, .contact { font-family:  'Hoefler Text', Garamond, georgia, times, serif; font-weight: normal; text-rendering: optimizeLegibility; color: rgb(159, 37, 48);  }
+
+a:hover, a:active { outline: none; border-bottom: 1px dotted; }
+a, a:active, a:visited { color:#045364; text-decoration: none; letter-spacing: 0.8px; }
+a:hover { color: inherit; }
+
+ul { margin-left:15px; }
+ol { margin-left:30px; list-style-type: decimal; }
+
+small { font-size:85%; }
+strong, th { font-weight: bold; }
+
+td, td img { vertical-align:top; } 
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+pre { 
+  padding: 15px; 
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+
+:-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
+
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+.ir { display:block; text-indent:-999em; overflow:hidden; background-repeat: no-repeat; }
+
+.hidden { display:none; visibility:hidden; } 
+
+.visuallyhidden { position:absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.invisible { visibility: hidden; }
+
+
+ /* Primary Styles
+    Author:  Divya Manian
+ */
+h1 { font-size: 6em; line-height: 1; text-align: center; text-shadow: 2px 1px 0px #000; }
+h2 { font-size: 3em; line-height: 1.2; margin-top: 1em; text-shadow: 1px 1px 0px #000;} 
+h3 { font-size: 1.5em; margin-top: 1em; } 
+h4 { text-transform: uppercase; }
+body, .social { width: 70%; margin: 6em auto 2em auto; }
+html { background: rgb(175, 190, 195); overflow-y: scroll;  }
+
+#coverletter p { margin-bottom: 2em; }
+#coverletter { width: 400px; margin: 0 auto; }
+#coverletter p:last-child { white-space: pre; }
+#mrclaws { position: fixed; bottom: 3em; right: 3em; }
+.social { position: absolute; top: 0; left: 0; background: rgb(159, 37, 48); width: 100%; text-align: center; margin: 0; padding: 0.5em 0; }
+.social a { color:  #f0c9a0; text-shadow: 1px 1px 0px #000; }  
+
+h1+h2 { text-align: center; margin: 1em 0 2em 0; font-size: 1.5em; text-shadow: none; }    
+
+h1+h2 i { white-space: nowrap; font-style: normal; } 
+h1+h2 b { font-weight: normal; font-family: times, serif; }
+.contact { text-shadow: none; font-size: 1.2em; letter-spacing: 1px; color: inherit; padding: 0.5em 0; border: 1px dotted rgba(33, 97, 122, 0.4); border-width: 1.5px 0; margin: 0 0 4em 0; text-align: center; }
+.contact li, .social li { display: inline-block; padding: 0 2em; }
+.contact li:last-child { white-space: nowrap; }
+
+p i, .social a { margin: 0 0.5em 0 0; font-style: normal; }
+p i:after, .social a:after { content: " · "; vertical-align: middle; font-size: 2em; line-height: 0.5em; font-weight: bold; padding: 0 0 0 0.5em; }
+p i:last-child:after, .social a:last-child:after { content: ""; padding: 0; }
+
+.social a { margin-right: 0.25em; }  
+.social a:after { padding-left: 0.25em; vertical-align: middle; }
+b[and] { font-weight: normal; font-style: italic; font-family: Baskerville, Palatino, "Book Antiqua", Constantia, serif; }
+
+@media print {
+  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")" !important; font-size: 1em !important; } 
+  abbr:after { content: " (" attr(title) ")"; } 
+  .ir a:after { content: ""; }  /* Don't show links for images */ 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }  
+  img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
+
+@media all and (orientation:portrait) { 
+  
+}
+
+@media all and (orientation:landscape) { 
+ 
+}
+
+@media screen and (max-device-width: 480px) {
+ html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+}
+

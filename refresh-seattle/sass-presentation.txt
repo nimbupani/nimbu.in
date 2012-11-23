@@ -1,0 +1,177 @@
+INTRODUCTION
+
+Hi, my name is Divya, I am a web designer in Seattle. I work for Microgroove, we specialize in creating websites for record labels and artist sites. I discovered Sass about 8 months ago. Several times we have had clients who request a "small website", which becomes a "big portal", and then, a duplication of the "small website" elsewhere on the site. And obviously all of this happens with a deadline that is not sufficient to neatly slice/dice and reuse CSS properly. 
+
+As they are usually large sites with thousands of hits every day, I cannot afford to split CSS into separate files, as that will increase the number of requests and increase page-load time. 
+
+We maintain these sites for a long time, we get requests to change the site "theme" based on the holiday seasons, and any other new advertising designs the client wants to use which we have not foreseen. 
+
+Cross-browser testing is no longer trivial with the increasing numbers of browsers, every change needs to be tested, and often  there is not enough time to thoroughly test the site.
+                                              
+So, in comes Sass/Compass which make all these and more trivial and easy to manage. 
+
+
+FIRST SLIDE:
+
+Sass is a meta-language written in Ruby with a syntax which allows nested rules, mixins, variables, and functions which can be compiled into CSS. It was originally created by Hampton Catlin, who created Haml, but is now maintained actively by Nathan Weisbaum, who is right here with us tonight! But, you do not need to know Ruby to use it, but only need Ruby to install. Lets see how a Sass file looks like along with the resulting CSS file:
+
+SECOND SLIDE:
+On the left is the Sass syntax, you put this in a filename.sass and compile it into a filename.css
+
+Here are some things to note:
+
+1. Variables, we will go into detail on that later.
+2. Nested styles, if you notice the h2 defined within div.container is rendered as div.container h2. So, now we have a clearly defined cascade. 
+3. If you have to declare a child selector you declare it by giving space on the left. Now, what is interesting is that it becomes difficult to handle complicated nesting, e.g. when you have 10 child selectors with another 10 child selectors within themselves, which I think is good, because it lets you keep your CSS simple. I used to have several levels of nested selectors but with Sass it is easier to split the selectors and make it simpler.
+
+THIRD SLIDE:
+Compass is framework that gives a lot of power to Sass. It was created by Chris Eppsteen. It has a ready library of mixins available (more on that in a minute), and you can create plugins for Compass. Compass also has out-of-the-box support for layout frameworks like 960gs, and Blueprint, plugin support for YUI. 
+
+So, lets now dive deep into the features of Sass. 
+
+FIFTH SLIDE
+
+So variables can be of these kinds. 
+
+Here is an example of a variable used as a number.
+
+
+SIXTH SLIDE
+
+I find Mixins the most useful feature of Sass. Let us see an example of a mixin. 
+
+SEVENTH SLIDE
+A mixin is always defined with an "=", the brackets, and variables within brackets are not necessary for mixins, but is being used here. 
+                                                                   
+This declaration in the Sass file will never be rendered to CSS. This is how you use a mixin.
+
+At this stage, the body selector is using the border mixin. The border mixin gets the values, 10px and red which it proceeds to apply to the border and padding, which is returned to body selector, which is compiled into CSS.
+
+The good part is you can reuse the same mixin several times. It keeps your Sass file uncluttered. But obviously you need a good naming convention so that you know at one glance what the mixin does. 
+
+Compass has some mixins defined CSS3. Let us use that as an example. 
+
+EIGHTH SLIDE
+
+Do note that the this Sass file ONLY contains mixins which do not compile into CSS, so this import does not add any lines to CSS (we will look into import syntax later). 
+
+Then, suppose you would like border-radius, you define it this way. 
+
+This is the resulting CSS code. The good part is, we have abstracted away the vendor-specific extensions, so you do not have to deal with that.  
+
+Lets look at the import.
+
+NINTH SLIDE
+
+Depending on the file you are importing @import works differently. If you are importing a CSS file, it will compile into the actual @import syntax of CSS . 
+
+If you are importing a Sass file, it will combine the contents of that Sass file and compile all of that into a single CSS file. If you note, mixins themselves are not rendered, so you can actually have a Sass file with *only* mixins which when imported do not render anything into the CSS (like the CSS3 example earlier).  
+
+This is why using frameworks like blueprint within Sass is more powerful. Compass has a lot of mixins setup for blueprint, which you can include and define as necessary instead of getting the entire set of selectors, you can pick and choose what you want for your CSS. 
+
+TENTH SLIDE
+
+I am going deeper into programming zone, sorry about that, but I think this is vital too. You can have If, for, while loops. I am just going to show the While loop because this is what I use often for generating background sprites. 
+
+This is how your resulting CSS will look like. Just to explain, the variable i is a counter that gets reduced every time it goes through the while loop. Here, in this example, the height of each image in the sprite is 20px, so I pull up the image by 20px for every count of sprite. 
+
+You can do the same with a for loop as well. I will give links to where you can find documentation for all this at the end of the presentation. 
+
+Next, we will look into some of the functions that are available natively in Sass.
+
+ELEVENTH SLIDE
+The numeric functions must be familiar to programmers. ceil, round, floor return a absolute value, which I found useful when calculating line-height for vertical rhythm (we can see a demo later).
+
+The color function is quite useful, when you are designing, you just want a color that is "darker" or lighter, and instead of doing it in photoshop you can do it direct into the Sass. 
+
+Here is an example of how a function works:
+
+TWELTH SLIDE
+
+
+THIRTEENTH SLIDE
+
+You can have two types of comments, comments that are rendered to the CSS, comments are only rendered in Sass. 
+
+I cannot tell you how many times I look into someone else's CSS file and see comments left by developers for one another! At least this way you can keep such comments within the Sass file, and only use the CSS comments to explain the CSS file.
+
+FOURTEENTH SLIDE
+
+Sass has different options to output the CSS. You can output them as either:
+
+nested, in which case the child selectors appear below the parent spaced as in the example.
+
+expanded almost same as the nested, except no space on the left for child selectors.
+
+compact, which is what I usually use, outputs all declarations in 1 line for every selector.
+
+compressed, outputs all the CSS code into a single line with no white-space, useful if you need your files to be as small as possible.
+
+You can set these values in config.rb file which compass creates when you create a new compass project. This is the only option if you are using Sass stand-alone. 
+
+By default, compass outputs line numbers of the corresponding selector in the Sass file as comments in CSS for debugging, you can turn it off by setting line_commentss = false in the config.rb 
+
+OK, we are almost at the end, I am going to wrap up with some caveats and then a demo.
+
+FIFTEENTH SLIDE
+
+Though increasingly, I have started using Sass for even simple 1-page websites, Sass is most effective, when you have CSS that you would love to split into several files but you are unable to because of how it will impact the site performance.
+
+If you are looking to maintain your CSS file for more than 2 years, Sass is a good way to do so. 
+
+You are not dependent on Sass, you can always continue development with the resulting CSS file, should you not want to use Sass.
+
+If you develop lots of sites with certain repeatable CSS, you can convert them into mixins, define in a universal central location and simply import them as and when needed for a project. 
+
+SIXTEENTH SLIDE
+
+So, now that you are exposed to the wonderful world of Sass, here are some caveats to bring you down to earth!
+
+So, Sass is not a magic wand, if your CSS writing skills are not good, your Sass wont compile into great magical CSS either.
+
+Your Sass files are only as maintainable as you make it be. There are lots of tools to make it maintainable, but it is up to you to use it wisely.
+
+Also, use it only if you know everyone who is working on the styling will also use it. While it is easy to backport CSS into Sass, you will not get back your mixins, or imports, and it will be one giant Sass file. Not ideal. 
+
+SEVENTEENTH SLIDE
+
+These are various places you can get your sass/compass-fix from. Notice, I have subtly included my website and twitter ID, I dont talk about Sass/Compass as often as these two above, but if you are curious about the work I do, you can track them here :P
+
+DEMO
+
+I would like to give a demo of vertical rhythm which was created by Chris Eppsteen. And how easy it will be once you set it up. I am not going to go into the details of the calculations which can be found on the 24ways article on vertical rhythm, but only to show how easy it is to apply them once it is set up. 
+
+First, let us create a project called verticalrhythm. 
+
+
+Then, lets create a grid that we can use to verify the rhythm. Compass also has a grid creator, which you can use to create grids for Blueprint, or for vertical rhythm. 
+
+Then I invoke the vertical_rhythm.sass file which I have stored in a central location and versioned. 
+
+Let us open vertical_rhythm.sass to see what mixins are available to use, so here we are. 
+
+We have a leader, trailer, adjust-font-size, adjust-line-height, which will be sufficient for our use. So, here is some sample text which we will format into code. 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

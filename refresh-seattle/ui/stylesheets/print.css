@@ -1,0 +1,95 @@
+/* line 1, ../src/print.sass */
+.slide, ul {
+  page-break-inside: avoid;
+  visibility: visible !important;
+}
+
+/* line 6, ../src/print.sass */
+h1 {
+  page-break-after: avoid;
+}
+
+/* line 10, ../src/print.sass */
+body {
+  font-size: 12pt;
+  background: white;
+}
+
+/* line 15, ../src/print.sass */
+* {
+  color: black;
+}
+
+/* line 19, ../src/print.sass */
+#slide0 {
+  margin-bottom: 3em;
+}
+/* line 22, ../src/print.sass */
+#slide0 h1 {
+  font-size: 200%;
+  border: none;
+  margin: 0.5em 0 0.25em;
+}
+/* line 27, ../src/print.sass */
+#slide0 h3 {
+  margin: 0;
+  padding: 0;
+}
+/* line 31, ../src/print.sass */
+#slide0 h4 {
+  margin: 0 0 0.5em;
+  padding: 0;
+}
+
+/* line 36, ../src/print.sass */
+h1 {
+  border-top: 2pt solid gray;
+  border-bottom: 1px dotted silver;
+}
+
+/* line 41, ../src/print.sass */
+.extra {
+  background: transparent !important;
+}
+
+/* line 45, ../src/print.sass */
+div.extra, pre.extra, .example {
+  font-size: 10pt;
+  color: #333;
+}
+
+/* line 50, ../src/print.sass */
+ul.extra a {
+  font-weight: bold;
+}
+
+/* line 54, ../src/print.sass */
+p.example, #header {
+  display: none;
+}
+
+/* line 59, ../src/print.sass */
+#footer h1 {
+  margin: 0;
+  border-bottom: 1px solid;
+  color: gray;
+  font-style: italic;
+}
+/* line 65, ../src/print.sass */
+#footer h2 {
+  display: none;
+}
+
+/* line 69, ../src/print.sass */
+#controls {
+  display: none;
+}
+
+/* line 73, ../src/print.sass */
+.layout {
+  display: none !important;
+}
+/* line 76, ../src/print.sass */
+.layout * {
+  display: none !important;
+}

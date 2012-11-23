@@ -1,0 +1,22 @@
+@import "compass/css3/text-shadow";
+@import "compass/css3/gradient";
+
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+@import "icon/*.png";
+
+.icons {
+  
+  a { @extend .ir; }
+  
+  .rss {
+    @include icon-sprite('rss');
+  }
+  
+  .share {
+    @include icon-sprite('share');
+  }
+}
