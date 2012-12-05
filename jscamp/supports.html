@@ -31,7 +31,8 @@
  			}
 			@supports (-webkit-font-feature-settings: 'liga') or
 			          (-moz-font-feature-settings: 'liga') or 
-			          (-o-font-feature-settings: 'liga') {
+			          (-o-font-feature-settings: 'liga') or 
+                      (font-feature-settings: 'liga') {
 			     h1:after {
 			         content: 'supported';
 			         color: lime;
