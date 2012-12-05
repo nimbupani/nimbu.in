@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>JSCamp Asia 2012</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">            
+        <style>        
+            
+            html, body { width: 100%; height: 100%; margin: 0; padding: 0; background: #002b36; color:white; color: aliceblue; }
+
+            body {                
+                width: 100%;
+                height: 100%;
+                display: table;
+                text-align: center;                                
+                font: 100%/1.5 sans-serif;                
+            }
+        
+        
+            .main {                
+                display: table-cell;
+                vertical-align: middle;                                                            
+            }
+
+            a {
+                color: #00D9EF;
+                text-decoration: none;                
+            }
+
+            ul { 
+                width: 50%; 
+                margin: 0 auto; 
+                text-align: left; 
+            }
+            
+            ul, li { list-style: none; }
+            
+            li a:first-child { 
+                display: block; 
+                font: 1.1em/1 sans-serif;                
+                font-style: normal;
+            }
+
+            code { 
+                font-family: 'courier new', courier, monospace; 
+                font-size: 1.1em; 
+            }
+            
+            li { 
+                color: #3D878F; 
+                font-size: 0.9em; 
+                padding: 1em;
+                font: 0.9em/1.5 georgia, serif;
+                font-style: italic;
+            }
+
+            li + li::before {
+                margin: -1em -1em 1em -1em ;
+                border-bottom: 1px dotted grey;
+                content: "";
+                display: block;
+            }
+
+        </style>
+    </head>
+    <body>        
+        <div class="main">
+            <h1>JSCamp Asia 2012</h1>       
+            <p>These are the demos shown in the talk. <a href="http://nimbupani.com/jscamp-css-next.html">More information on each CSS feature covered</a>.</p>
+            <ul>
+                <li><a href="http://timepiece.inostudio.de">Clock with Open Type Ligatures</a>WebKit or Firefox</li>
+                <li><a href="unicode-range.html">Better Ampersand with Unicode Range</a>Any browser</li>
+                <li><a href="shape-inside.html">Wrapping text within a path</a>Chrome Canary with 'Enable Experimental WebKit features` turned on via <code>chrome:flags</code></li>
+                <li><a href="regions.html">Flowing content across layout containers</a>Chrome Canary with 'Enable Experimental WebKit features` turned on via <code>chrome:flags</code></li>
+                <li><a href="http://codepen.io/vcurd/full/fmHJL">Native Image processing filters on HTML elements</a>Chrome or Safari</li>
+                <li><a href="custom-filters.html">Custom filter functions using GLSL Shaders on HTML elements</a>Chrome Canary with 'Enable CSS Shaders' turned on via <code>chrome:flags</code></li>
+                <li><a href="http://adobe.github.com/web-platform/demos/compositing/blend-photogallery/index.html">Blend modes on HTML elements</a><a href="https://github.com/adobe/webkit/downloads">Prototype Chromium build</a>.</li>
+                <li><a href="css-canvas.html">Using canvas as background image</a>Chrome or Safari</li>
+                <li><a href="http://jsfiddle.net/simurai/JKZTu/21/show/">Using any element as background image</a>Firefox</li>
+                <li><a href="supports.html">Responsible Styling with native feature detection</a>Opera or Firefox with <code>layout.css.supports-rule.enabled</code> set to true in <code>about:config</code></li>
+            </ul>
+        </div>        
+    </body>
+</html>
