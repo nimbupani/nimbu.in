@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{page.title}} | HTML5 Boilerplate Web Development</title>
+        <meta name="description" content="Resources for HTML5 Boilerplate Web Development book">
+        <meta name="viewport" content="width=device-width">   
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">             
+        <link rel="stylesheet" href="/css/main.css">        
+    </head>
+    <body>
+        <section class="about">
+            {% include title.html %}
+            <p>{{page.summary}}</p>
+            <p><a class="btn btn-download" href="{{site.repourl}}{{post.tag}}">Browse source files</a> or <a href="http://www.packtpub.com/html5-boilerplate-web-development/book">Buy the book to follow along</a>.</p>
+        </section>
+        
+        <section class="chapter-container">                               
+            {{content}}
+        </section>        
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Home | HTML5 Boilerplate Web Development</title>
+        <meta name="description" content="Resources for HTML5 Boilerplate Web Development book">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">                
+        <link rel="stylesheet" href="css/main.css">        
+    </head>
+    <body>
+        <section class="about">
+            <h1 class="site-title">HTML5 Boilerplate <b class="star"></b> Web Development</h1>
+            <div class="about-book">
+                <p>HTML5 Boilerplate Web Development helps you understand the basics of writing effective websites using <a href="http://html5boilerplate.com">HTML5 Boilerplate</a> framework.</p> 
+
+                <p><small>All money <a href="http://nimbupani.com/about">I</a> earn from this book goes to the <a href="http://www.givewell.org/international/top-charities/AMF">Anti-Malaria Foundation</a></small></p>
+
+                <p><a class="btn btn-buy" href="http://www.packtpub.com/html5-boilerplate-web-development/book">Buy this book</a></p>
+            </div>
+        </section>        
+        
+        <section class="chapter-container">
+            <p class="chapters-introduction"><a href="/sun-shine-festival-2012/">Sun and Sand Music Festival</a> is a hypothetical single-page music festival website that we work on to understand HTML5 Boilerplate. The website builds gradually over each chapter (<a href="/sun-shine-festival-2012/">here is how it would look like finally</a>). You can download <a href="https://github.com/nimbupani/h5bp-book/downloads">files from all chapters</a> or browse the files chapter by chapter:</p>
+
+            <ul class="chapter-list">
+            {% for post in site.posts %}                
+            <li>
+                <h3 class="chapter-list-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <p>{{ post.summary }} {% if post.github != false %} <a class="link-browse" href="{{site.repourl}}{{post.tag}}">Browse files for this chapter</a> {% endif %} </p>
+            </li>            
+            {% endfor %}    
+            </ul>
+        </section>
+        {% include footer.html %}
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
