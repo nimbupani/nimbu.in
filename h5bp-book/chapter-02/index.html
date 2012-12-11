@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{page.title}} | HTML5 Boilerplate Web Development</title>
+        <title>Starting Your Project | HTML5 Boilerplate Web Development</title>
         <meta name="description" content="Resources for HTML5 Boilerplate Web Development book">
         <meta name="viewport" content="width=device-width">   
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">             
@@ -11,13 +11,18 @@
     </head>
     <body>
         <section class="about">
-            {% include title.html %}
-            <p>{{page.summary}}</p>
-            <p><a class="btn btn-download" href="{{site.repourl}}{{post.tag}}">Browse source files</a> or <a href="http://www.packtpub.com/html5-boilerplate-web-development/book">Buy the book to follow along</a>.</p>
+            <div class="title">
+	<a href="/" class="link-home"><h3 class="about-title">Resources for</h3> 
+		<h1 class="about-title about-title-book">HTML5 Boilerplate <b class="star">★</b> Web Development</h1></a>
+	<h2 class="about-title about-title-chapter">chapter-2: Starting Your Project</h2>
+</div>
+
+            <p>Initializing your first project with HTML5 Boilerplate and doing basic house-keeping activities like editing favicons, Google Analytics, humans.txt, etc.</p>
+            <p><a class="btn btn-download" href="https://github.com/nimbupani/h5bp-book/tree/master/">Browse source files</a> or <a href="http://www.packtpub.com/html5-boilerplate-web-development/book">Buy the book to follow along</a>.</p>
         </section>
         
         <section class="chapter-container">                               
-            {{content}}
+            
         </section>        
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
