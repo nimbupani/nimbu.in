@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Private Use Unicode Range</title>
+
+  <style>
+    @font-face {
+        font-family: 'amp';
+		src: url('http://s3.amazonaws.com/nimbufonts/entypo.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+        unicode-range: U+E001-E004;
+    }
+
+    @font-face {
+        font-family: 'space';
+        src: url(data:application/x-font-woff;charset=utf-8;base64,d09GRk9UVE8AAAOYAAsAAAAABUwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAABCAAAAIQAAACQ1P+0gUZGVE0AAAGMAAAAGgAAABxjhaFsR0RFRgAAAagAAAAbAAAAIAAvAARPUy8yAAABxAAAAEsAAABgP9zcNGNtYXAAAAIQAAAAOgAAAUrgERK3aGVhZAAAAkwAAAAuAAAANvsbcvdoaGVhAAACfAAAAB0AAAAkBBD942htdHgAAAKcAAAACAAAAAgAAAAAbWF4cAAAAqQAAAAGAAAABgACUABuYW1lAAACrAAAAN4AAAGJ242MgnBvc3QAAAOMAAAADAAAACAAAwAAeJw9zUEKwjAQRuF/kkhKDa2WKgqjZ8gJXHoBj+CqSJtNK3gCkdnmsLMQFEHdvdX3CM6BiIrunPqUBpAB4aBsdGd14yRYCW5fYntqXiL/CF4umnWcMa41AwvGbcnwjEcD+zEK1FhPQ3eMMX7x3wOgOwyRmVc6umfW7CtpZSWhfANCyyLweJxjYGBgZACCk535hiD6zD9JWRgNAEIVBfQAAHicY2BkYGDgA2IJBhBgYmCEQhYwjwEABFUANAB4nGNgZvzCOIGBlYGD0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAMBBJMhIM01hcHhA8MHBsYH/x8w6DE+YFBoYGBghCtQAEJGAGqIDSIAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGBg+MPz/D1IAoQUYoeqBgJGNAcEZoQAAbecGtwAAeJxjYGRgYADiTz08rvH8Nl8ZuJkYQODMP0lZBP3/ARMD4wMgl4MBLA0AIQUKSgAAeJxjYGRgYHzw/wGDHgMQ/GNgAnIZUAETAG2yA/MAAAAAAAAAAAAAAAAAUAAAAgAAeJx1jjFOAzEQRd8mmyAUhKgQpQsKml3ZVqocYEVNkT6KrNVKSSw5SZOD0HIESo7BATgCl+DHcUMRSyM/f/+ZP8Ad71ScT8UND4VH4pfCY545Fa6lfxaeMOO78FT6r5xVfSvlPnedeSR+KjzmFVu4lv5ReMIjX4Wn0n8YWBPZqiI7GNZxG6PgjUDPkQ0rkp6hP25Wgi77DvlOcgQMnlZphoXq/7yL5pnT4HQ3KpuJLu4OXUx9ML61ZmFKssjPG+cbb51c19ZbKjix1/8lxuUVWIa0HzTEtfZq7x+jCTpIAAB4nGNgZsALAAB9AAQ=) format('woff');
+        unicode-range: U+E000-E004;
+    }
+
+	body {
+	  font: 100%/1.5 space, sans-serif;
+    }
+
+    @media (min-width: 800px) {
+        body {
+            font: 100%/1.5 amp, space, sans-serif;
+        }
+    }
+  </style>
+</head>
+<body>
+    <h1>Adaptive Icon Fonts</h1>
+  <p>Below are characters that would render with icons or not depending on the width of the browser:</p>&#57344;&#xE001;&#57345;&#xE000;&#57344;twitter
+</body>
+
+</html>
