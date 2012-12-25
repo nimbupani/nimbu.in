@@ -9,11 +9,10 @@
 <meta name="defaultView" content="slideshow" />
 <meta name="controlVis" content="hidden" />
 <!-- style sheet links -->
-<link rel="stylesheet" href="ui/stylesheets/slides.css" type="text/css" media="projection" id="slideProj" />
-<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />                           
-<link rel="stylesheet" href="ui/stylesheets/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="/css/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="/css/outline.css" type="text/css" media="screen" id="outlineStyle" />
 <!-- S5 JS -->
-<script src="ui/slides.js" type="text/javascript"></script>
+<script src="/js/slides.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -41,14 +40,14 @@
 </div>
 </div>
 <div class="slide">
-<h1>What Is Sass?</h1> 
+<h1>What Is Sass?</h1>
 <ul>
 <li>Syntactically Awesome Stylesheets.
-</li>	
+</li>
 <li>Allows variables, mixins, functions in your stylesheet written in Ruby.</li>
 </ul>
 <div class="notes">
-<ul> 
+<ul>
 <li>This is programming and or similar to writing a pseudo-code except with syntax.</li>
 <li>White-space sensitive, which means you need to learn to use white-space correctly, unlike CSS.</li>
 <li>Your Sass file is compiled to a CSS file. Compass is a framework that makes it easy to do so.</li>
@@ -74,12 +73,12 @@ div.container
 	</li>
 	<li class="aside css">
 <pre>div.container {
- background: #ccc; 
+ background: #ccc;
 }
 div.container h2 {
  color: #000;
-}             
-		
+}
+
 div.container a.button {
  background: #ccc;
  color: #000
@@ -87,26 +86,26 @@ div.container a.button {
 </pre>
 	<h2>CSS</h2>
 	</li>
-</ul> 
+</ul>
 <div class="notes"><!--START CLASS notes-->
 <ul><li>Compass is a stylesheet authoring framework on top of sass that gives a set of templates, options to make sass easier to use.</li>
-<li></li> 
-<li></li> 
-<li>There is a one-hour video on compass website compass-style.org which explains very exhaustively.</li></ul>	
+<li></li>
+<li></li>
+<li>There is a one-hour video on compass website compass-style.org which explains very exhaustively.</li></ul>
 </div><!--END CLASS notes-->
-</div> 
+</div>
 <div class="slide">
 <h1>Compass</h1>
 <ul>
 	<li>is a framework</li>
 	<li>has lots of mixins and supports layout frameworks like Blueprint, YUI, 960, Drupal&rsquo;s Zen framework.</li>
 	<li>has plugins such as Colors and Fancy Buttons.</li>
-</ul> 
+</ul>
 <div class="notes"><!--START CLASS notes-->
 <ul><li>Compass is a stylesheet authoring framework on top of sass that gives a set of templates, options to make sass easier to use.</li>
-<li></li> 
-<li></li> 
-<li>There is a one-hour video on compass website compass-style.org which explains very exhaustively.</li></ul>	
+<li></li>
+<li></li>
+<li>There is a one-hour video on compass website compass-style.org which explains very exhaustively.</li></ul>
 </div><!--END CLASS notes-->
 </div>
 <div class="slide">
@@ -119,11 +118,11 @@ div.container a.button {
 		<li>booleans (e.g. true, false)</li>
 		</ul>
 	</li>
-	<li><pre>                 
+	<li><pre>
 !base_font_size = 10px
 
 div.focus
- font-size = !base_font_size 		
+ font-size = !base_font_size
 </pre></li>
 	<li class="aside css"><pre>div.focus{
  font-size:10px;
@@ -146,7 +145,7 @@ div.focus
 	<li><pre>=border(!width, !color)
  border = !width "dotted" !color
  padding = !width</pre>
-	</li>	
+	</li>
 	<li>
 	<pre>body
  +border(10px, red)</pre>
@@ -157,9 +156,9 @@ div.focus
  border:10px dotted red;
  padding: 10px;
 }</pre>
-	</li>		
+	</li>
 </ul>
-</div>    
+</div>
 <div class="slide">
 <h1>CSS3 Mixins Example</h1>
 <ul class="incremental">
@@ -167,25 +166,25 @@ div.focus
 	<li>
 		<pre>a.donate
   +border-radius(0.5em)</pre>
-	</li>                                
+	</li>
 	<li class="aside css">
 		<pre>a.donate {
  -moz-border-radius: 0.5em;
  -webkit-border-radius: 0.5em;
- border-radius: 0.5em;     	
-}</pre> 
+ border-radius: 0.5em;
+}</pre>
 		<h2>CSS</h2>
 	</li>
-</ul> 
+</ul>
 <div class="notes"><!--START CLASS notes-->
-<ul><li>You can define as many mixins as you want, and render them only when necessary. Compass is a framework that comes with a lot of mixins which can be imported this way:</li></ul>	
+<ul><li>You can define as many mixins as you want, and render them only when necessary. Compass is a framework that comes with a lot of mixins which can be imported this way:</li></ul>
 </div><!--END CLASS notes-->
-</div>   
+</div>
 
 <div class="slide">
 <h1>@imports</h1>
 <ul>
-	<li><code>@import reset.css</code></li>	
+	<li><code>@import reset.css</code></li>
 	<li><code>@import reset.sass</code></li>
 	<li>And, in reset.sass you have:
 <pre>=border
@@ -211,11 +210,11 @@ a {
 	<li>
 		<pre>!i = 4;
 @while (!i > 0)
- .sprite-{!i} 
+ .sprite-{!i}
    background-position: 0 {-(!i*20px)}
-			
+
  !i = !i -1;</pre>
-	</li>                                
+	</li>
 	<li class="aside css">
 <pre>.sprite-4 {
  background-position: 0 -80px;
@@ -234,23 +233,23 @@ a {
 </ul>
 <div class="notes"><!--START CLASS notes-->
 	<ul>
-		<li>Like other programming languages, SASS brings in if, for, while logic.</li>  
-		<li>I usually use it for rendering background image sprites for headings or for rating stars.</li>			
+		<li>Like other programming languages, SASS brings in if, for, while logic.</li>
+		<li>I usually use it for rendering background image sprites for headings or for rating stars.</li>
 	</ul>
 </div><!--END CLASS notes-->
 </div>
 <div class="slide">
-<h1>Functions</h1> 
+<h1>Functions</h1>
 <ul class="incremental">
 	<li>
-		<ul><li>Numeric: <code>ceil</code>, <code>round</code>, <code>floor</code>, <code>percentage</code>, <code>abs</code></li>	
+		<ul><li>Numeric: <code>ceil</code>, <code>round</code>, <code>floor</code>, <code>percentage</code>, <code>abs</code></li>
 		<li>Color (In latest Sass): <code>darken(#cc3, 10%)</code>, <code>lighten(#cc3, 10%)</code>, <code>saturate(#cc3, 10%)</code>, <code>desaturate(#cc3, 10%)</code></li>
-		</ul>		
-	</li>  
-</ul>                
+		</ul>
+	</li>
+</ul>
 </div>
 <div class="slide">
-<h1>Functions Example</h1> 
+<h1>Functions Example</h1>
 <ul class="incremental">
 <li><pre>div.footer
  color = darken(#cc3, 30%)</pre></li>
@@ -260,30 +259,30 @@ a {
 }</pre>
 <h2>CSS</h2>
 </li>
-</ul>                
+</ul>
 </div>
 
 <div class="slide">
-<h1>Comments</h1> 
+<h1>Comments</h1>
 <ul class="incremental">
-	<li><code>// THIS IS A SASS COMMENT</code></li>	
+	<li><code>// THIS IS A SASS COMMENT</code></li>
 	<li>/* THIS IS A CSS COMMENT */</li>
 	<li class="aside css">
 		<pre>/* THIS IS A CSS COMMENT */</pre>
 		<h2>CSS</h2>
 	</li>
-</ul>                
+</ul>
 </div>
 <div class="slide">
-<h1>Output Style</h1> 
+<h1>Output Style</h1>
 <ul class="incremental">
 	<li>:nested (default)
 		<pre>#main {
  color: #fff;
- background-color: #000;  
+ background-color: #000;
 }
  #main p {
-  width: 10em; }</pre></li>	
+  width: 10em; }</pre></li>
 	<li>:expanded
 <pre>#main {
  color: #fff;
@@ -294,7 +293,7 @@ a {
 }
 </pre>
 </li>
-<li class="aside wide">:compact 
+<li class="aside wide">:compact
 <pre>#main { color: #fff; background-color: #000; }
 #main p { width: 10em; }</pre>
 <br>
@@ -302,37 +301,37 @@ a {
 <pre>
 #main{color:#fff;background-color:#000}#main p{width:10em}
 </pre>
-</li> 
-</ul>                
+</li>
+</ul>
 </div>
 <div class="slide">
-<h1>When to use SASS/Compass</h1> 
+<h1>When to use SASS/Compass</h1>
 <ul class="incremental">
-	<li>Want to split CSS,but worried about multiple file requests.</li>	
+	<li>Want to split CSS,but worried about multiple file requests.</li>
 	<li>Maintainable code</li>
 	<li>Reusable snippets</li>
-</ul>                
+</ul>
 <div class="notes"><!--START CLASS notes-->
 <ul>
 	<li>that is easy to change when clients want to. Clients want to change themes, colors, or want a website in a day.</li>
 	<li>You have a set of snippets you want to use for every site but only when relevant and not add to CSS bloat.</li>
-</ul>	
+</ul>
 </div><!--END CLASS notes-->
 </div>
 
 <div class="slide">
-<h1>Caveats</h1> 
+<h1>Caveats</h1>
 <ul class="incremental">
-	<li>It is only as good as you are.</li>	
+	<li>It is only as good as you are.</li>
 	<li>It is only as maintainable as you make it to be.</li>
 	<li>Use only if everyone who is working on the CSS uses Sass as well.</li>
-</ul>                
+</ul>
 <div class="notes"><!--START CLASS notes-->
 <ul>
 	<li>if your grasp of CSS is poor, so will your sass be.</li>
 	<li>It is a means to an end and not an end in itself.</li>
 	<li>Now a demo.</li>
-</ul>	
+</ul>
 </div><!--END CLASS notes-->
 </div>
 
@@ -343,8 +342,8 @@ a {
 		<li>Blogs: <br><a href="http://nex-3.com/?tags=sass">nex-3.com/?tags=sass</a> &amp; <a href="http://chriseppstein.github.com/blog/">chriseppstein.github.com/blog/</a></li>
 		<li>Twitter: <br><a href="http://twitter.com/nex3">@nex3</a> &amp; <a href="http://twitter.com/chriseppstein">@chriseppstein</a></li>
 		<li>Mailing lists:<br> <a href="groups.google.com/group/haml">groups.google.com/group/haml</a> &amp; <a href="groups.google.com/group/compass-users">groups.google.com/group/compass-users</a></li>
-		<li>Me:<br> <a href="http://twitter.com/nimbuin">@nimbuin</a> &amp; <a href="http://nimbu.in">nimbu.in</a></li>
-	</ul>     
+		<li>Me:<br> <a href="http://twitter.com/divya">@divya</a> &amp; <a href="http://nimbu.in">nimbu.in</a></li>
+	</ul>
 	<div class="notes"></div>
 </div>
 </body>

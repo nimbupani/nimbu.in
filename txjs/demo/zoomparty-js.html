@@ -1,11 +1,10 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta charset="UTF-8"> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
   <title>Zooming with JavaScript</title>
-  <link rel="stylesheet" href="../reset.css">  
   <link rel="stylesheet" href="zoomparty.css">
-</head> 
+</head>
 <body>
   <pre>
 
@@ -25,12 +24,11 @@
     requestAnimFrame(animateNow);
   }
 
-</pre> 
-  <div></div>   
-</body> 
-<script type='text/javascript'> 
+</pre>
+  <div></div>
+</body>
+<script type='text/javascript'>
   window.onload = function() {
-      // shim layer with setTimeout fallback by Paul Irish
       window.requestAnimFrame = (function() {
           return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
           function(
@@ -71,7 +69,7 @@
 
       (function animateNow() {
           if (!contract && (count < 240)) {
-              count = +count + 5;            
+              count = +count + 5;
               parent.style.fontSize = count + unit;
           } else {
               contract = true;
@@ -85,6 +83,6 @@
           requestAnimFrame(animateNow);
       })();
   }
-</script> 
- 
-</html> 
+</script>
+
+</html>

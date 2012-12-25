@@ -5,7 +5,6 @@
 	<title>Bring Your Apps to life with CSS</title>
 
 	<link href="slideshow.css" rel="stylesheet" type="text/css" />
-  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css"/>  
 </head>
 <body>
 
@@ -26,9 +25,9 @@
 <div class="slide single" title="Who am I?">
 	<h2>Who am I?</h2>
 	<ul>
-		<li class="delayed">Web Opener <br> <img src="img/opera-logo.png" alt="Opera Software"></li>
-		<li class="delayed">Core Contributor<br> <a href="http://html5boilerplate.com"><img src="./img/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
-		<li class="delayed"><a href="http://html5readiness.com"><img src="./img/html5readiness.png" alt="html5readiness.com" width="480"></a><a href="http://w3fools.com"><img src="./img/w3fools.png" alt="w3fools.com" width="480" height="271"></a></li>
+		<li class="delayed">Web Opener <br> <img src="http://s3.amazonaws.com/nimbublips/opera-logo.png" alt="Opera Software"></li>
+		<li class="delayed">Core Contributor<br> <a href="http://html5boilerplate.com"><img src="http://s3.amazonaws.com/nimbublips/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
+		<li class="delayed"><a href="http://html5readiness.com"><img src="http://s3.amazonaws.com/nimbublips/html5readiness.png" alt="html5readiness.com" width="480"></a><a href="http://w3fools.com"><img src="http://s3.amazonaws.com/nimbublips/w3fools.png" alt="w3fools.com" width="480" height="271"></a></li>
 		<li class="delayed"><a href="http://nimbupani.com">nimbupani.com</a> and <a href="http://twitter.com/divya">@divya</a></li>
 	</ul>
 </div>
@@ -37,13 +36,13 @@
 	<h2>What is a web app?</h2>
 </div>
 <div class="slide iframe center">
-  <img width="800" src="img/facebook.png">
+  <img width="800" src="http://s3.amazonaws.com/nimbublips/facebook.png">
 </div>
 <div class="slide iframe center">
-  <img width="800" src="img/nimbupani.png">
+  <img width="800" src="http://s3.amazonaws.com/nimbublips/nimbupani.png">
 </div>
 <div class="slide iframe center">
-  <img width="800" src="img/amazon.png">
+  <img width="800" src="http://s3.amazonaws.com/nimbublips/amazon.png">
 </div>
 <div class="slide single">
   <h2>What is a web app?</h2>
@@ -130,18 +129,18 @@
 <div class="slide code">
   <h2>Slideshow - Style</h2>
 <pre class="brush: css; highlight: [3, 4]">
-.slideshow { 
- /* Set the viewbox for the slideshow */  
+.slideshow {
+ /* Set the viewbox for the slideshow */
   width: 500px;
-  height: 300px; 
-/* Make all slides position absolutely w.r.t this viewbox */  
+  height: 300px;
+/* Make all slides position absolutely w.r.t this viewbox */
   position: relative;
 }
 
-.slideshow article { 
-/* Each slide is stacked on top of each other */  
+.slideshow article {
+/* Each slide is stacked on top of each other */
   position: absolute;
-  top: 0; left: 0; 
+  top: 0; left: 0;
 }
 </pre>
 </div>
@@ -165,7 +164,7 @@ in 12s cycles forever using fade animation  */
 .cssanimations .slideshow article:last-of-type {
 /* Delay starting animation for this slide by 4s */
   animation-delay: 4s;
-}</pre>  
+}</pre>
 </div>
 <div class="slide single">
   <h2>CSS3 Selectors</h2>
@@ -185,7 +184,7 @@ in 12s cycles forever using fade animation  */
   <ul>
     <li>More selectors: <a href="http://dev.w3.org/csswg/selectors3/#selectors">dev.w3.org/csswg/selectors3/#selectors</a></li>
     <li>Test them: <a href="http://leaverou.me/demos/nth.html">leaverou.me/demos/nth.html</a></li>
-    <li><h3>Browser Support</h3><p><img src="./img/opera.png"><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/firefox.png"><img src="./img/ie9.png" width="64"></p></li>
+    <li><h3>Browser Support</h3><p><img src="http://s3.amazonaws.com/nimbublips/opera.png"><img src="http://s3.amazonaws.com/nimbublips/chrome.png" width="64"><img src="http://s3.amazonaws.com/nimbublips/safari.png"><img src="http://s3.amazonaws.com/nimbublips/firefox.png"><img src="http://s3.amazonaws.com/nimbublips/ie9.png" width="64"></p></li>
   </ul>
 </div>
 <div class="slide single">
@@ -193,31 +192,31 @@ in 12s cycles forever using fade animation  */
   <p class="codeexplained">
     <code>animation:</code> <code>fade <b>Animation Name</b></code> <code>6s<b>Duration of the animation</b></code> <code>linear <b>Timing function to use</b></code> <code>infinite</code>;
   </p>
-  <h3>Browser Support</h3><p><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/aurora.png" width="64"></p>
+  <h3>Browser Support</h3><p><img src="http://s3.amazonaws.com/nimbublips/chrome.png" width="64"><img src="http://s3.amazonaws.com/nimbublips/safari.png"><img src="http://s3.amazonaws.com/nimbublips/aurora.png" width="64"></p>
 </div>
 <div class="slide code">
   <h2>Slideshow - Animations</h2>
 <pre class="brush: css">
 /* The fade animation */
 @keyframes fade {
-/* Fades in from 0% to 4% of animation */  
+/* Fades in from 0% to 4% of animation */
     0% { opacity: 0; }
     4% { opacity: 1; }
 
 /* From 4% to 33% keep opacity steady at 1 */
    33% { opacity: 1; }
 
-/* Fades out in 4%(37% - 31%) of animation */	
+/* Fades out in 4%(37% - 31%) of animation */
    37% { opacity: 0; }
   100% { opacity: 0; }
-}</pre>  
+}</pre>
 </div>
 <div class="slide single">
   <h2>Calculations</h2>
   <ul>
     <li class="delayed">Each slide needs to stay on for 2 seconds. </li>
     <li class="delayed">Total time for 3 slides: 6 seconds</li>
-    <li class="delayed">Each slide should be visible for about 2s…</li> 
+    <li class="delayed">Each slide should be visible for about 2s…</li>
     <li class="delayed">…which translates to 33% (⅓) of the total animation time.</li>
   </ul>
 </div>
@@ -235,8 +234,8 @@ in 12s cycles forever using fade animation  */
 </div>
 <div class="slide code">
   <h2>How to pause animations?</h2>
-  <pre class="brush: css">.cssanimations .slideshow:hover article { 
-  animation-play-state: paused; 
+  <pre class="brush: css">.cssanimations .slideshow:hover article {
+  animation-play-state: paused;
   }</pre>
 </div>
 <div class="slide single">
@@ -266,26 +265,26 @@ in 12s cycles forever using fade animation  */
 
 <div class="slide code">
   <h2>Browsers without CSS animations</h2>
-<pre class="brush: css; highlight: [12]">.slideshow nav { 
-/* Position above the slideshow */  
-  text-align: center; 
-  margin-top: -2em; 
-  font-size: 2em;  
-  display: block; 
+<pre class="brush: css; highlight: [12]">.slideshow nav {
+/* Position above the slideshow */
+  text-align: center;
+  margin-top: -2em;
+  font-size: 2em;
+  display: block;
 }
 
-.slideshow article { 
-/* Prepare slides for showing when clicked */  
-  opacity: 0; 
-  transition: opacity 1s linear; 
+.slideshow article {
+/* Prepare slides for showing when clicked */
+  opacity: 0;
+  transition: opacity 1s linear;
 }
 
 .slideshow article:first-of-type,
-.slideshow article:target { 
-/* If no article element is targetted, 
+.slideshow article:target {
+/* If no article element is targetted,
 have first slide show, else,
-show the target element */  
-  opacity: 1; 
+show the target element */
+  opacity: 1;
 }</pre>
 </div>
 <div class="slide">
@@ -298,16 +297,16 @@ show the target element */
 <div class="slide code">
   <h2>Slideshow - Different Screens?</h2>
   <pre class="brush: css; highlight = [10]">
-/* Styles for smaller screens */    
-  .slideshow article { 
-    padding: 1em; 
-    overflow: hidden; 
+/* Styles for smaller screens */
+  .slideshow article {
+    padding: 1em;
+    overflow: hidden;
   }
-  .slideshow img { 
-    float: left; 
-    width: 100px; 
+  .slideshow img {
+    float: left;
+    width: 100px;
   }
-@media screen and (min-width: 800px) {  
+@media screen and (min-width: 800px) {
 /* Styles we used previously */
 }</pre>
 </div>
@@ -315,7 +314,7 @@ show the target element */
   <h2>Media Queries</h2>
   <p class="codeexplained">
     <code>@media</code> <code>screen <b>Type of media: tv, print, projection</b></code> <code>and <b>combining queries, also <code>not</code>, <code>only</code> and ","</b></code> (<code>min-width: <b>A media feature</b></code> <code>800px <b>Value for that media feature</b></code>)
-<br><br>    
+<br><br>
   </p>
   <ul>
     <li>More at: <a href="http://dev.w3.org/csswg/css3-mediaqueries/">dev.w3.org/csswg/css3-mediaqueries/</a></li>
@@ -338,7 +337,7 @@ show the target element */
   <ul>
     <li class="delayed">CSS Animations can help you do away with Flash or JavaScript based slideshows</li>
     <li class="delayed">CSS Selectors give you powerful choice of elements</li>
-    <li class="delayed">Media Queries to optimize content for different layouts</li>    
+    <li class="delayed">Media Queries to optimize content for different layouts</li>
     <li class="delayed">Using modernizr can help you provide optimal solutions based on feature-support.</li>
   </ul>
 </div>
@@ -366,21 +365,21 @@ show the target element */
 <h2>Spinner - CSS</h2>
 <pre class="brush: css; highlight: [15]">
 .cssanimations .loader {
-/* Set the size of the spinner */  
-width: 100px; 
+/* Set the size of the spinner */
+width: 100px;
 height: 100px;
 
-/* We want to hide the text "loading" */  
+/* We want to hide the text "loading" */
 text-indent: 110px;
 white-space: nowrap;
 overflow: hidden;
-  
+
 /* There is no spinner but a circular spinner */
 border-radius: 100px;
-  
-/* The Real Magic! */  
-background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%), 
-                  linear-gradient(transparent 0%, indianred 90%, indianred 100%), 
+
+/* The Real Magic! */
+background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%),
+                  linear-gradient(transparent 0%, indianred 90%, indianred 100%),
                   linear-gradient(0deg, indianred 0%, indianred 50%, #000 50%, indianred 100%);
 }
 </pre>
@@ -391,14 +390,14 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
     <li class="delayed">
       <h3>Multiple Backgrounds</h3>
       <p class="codeexplained">
-        <code>background-image</code>: <code>radial-gradient(…)<b>Appears on top of all other background images</b></code>, <code>linear-gradient(…)<b>Penultimate background image</b></code>, <code>linear-gradient(…)<b>Lowest background image</b></code>;        
+        <code>background-image</code>: <code>radial-gradient(…)<b>Appears on top of all other background images</b></code>, <code>linear-gradient(…)<b>Penultimate background image</b></code>, <code>linear-gradient(…)<b>Lowest background image</b></code>;
       </p></li>
     <li class="delayed">
       <h3>Gradients as Images</h3>
       <p class="codeexplained">
         <code>linear-gradient</code>(<code>0deg<b>direction for the gradient creating a gradient line</b></code>, <code>indianred 0%<b>A color stop</b></code>, <code>aliceblue 50%<b>Another color stop</b></code>, <code>indianred 100%<b>Last color stop</b></code>);
       </p>
-      <p>Color stops are points on the gradient line</p>      
+      <p>Color stops are points on the gradient line</p>
     </li>
   </ul>
 </div>
@@ -407,11 +406,11 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
   <ul>
     <li class="delayed">
       <h3>Gradient Line</h3>
-      <p><img src="img/gradient-line.png" alt="screenshot of how a gradient line appears" height="200"></p>
+      <p><img src="http://s3.amazonaws.com/nimbublips/gradient-line.png" alt="screenshot of how a gradient line appears" height="200"></p>
     </li>
     <li class="delayed">
       <h3>Color Stops</h3>
-      <p><img src="img/color-stops.png" alt="color stops in photoshop"></p>
+      <p><img src="http://s3.amazonaws.com/nimbublips/color-stops.png" alt="color stops in photoshop"></p>
     </li>
   </ul>
 </div>
@@ -421,13 +420,13 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
 <div class="slide code">
   <h2>Spinner - Animation</h2>
   <pre class="brush: css; highlight: [6]">
-.loader {   
-  animation: spin 2s linear infinite; 
+.loader {
+  animation: spin 2s linear infinite;
 }
-@keyframes spin { 
+@keyframes spin {
 /* Make the element spin to 360deg */
     0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); } 
+  100% { transform: rotate(360deg); }
 }</pre>
 </div>
 <div class="slide iframe">
@@ -464,10 +463,10 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
   <ul>
     <li>
       <h3>Sass</h3>
-      <pre class="brush: xml">html { 
+      <pre class="brush: xml">html {
   @include background-image(
-  linear-gradient(left top, white, #ddd)); 
-}</pre>      
+  linear-gradient(left top, white, #ddd));
+}</pre>
     </li>
     <li>
       <h3>CSS</h3>
@@ -475,10 +474,10 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
    background-image: -webkit-gradient(linear, 0% 0% , 100% 100% , color-stop( 0% , #ffffff ), color-stop( 100% , #dddddd ));
    background-image: -webkit-linear-gradient( left top , #ffffff , #dddddd );
    background-image: -moz-linear-gradient( left top , #ffffff , #dddddd );
-   background-image: -ms-linear-gradient( left top , #ffffff , #dddddd );   
+   background-image: -ms-linear-gradient( left top , #ffffff , #dddddd );
    background-image: -o-linear-gradient( left top , #ffffff , #dddddd );
    background-image: linear-gradient( left top , #ffffff , #dddddd );
-}</pre>      
+}</pre>
     </li>
   </ul>
 </div>
@@ -487,9 +486,9 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
   <ul>
     <li>
       <h3>Sass</h3>
-      <pre class="brush: xml">html { 
-  @include transform2d(rotate(90deg)); 
-}</pre>      
+      <pre class="brush: xml">html {
+  @include transform2d(rotate(90deg));
+}</pre>
     </li>
     <li>
       <h3>CSS</h3>
@@ -499,7 +498,7 @@ background-image: radial-gradient(contain, black 0%, black 60%, transparent 62%)
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-}</pre>      
+}</pre>
     </li>
   </ul>
 </div>
@@ -517,7 +516,7 @@ sudo* gem install compass</pre>
     <li><a href="http://border-image.com">border-image.com</a></li>
     <li><a href="http://layerstyles.org/">layerstyles.org</a> (old syntax)</li>
     <li><a href="http://mothereffingtextshadow.com/">mothereffingtextshadow.com</a></li>
-    <li><a href="http://text-align.com/">text-align.com</a></li>    
+    <li><a href="http://text-align.com/">text-align.com</a></li>
   </ul>
 </div>
 <div class="slide list">
@@ -565,15 +564,9 @@ sudo* gem install compass</pre>
 <footer>
   <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
 </footer>
-<script src="classList.js"></script>
 <script src="slideshow.js"></script>
 <script>
 var slideshow = new SlideShow(document.getElementById('presentation'));
 </script>
-<script src="syntaxhighlighter/scripts/shCore.js"></script>
-<script src="syntaxhighlighter/scripts/shBrushCSS.js"></script>
-<script src="syntaxhighlighter/scripts/shBrushXML.js"></script>
-<script src="syntaxhighlighter/scripts/shBrushBash.js"></script>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
 </body>
 </html>

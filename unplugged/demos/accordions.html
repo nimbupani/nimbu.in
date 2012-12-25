@@ -1,11 +1,10 @@
 
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-  <title>CSS Accordions</title>   
-  <link rel="stylesheet" href="../reset.css">
-  <style>    
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CSS Accordions</title>
+  <style>
     html, body, .accordion { height: 100%; overflow: hidden; }
     ul, li { list-style: none; margin-left: 0; }
 
@@ -14,83 +13,81 @@
     .accordion b { display: inline-block; -o-transform: rotate(90deg); -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg);  -o-transform-origin: 40% 40%; -webkit-transform-origin: 40% 0; -moz-transform-origin: 40% 0;}
 
     .accordion input { height: 0; width: 0; overflow: hidden; background: 0 0; opacity: 0; }
-    .accordion div ul { opacity: 0; pointer-events: none; }    
+    .accordion div ul { opacity: 0; pointer-events: none; }
     .accordion div { width: 4em; position: relative; height: 100%; padding-top: 0px; background: #444; }
 
     .accordion input:checked + div {  width: 20em; }
     .accordion input:checked + div ul { opacity: 1; pointer-events: auto; }
 
-    .accordion label { text-transform: uppercase; }    
+    .accordion label { text-transform: uppercase; }
     .accordion div ul { padding-top: 20em; position: relative; z-index: 2; }
     .accordion li { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
-    .accordion li a { display: block; padding: 0.5em; }    
-    
-    body { background: #000; color: #fff; } 
+    .accordion li a { display: block; padding: 0.5em; }
+
+    body { background: #000; color: #fff; }
     a, a:visited { text-decoration: none; background: #000; background: rgba(0, 0, 0, 0.2); text-shadow: 1px 1px 1px #000; }
-    a:hover { background: #000; }       
-    .accordion label, .accordion a, .accordion a:visited { color: #fff; } 
-    
+    a:hover { background: #000; }
+    .accordion label, .accordion a, .accordion a:visited { color: #fff; }
+
     .accordion a, .accordion div, .accordion ul { -o-transition: all 1s; -webkit-transition: all 1s; -moz-transition: all 1s; }
     .accordion div {
-      background-image: 
+      background-image:
       	-moz-radial-gradient(100% 150%, 50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
       	-moz-radial-gradient(0    150%, 50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
       	-moz-radial-gradient(50%  100%, 50% 101%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
       	-moz-radial-gradient(100% 50%,  50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
       	-moz-radial-gradient(0    50%,  50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%);
-        background-image: 
+        background-image:
         	-webkit-radial-gradient(100% 150%, 50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
         	-webkit-radial-gradient(0    150%, 50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
         	-webkit-radial-gradient(50%  100%, 50% 101%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
         	-webkit-radial-gradient(100% 50%,  50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%, #444 99%, transparent 99%),
-        	-webkit-radial-gradient(0    50%,  50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%);      	
-      background-size:100px 50px;      
+        	-webkit-radial-gradient(0    50%,  50% 100%, #444 10%, black 11%, black 30%, #444 31%, #444 40%, black 41%, black 60%, #444 61%, #444 70%, black 71%, black 90%, #444 91%);
+      background-size:100px 50px;
     }
-    
+
     .accordion div ul {
       background: url(http://placekitten.com/300/178) no-repeat;
-      background: -o-linear-gradient(#000, transparent 20%), -o-linear-gradient(transparent 120px, #000 178px, transparent), url(http://placekitten.com/300/178) no-repeat;   
-      background: -webkit-linear-gradient(#000, transparent 20%), -webkit-linear-gradient(transparent 120px, #000 178px, transparent), url(http://placekitten.com/300/178) no-repeat;   
-      background: -moz-linear-gradient(#000, transparent 20%), -moz-linear-gradient(transparent 120px, #000 178px, transparent), url(http://placekitten.com/300/178) no-repeat;                        
+      background: -o-linear-gradient(#000, transparent 20%), -o-linear-gradient(transparent 120px, #000 178px, transparent), url(http://placekitten.com/300/178) no-repeat;
+      background: -webkit-linear-gradient(#000, transparent 20%), -webkit-linear-gradient(transparent 120px, #000 178px, transparent), url(http://placekitten.com/300/178) no-repeat;
+      background: -moz-linear-gradient(#000, transparent 20%), -moz-linear-gradient(transparent 120px, #000 178px, transparent), url(http://placekitten.com/300/178) no-repeat;
     }
-    
-  </style>  
-  
-</head> 
-<body> 
+
+  </style>
+
+</head>
+<body>
   <section class="accordion">
-		<article>  		      
-      <label id="tab1_label" for="tab1" tabindex="0"><b>The Gossip</b></label>		  
-  		<input type="radio" value="tab1" id="tab1" name="tabs" checked />		  		  
+		<article>
+      <label id="tab1_label" for="tab1" tabindex="0"><b>The Gossip</b></label>
+  		<input type="radio" value="tab1" id="tab1" name="tabs" checked />
   		<div role="tabpanel" aria-labelledby="tab1_label">
         <ul><li><a href="#">Kate and William</a></li>
           <li><a href="#">Beyoncé and Brianna</a></li>
           <li><a href="#">HTML5 red carpet</a></li>
-        </ul>  		  
+        </ul>
   		</div>
     </article>
     <article>
       <label id="tab2_label" for="tab2" tabindex="0"><b>The Facts</b></label>
-  		<input type="radio" value="tab2" id="tab2" name="tabs" />    
+  		<input type="radio" value="tab2" id="tab2" name="tabs" />
   		<div role="tabpanel" aria-labelledby="tab2_label">
         <ul><li><a href="#">North Korea has a dictator</a></li>
           <li><a href="#">Mexico's capital is Mexico City</a></li>
           <li><a href="#">India and China are most populous</a></li>
-        </ul>  		  
+        </ul>
   		</div>
     </article>
     <article>
       <label id="tab3_label" for="tab3" tabindex="0"><b>The Fiction</b></label>
-  		<input type="radio" value="tab3" id="tab3" name="tabs" />            
+  		<input type="radio" value="tab3" id="tab3" name="tabs" />
   		<div role="tabpanel" aria-labelledby="tab3_label">
         <ul><li><a href="#">New Yorker's top 10 best sellers</a></li>
           <li><a href="#">To be or not to be a writer</a></li>
           <li><a href="#">When the wind blows</a></li>
-        </ul>  		  
+        </ul>
   		</div>
-    </article>    
+    </article>
   </section>
-</body> 
- 
- 
-</html> 
+</body>
+</html>

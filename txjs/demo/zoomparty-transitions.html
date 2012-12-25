@@ -1,20 +1,19 @@
 
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Zoom Party</title>   
-  <link rel="stylesheet" href="../reset.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Party</title>
   <link rel="stylesheet" href="zoomparty.css">
-  <style>    
+  <style>
   section.party { -o-transition: font-size 5s linear; -webkit-transition: font-size 5s linear; -moz-transition: font-size 5s linear; transition: font-size 5s linear;}
   section.party.active { font-size: 120px; }
-  </style>  
-</head> 
-<body> 
+  </style>
+</head>
+<body>
     <pre>.party { transition: font-size 5s linear; }
-.party.active { font-size: 120px; }</pre>   
+.party.active { font-size: 120px; }</pre>
 <pre>party.addEventListener('transitionend', animate, false);</pre>
   <section class="party">
   </section>
@@ -48,12 +47,12 @@
 
   function reanimate() {
     if(parent.classList.contains('active')) {
-      parent.classList.remove('active')      
+      parent.classList.remove('active')
     } else {
-      parent.classList.add('active');      
+      parent.classList.add('active');
     }
-  }      
+  }
 })();
 </script>
-</body> 
-</html> 
+</body>
+</html>

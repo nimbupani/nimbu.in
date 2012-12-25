@@ -5,33 +5,33 @@
  */
  @font-face {
      font-family: 'PacificoRegular';
-     src: url('Pacifico-webfont.eot');
-     src: url('Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
-          url('Pacifico-webfont.woff') format('woff'),
-          url('Pacifico-webfont.ttf') format('truetype'),
-          url('Pacifico-webfont.svg#PacificoRegular') format('svg');
+     src: url('http://s3.amazonaws.com/nimbufonts/Pacifico-webfont.eot');
+     src: url('http://s3.amazonaws.com/nimbufonts/Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+          url('http://s3.amazonaws.com/nimbufonts/Pacifico-webfont.woff') format('woff'),
+          url('http://s3.amazonaws.com/nimbufonts/Pacifico-webfont.ttf') format('truetype'),
+          url('http://s3.amazonaws.com/nimbufonts/Pacifico-webfont.svg#PacificoRegular') format('svg');
      font-weight: normal;
      font-style: normal;
 
  }
-  
+
  body {
    overflow-x: hidden;
  }
- 
+
  .slide {
  	position:absolute;
  	top:0;
  	left:0;
  	right: 0;
- 	bottom: 0; 	
+ 	bottom: 0;
  	z-index: 0;
  	display: none;
  	font-size:250%;
- 	line-height:1.6; 	 	
+ 	line-height:1.6;
  	counter-increment: slide;
  }
- 
+
  .slide:target {
  	z-index:100;
   display: block;
@@ -40,7 +40,7 @@
 
 /**
 	Slide numbers
- */ 
+ */
 
 /* If there's nothing selected, show the first */
 .slide:first-child {
@@ -51,7 +51,7 @@
 .slide .delayed,
 .slide h2,
 .slide p {
-	opacity: 0;	
+	opacity: 0;
 	-webkit-transition:.7s opacity;
 	-moz-transition:.7s opacity;
 	-o-transition:.7s opacity;
@@ -72,13 +72,13 @@
 
 /**
 	CSSS Nimbu Theme
-	
+
 	@author Divya Manian
 	@version 1.0
 */
 
 * {
-	padding:0;	
+	padding:0;
 	margin:0;
 	font:inherit;
 	color:inherit;
@@ -88,7 +88,7 @@ html { background-color: #000; }
 
 body {
 	background:black;
-	font: 150%/1.5 Helvetica, Arial, sans-serif;	
+	font: 150%/1.5 Helvetica, Arial, sans-serif;
 }
 
 button {
@@ -99,7 +99,7 @@ a { color: skyblue; text-decoration: none; }
 a:hover { color: hsl(26,75%,51%); }
 
 code, pre, style {
-	font-family: Consolas, 'Andale Mono', 'Courier New', monospace;	
+	font-family: Consolas, 'Andale Mono', 'Courier New', monospace;
 }
 
 code {
@@ -107,7 +107,7 @@ code {
 	white-space: nowrap;
 	border-radius:.2em;
 	box-shadow:.05em .05em .3em black;
-	
+
 	border: 1px solid rgba(0,0,0,0.5);
 	background: rgba(0,0,0,0.25);
 
@@ -115,7 +115,7 @@ code {
 }
 
 strong, b {
-	font-weight:bold;	
+	font-weight:bold;
 }
 
 .slide {
@@ -138,21 +138,21 @@ strong, b {
 		letter-spacing: -.03em;
 		margin-left: 2em;
 	}
-		
+
 	.slide > ul {
 		list-style:none;
 	}
-	
+
 	.slide ol {
-		margin-left:2em;	
+		margin-left:2em;
 	}
-		
+
 		.slide li {
 			margin:.2em 0;
 			vertical-align: middle;
 			text-align: center;
 		}
-		
+
 
 .slide .emphasis {
 	padding: .4em .5em .3em;
@@ -160,27 +160,25 @@ strong, b {
 	background: #f80;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fa0), to(#f80));
 	background: -moz-linear-gradient(#fa0, #f80);
-	background: -o-linear-gradient(#fa0, #f80);	
-	background: -ms-linear-gradient(#fa0, #f80);	
+	background: -o-linear-gradient(#fa0, #f80);
+	background: -ms-linear-gradient(#fa0, #f80);
 	color: white;
 	font-weight: bold;
 	letter-spacing: -.05em;
 	line-height: .85;
 	text-shadow: .05em .05em .1em rgba(0,0,0,.4);
-	border-radius: .3em;	
+	border-radius: .3em;
 	box-shadow:.1em .1em .5em black;
 }
 
 .light.slide .emphasis {
-	-moz-box-shadow:.1em .1em .5em rgba(0,0,0,.4);
-	-webkit-box-shadow:.1em .1em .5em rgba(0,0,0,.4);
 	box-shadow:.1em .1em .5em rgba(0,0,0,.4);
 }
 
 .slide .emphasis::before {
 	content: '\279C';
 	color: rgba(255,255,255,.5);
-	float: left;	
+	float: left;
 	width: .75em;
 	height: 0;
 	padding: .45em 0 .3em;
@@ -191,9 +189,9 @@ strong, b {
 	font-size: 120%;
 	font-family: inherit;
 	text-shadow: none;
-	
+
 	border-radius:50%;
-	
+
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
@@ -214,7 +212,7 @@ footer {
 }
 
 html, body { height: 100%; }
-body { background: 99% 99% url(./img/opera-logo.png) no-repeat; background-size: 140px auto;}
+body { background: 99% 99% url(http://s3.amazonaws.com/nimbublips/opera-logo.png) no-repeat; background-size: 140px auto;}
 
 #intro h1 {
 	width: 60%;
@@ -224,15 +222,15 @@ body { background: 99% 99% url(./img/opera-logo.png) no-repeat; background-size:
 
 #intro h1,
 .slide h2 {
-  font-family: 'PacificoRegular', arial, serif;  
-  text-shadow: hsl(26,75%,51%) 1px 1px, hsl(26,75%,51%) 2px 2px, hsl(26,75%,51%) 3px 3px, hsl(26,75%,51%) 4px 4px, hsl(26,75%,51%) 5px 5px, hsl(26,75%,51%) 6px 6px, hsl(26,75%,51%) 7px 7px, hsl(26,75%,51%) 8px 8px, hsl(26,75%,51%) 9px 9px;  
+  font-family: 'PacificoRegular', arial, serif;
+  text-shadow: hsl(26,75%,51%) 1px 1px, hsl(26,75%,51%) 2px 2px, hsl(26,75%,51%) 3px 3px, hsl(26,75%,51%) 4px 4px, hsl(26,75%,51%) 5px 5px, hsl(26,75%,51%) 6px 6px, hsl(26,75%,51%) 7px 7px, hsl(26,75%,51%) 8px 8px, hsl(26,75%,51%) 9px 9px;
 }
 
 #intro .attribution { text-align: center; }
 
 iframe {
   width: 96%;
-  height: 500px;  
+  height: 500px;
   border: 0;
 }
 
@@ -241,7 +239,7 @@ iframe {
 .codeexplained code:hover b { display: block; }
 .slide { font-size: 1.2em; }
 .slide h2 { font-size: 200%; padding-left: 1em; position: absolute; top: 0; left: 0; right: 0; }
-.slide h3, #slide44 h3 { margin-bottom: 3em; margin-top: -3em; text-transform: uppercase; } 
+.slide h3, #slide44 h3 { margin-bottom: 3em; margin-top: -3em; text-transform: uppercase; }
 .slide li h3 { margin-top: 1em; margin-bottom: 0; }
 .slide li p { margin-left: 0; }
 .slide.list li { text-align: left; margin-bottom: 1em; }
@@ -283,20 +281,20 @@ iframe {
   -webkit-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
   -webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background:
--moz-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,           
--moz-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,       
--moz-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,       
--moz-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;  
+-moz-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,
+-moz-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,
+-moz-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
+-moz-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background:
 -o-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,
 -o-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,
 -o-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
--o-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;    
+-o-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background:
   -ms-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 0 0,
   -ms-radial-gradient(black 15%, rgba(0, 0, 0, 0.3) 16%) 8px 8px,
   -ms-radial-gradient(rgba(0,0,0,.1) 15%, transparent 20%) 0 1px,
-  -ms-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;      
+  -ms-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background-color:#222;
 background-size:16px 16px; }
 

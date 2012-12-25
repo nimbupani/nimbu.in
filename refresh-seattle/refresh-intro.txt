@@ -1,9 +1,0 @@
-An Introduction to Sass & Compass
-
-Remember the time when CSS was fun? Sass makes CSS fun again with variables, mixins, and more, in a concise readable format. Compass is a framework for Sass that makes it easy to build and maintain websites. In this talk, you will learn how to use Sass and Compass to create CSS that is readable and maintainable.
-
-About the Speaker
-
-Divya Manian is a Web Designer in Seattle. She made the jump from developing device drivers for Motorola phones to designing websites and has not looked back since. In her day job, she works on record label and artist websites, and by night, is a CSS/HTML vigilante. 
-
-She loves reading books and making light of things on Twitter. 

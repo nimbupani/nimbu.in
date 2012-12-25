@@ -1,30 +1,29 @@
 
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>CSS Slideshow</title>   
-  <link rel="stylesheet" href="../reset.css">
-  <link rel="stylesheet" href="zoomparty.css">  
-  <style>    
-    .party { 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slideshow</title>
+  <link rel="stylesheet" href="zoomparty.css">
+  <style>
+    .party {
       -webkit-animation: random 10s linear infinite;
       -moz-animation: random 10s linear infinite;
     }
 
     @-webkit-keyframes random {
         50% { font-size: 120px; }
-    }    
+    }
 
     @-moz-keyframes random {
         50% { font-size: 120px; }
-    }    
-  </style>  
-</head> 
+    }
+  </style>
+</head>
 <body>
   <pre>.party { animation: random 10s linear infinite; }
-@keyframes random { 50% { font-size: 120px; } }</pre> 
+@keyframes random { 50% { font-size: 120px; } }</pre>
   <section class="party">
   </section>
 <script>
@@ -47,8 +46,8 @@
   style.textContent = styles.join('');
 
   document.head.appendChild(style);
-  document.querySelector('.party').appendChild(fragment);  
+  document.querySelector('.party').appendChild(fragment);
 })();
 </script>
-</body> 
-</html> 
+</body>
+</html>

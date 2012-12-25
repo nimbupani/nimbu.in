@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Wee Marquee!</title>   
-		<style type="text/css" media="screen"> 		 	
+		<title>Wee Marquee!</title>
+		<style type="text/css" media="screen">
 		body {
 		  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAAAZCAYAAADpG6rZAAAAg0lEQVRoBe3TQQ2AQBDFUBZFCCDhhC6kAwkq3tJR0Gnzx3Jc9zLpjfevc98m/e57a536ux88V0A8cgELiBvA8VtgAXEDOH4LLCBuAMdvgQXEDeD4LbCAuAEcvwUWEDeA47fAAuIGcPwWWEDcAI7fAguIG8DxW2ABcQM4fgssIG4Ax38AjJICoTOcv+AAAAAASUVORK5CYII=);
 		  font: 12px/1.5 helvetica, arial, sans-serif;
@@ -11,17 +11,15 @@
 		#container {
 		  width: 80%;
 		  max-width: 1000px;
-		  min-width: 300px;  
+		  min-width: 300px;
 			background: #fff;
 		  background: rgba(255, 255, 255, 0.9);
-		  margin: 3em auto; 
-		  padding: 2em; 
+		  margin: 3em auto;
+		  padding: 2em;
 		  border: 2px solid #fff;
-			-moz-box-shadow: 0 0 1em #000;
-			-webkit-box-shadow: 0 0 1em #000;
 			box-shadow: 0 0 1em #000;
-		} 
-		  
+		}
+
 	  #raptor {
 			position: fixed;
 			bottom: 5em;
@@ -33,62 +31,41 @@
 			height: 300px;
 			overflow:hidden;
 			text-indent: -1000em;
-		} 
-		
+		}
+
 		#raptor:target a {
-			background: url(raptor.png) top left no-repeat;
-		}                  			
+			background: url(http://s3.amazonaws.com/nimbublips/raptor.png) top left no-repeat;
+		}
 		</style>
-		<link rel="stylesheet" href="jquery.weemarquee.css" type="text/css" media="screen" title="Plugin Stylesheet" charset="utf-8"> 		
+		<link rel="stylesheet" href="jquery.weemarquee.css" type="text/css" media="screen" title="Plugin Stylesheet" charset="utf-8">
 	</head>
-	<body>  
+	<body>
 		<div id="container"><!--START ID container-->
 			<b id="raptor"><a href="http://en.wikipedia.org/wiki/Dromaeosauridae" title="looking for me? click!">guess who?!</a></b>
+            <h1>This project is no longer being maintained</h1>
 			<h1>Demo for Wee Marquee</h1>
-			<p>Wee! Yet another marquee jQuery plugin! So, this creates a marquee like Twitter's homepage, but also accounts for the case when the length of the content is less than the width of the marquee viewport (check the first example below). </p>  
+			<p>Wee! Yet another marquee jQuery plugin! So, this creates a marquee like Twitter's homepage, but also accounts for the case when the length of the content is less than the width of the marquee viewport (check the first example below). </p>
 				<p class="scroller">
-					<span>This is a poor single marquee.</span> 		      
-				</p>		
+					<span>This is a poor single marquee.</span>
+				</p>
 				<p class="scroller wm-mom"><!--START CLASS scroller-->
 						<span class="wm-el">This is a selection of scrolling text which exceeds the width of this container. This means it will be duplicating itself.  Weee! &lt;end&gt;</span>
-				</p><!--END CLASS scroller-->			
+				</p><!--END CLASS scroller-->
 				<p class="scroller-nofade"><!--START CLASS scroller-->
 						<span class="wm-el">This has no fade effect for minimalists.</span>
-				</p><!--END CLASS scroller-->		 
+				</p><!--END CLASS scroller-->
 				<h2>Why?</h2>
-				<p>I am learning to use jQuery and I figured creating code would be more useful than studying it. Plus this way, one of you might get frustrated enough to correct it or suggest something better. Either way, I win!</p> 
+				<p>I am learning to use jQuery and I figured creating code would be more useful than studying it. Plus this way, one of you might get frustrated enough to correct it or suggest something better. Either way, I win!</p>
 				<h2>Supported Browsers</h2>
-				<p>It <em>should</em> work on all browsers including IE6. But it only has been tested on Opera 10.5+, Firefox 3.6+, Safari 4+, Chrome. <a href="http://github.com/nimbupani/weemarquee/issues">Do report bugs</a>, if it does not.</p>
-      <h2>Gimme Code!</h2> 
-			<ol>
-				<li><h4>Get the CSS</h4>
-					<p>This is the <a href="http://github.com/nimbupani/weemarquee/blob/master/jquery.weemarquee.css">CSS you need for the plugin to work</a>. </p>  <p>If you don't copy the CSS to your main stylesheet, a <a href="#raptor">raptor</a> will be automatically dispatched to eat you.</p></li>
-					<li><h4>Get the JS</h4>
-						<p><a href="http://github.com/nimbupani/weemarquee/blob/master/jquery.weemarquee.js">Download the Javascript file</a> and link to it (preferably before the closing <code>body</code> tag).</p>
-					</li>                                           
-					<li><h4>Call it!</h4>
-						<pre><code>$(".scroller").weemarquee();</code></pre>
-					</li>                                                  
-					<li><h4>Options</h4>
-					<p>You can call it using the following options:</p>	
-					<ul><li><b>interval</b> - defaults to 20, The greater the interval, the slower the marquee will be.</li>
-						<li><b>fade</b> - defaults to <code>true</code>, if you do not want the fade on the sides, set it to <code>false</code>. </li>
-						<li><b>width</b> - set the width of the marquee viewport, defaults to 400px.</li>
-						<li><b>skin</b> - adds a class to the marquee container so you can style it as you wish. Default class name is <code>wm-base</code>.</li></ul>  
-						<p><b>Usage:</b> <code>$(".scroller").weemarquee({ fade: false, width: 300 })</code></p>
-					</li>
-			</ol>
-			<h2>I wanna improve it!</h2>
-		  <p>Thank you Opensorcerers, fork it on <a href="http://github.com/nimbupani/weemarquee/">github</a> and improve it as you wish!</p>
+                <p><strike>It <em>should</em> work on all browsers including IE6. But it only has been tested on Opera 10.5+, Firefox 3.6+, Safari 4+, Chrome. <a href="http://github.com/nimbupani/weemarquee/issues">Do report bugs</a>, if it does not.</strike></p>
 		</div><!--END ID container-->
-		<script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script> 
-		<script src="jquery.weemarquee.min.js" type="text/javascript" charset="utf-8"></script>   
+		<script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.weemarquee.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
 			$(function(){
 			    $(".scroller").weemarquee();
 					$(".scroller-nofade").weemarquee({ fade: false, width: "100%" });
 			});
-
 		</script>
 	</body>
 </html>

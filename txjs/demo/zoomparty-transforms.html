@@ -1,10 +1,10 @@
 
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-  <title>Animation using transforms</title>   
-  <style type='text/css'> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Animation using transforms</title>
+  <style type='text/css'>
 html, body { height: 100%; }
 body { font-family: sans-serif; overflow: hidden; }
 div { font-size: 12px; left: 0%; top: 0%; height: 10em; width: 10em; margin: -5em 0 0 -5em; position: relative; }
@@ -12,15 +12,15 @@ b { position: absolute; width: 50px; height: 50px; border-radius: 50px; line-hei
 
 b i { font-size: 12px; font-style: normal; position: absolute; left: 0; right: 0; }
 
-div { 
+div {
   -webkit-animation: random 10s linear infinite;
   -moz-animation: random 10s linear infinite;
   -webkit-transform: translateZ(0, 0, 0);
 }
 
-div b { 
-  -webkit-animation: antirandom 10s linear infinite; 
-  -moz-animation: antirandom 10s linear infinite;     
+div b {
+  -webkit-animation: antirandom 10s linear infinite;
+  -moz-animation: antirandom 10s linear infinite;
 }
 
 div:hover,
@@ -36,9 +36,9 @@ div:hover b { -webkit-animation-play-state: paused; -moz-animation-play-state: p
     70% { -webkit-transform: scale(6); }
     80% { -webkit-transform: scale(4); }
     90% { -webkit-transform: scale(2); }
-}    
- 
-@-webkit-keyframes antirandom {   
+}
+
+@-webkit-keyframes antirandom {
     10% { -webkit-transform: scale(0.5); }
     20% { -webkit-transform: scale(0.25); }
     30% { -webkit-transform: scale(0.17); }
@@ -48,8 +48,8 @@ div:hover b { -webkit-animation-play-state: paused; -moz-animation-play-state: p
     70% { -webkit-transform: scale(0.17); }
     80% { -webkit-transform: scale(0.25); }
     90% { -webkit-transform: scale(0.5); }
-}    
- 
+}
+
 @-moz-keyframes random {
     10% { -moz-transform: scale(2); }
     20% { -moz-transform: scale(4); }
@@ -60,9 +60,9 @@ div:hover b { -webkit-animation-play-state: paused; -moz-animation-play-state: p
     70% { -moz-transform: scale(6); }
     80% { -moz-transform: scale(4); }
     90% { -moz-transform: scale(2); }
-}    
- 
-@-moz-keyframes antirandom {   
+}
+
+@-moz-keyframes antirandom {
     10% { -moz-transform: scale(0.5); }
     20% { -moz-transform: scale(0.25); }
     30% { -moz-transform: scale(0.17); }
@@ -72,12 +72,12 @@ div:hover b { -webkit-animation-play-state: paused; -moz-animation-play-state: p
     70% { -moz-transform: scale(0.17); }
     80% { -moz-transform: scale(0.25); }
     90% { -moz-transform: scale(0.5); }
-}     
-  </style>   
-</head> 
-<body> 
-  <div></div>   
-    <script type='text/javascript'> 
+}
+  </style>
+</head>
+<body>
+  <div></div>
+    <script type='text/javascript'>
       var styles = [],
         style = document.createElement('style'),
         fragment = document.createDocumentFragment(),
@@ -97,6 +97,6 @@ div:hover b { -webkit-animation-play-state: paused; -moz-animation-play-state: p
 
       document.head.appendChild(style);
       document.querySelector('div').appendChild(fragment);
-    </script>  
-</body>  
-</html> 
+    </script>
+</body>
+</html>

@@ -1,10 +1,9 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
+<!DOCTYPE html>
+<html>
+<head>
   <meta charset="utf-8">
-  <title> Spinner</title> 
-  <link rel="stylesheet" href="../reset.css">
-  <style type='text/css'> 
+  <title> Spinner</title>
+  <style type='text/css'>
     html, body { overflow: hidden;  }
     body { background: #000; color: #fff; }
     .loader {
@@ -16,7 +15,7 @@
       left: 50%;
       position: absolute;
       overflow: hidden;
-      display: block;      
+      display: block;
     }
     .cssanimations .loader {
         width: 100px;
@@ -26,10 +25,10 @@
         margin: -50px 0 0 -50px;
         border-radius: 100px;
         -webkit-animation: spin 2s linear infinite;
-        -moz-animation: spin 2s linear infinite;    
+        -moz-animation: spin 2s linear infinite;
         background: indianred;
         background-image: -webkit-radial-gradient(closest-side, black 60%, transparent 62%), -webkit-linear-gradient(transparent, indianred 80%), -webkit-linear-gradient(0, indianred 50%, #000 50%, indianred);
-        background-image: -moz-radial-gradient(closest-side, black 60%, transparent 61%), -moz-linear-gradient(transparent, indianred 90%), -moz-linear-gradient(0, indianred 50%, #000 50%, indianred);    
+        background-image: -moz-radial-gradient(closest-side, black 60%, transparent 61%), -moz-linear-gradient(transparent, indianred 90%), -moz-linear-gradient(0, indianred 50%, #000 50%, indianred);
         background-image: -o-radial-gradient(closest-side, black 60%, transparent 61%), -o-linear-gradient(transparent, indianred 90%), -o-linear-gradient(0, indianred 50%, #000 50%, indianred);
         background-image: -ms-radial-gradient(closest-side, black 60%, transparent 61%), -ms-linear-gradient(transparent, indianred 90%), -ms-linear-gradient(0, indianred 50%, #000 50%, indianred);
         background-image: radial-gradient(closest-side, black 60%, transparent 61%), linear-gradient(transparent, indianred 90%), linear-gradient(0, indianred 50%, #000 50%, indianred);
@@ -37,10 +36,10 @@
 
     @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
     @-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); }
-  </style> 
+  </style>
   <script src="https://github.com/Modernizr/Modernizr/raw/master/modernizr.js"></script>
-</head> 
-<body> 
-  <span class="loader">loading…</span>   
-</body> 
+</head>
+<body>
+  <span class="loader">loading…</span>
+</body>
 </html>

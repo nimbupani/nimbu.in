@@ -4,8 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Taking presentation out of JavaScript one setInterval at a time</title>
 
-	<link href="slideshow.css" rel="stylesheet" type="text/css" />
-  <link type="text/css" rel="stylesheet" href="./syntaxhighlighter/styles/shCoreDefault.css"/>  
+	<link href="/css/slideshow.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -20,9 +19,9 @@
 <div class="slide single" title="Who am I?">
 	<h2>Who am I?</h2>
 	<ul class="delayed">
-		<li>Web Opener <br> <img src="./img/opera-logo.png" alt="Opera Software"></li>
-		<li>Core Contributor<br> <a href="http://html5boilerplate.com"><img src="./img/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
-		<li><a href="http://html5readiness.com"><img src="./img/html5readiness.png" alt="html5readiness.com" width="480"></a><a href="http://w3fools.com"><img src="./img/w3fools.png" alt="w3fools.com" width="480" height="271"></a></li>
+		<li>Web Opener <br> <img src="http://s3.amazonaws.com/nimbublips/opera-logo.png" alt="Opera Software"></li>
+		<li>Core Contributor<br> <a href="http://html5boilerplate.com"><img src="http://s3.amazonaws.com/nimbublips/html5boilerplate.png" alt="HTML5 Boilerplate"></a></li>
+		<li><a href="http://html5readiness.com"><img src="http://s3.amazonaws.com/nimbublips/html5readiness.png" alt="html5readiness.com" width="480"></a><a href="http://w3fools.com"><img src="http://s3.amazonaws.com/nimbublips/w3fools.png" alt="w3fools.com" width="480" height="271"></a></li>
 		<li><a href="http://nimbupani.com">nimbupani.com</a> and <a href="http://twitter.com/divya">@divya</a></li>
 	</ul>
 </div>
@@ -33,12 +32,12 @@
     <li>
       <pre class="brush:js">
 var marqueecontents='<font face="Arial">
-  <strong><big>Thank you for visiting 1996. Enjoy your stay!</big></strong></font>';    
-document.write('<marquee 
-  direction="up" 
-  scrollAmount='+speed+' 
+  <strong><big>Thank you for visiting 1996. Enjoy your stay!</big></strong></font>';
+document.write('<marquee
+  direction="up"
+  scrollAmount='+speed+'
   style="width:'+marqueewidth+';height:'+marqueeheight+'">'+marqueecontents+'</marquee>');
-setTimeout("window.onresize=regenerate",450);    
+setTimeout("window.onresize=regenerate",450);
       </pre>
       <script language="JavaScript1.2">
 
@@ -126,25 +125,25 @@ setTimeout("window.onresize=regenerate",450);
       document.write('</td></table>')
       }
       }
-      </script>      
+      </script>
     </li>
   </ul>
 </div>
 <div class="slide">
   <ul>
-    <li><img src="./img/zeldman.jpg"></li>
+    <li><img src="http://s3.amazonaws.com/nimbublips/zeldman.jpg"></li>
   </ul>
 </div>
 <div class="slide">
   <ul>
-    <li><img src="./img/csszen.png"></li>
+    <li><img src="http://s3.amazonaws.com/nimbublips/csszen.png"></li>
   </ul>
 </div>
 <div class="slide">
   <style>
-  .yellowshadow { 
-    position: absolute; 
-    left: 50%; 
+  .yellowshadow {
+    position: absolute;
+    left: 50%;
     top: 50%;
     width: 430px;
     height: 396px;
@@ -156,20 +155,20 @@ setTimeout("window.onresize=regenerate",450);
     top: 0;
     opacity: 1;
   }
-  .yellowshadow img:last-child { 
-    -webkit-transition: opacity 1s linear 1s; 
-    -o-transition: opacity 1s linear 1s;     
-    -moz-transition: opacity 1s linear 1s;     
-    transition: opacity 1s linear 1s;     
+  .yellowshadow img:last-child {
+    -webkit-transition: opacity 1s linear 1s;
+    -o-transition: opacity 1s linear 1s;
+    -moz-transition: opacity 1s linear 1s;
+    transition: opacity 1s linear 1s;
   }
-  
+
   .yellowshadow:hover img:not(:first-child) {
     opacity: 0;
-  }  
+  }
   </style>
   <div class="yellowshadow">
-    <img src="./img/yellow_fade5.gif">
-    <img src="./img/yellow_fade3.gif">    
+    <img src="http://s3.amazonaws.com/nimbublips/yellow_fade5.gif">
+    <img src="s3.amazonaws.com/nimbublips/yellow_fade3.gif">
   </div>
 </div>
 <div class="slide single">
@@ -187,9 +186,9 @@ setTimeout("window.onresize=regenerate",450);
       <pre class="brush:js">
       $('#slidingdiv').hover(function(){
         $(this).addClass('hover');
-        $(this).css({opacity: 0.7});        
+        $(this).css({opacity: 0.7});
       });
-      </pre>      
+      </pre>
     </li>
   </ul>
 </div>
@@ -205,7 +204,7 @@ setTimeout("window.onresize=regenerate",450);
   <ul class="delayed">
     <li>CSS animations are native</li>
     <li>More accurate</li>
-    <li>Browsers can optimize</li>        
+    <li>Browsers can optimize</li>
     <li>Hardware Accelerated!</li>
     <li>Cleaner code</li>
   </ul>
@@ -215,13 +214,13 @@ setTimeout("window.onresize=regenerate",450);
   <ul class="delayed">
     <li>Transitions</li>
     <li>Keyframed Animations</li>
-  </ul>  
+  </ul>
 </div>
 <div class="slide">
   <h2>Browser Support</h2>
   <ul class="delayed">
-    <li><h3>Transitions</h3><p><img src="./img/opera.png" width="64"><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/firefox.png" width="64"><img src="./img/ie9.png" width="64"></p></li>
-    <li><h3>Keyframe Animations</h3><p><img src="./img/chrome.png" width="64"><img src="./img/safari.png"><img src="./img/firefox.png" width="64"></p></li>
+    <li><h3>Transitions</h3><p><img src="http://s3.amazonaws.com/nimbublips/opera.png" width="64"><img src="http://s3.amazonaws.com/nimbublips/chrome.png" width="64"><img src="http://s3.amazonaws.com/nimbublips/safari.png"><img src="http://s3.amazonaws.com/nimbublips/firefox.png" width="64"><img src="http://s3.amazonaws.com/nimbublips/ie9.png" width="64"></p></li>
+    <li><h3>Keyframe Animations</h3><p><img src="http://s3.amazonaws.com/nimbublips/chrome.png" width="64"><img src="http://s3.amazonaws.com/nimbublips/safari.png"><img src="http://s3.amazonaws.com/nimbublips/firefox.png" width="64"></p></li>
   </ul>
 </div>
 <div class="slide single">
@@ -237,10 +236,10 @@ setTimeout("window.onresize=regenerate",450);
   </ul>
 </div>
 <div class="slide" id="slide-tween">
-  <h2>Timing Function</h2>  
+  <h2>Timing Function</h2>
   <ul>
     <li>
-      <div class="logo"><img src="./img/opera-tween.png"></div>
+      <div class="logo"><img src="http://s3.amazonaws.com/nimbublips/opera-tween.png"></div>
       <select>
         <option selected="">linear</option>
         <option>cubic-bezier</option>
@@ -248,10 +247,10 @@ setTimeout("window.onresize=regenerate",450);
         <option>ease-out</option>
         <option>ease-in-out</option>
       </select>
-      <button>Animate</button> <br>      
-      <canvas width="300" height="300"></canvas> 
-      <pre>cubic-bezier(<span class="val lit">0.9</span>, <span class="val lit">0.1</span>, <span class="val lit">0.1</span>, <span class="val lit">0.9</span>);</pre>       
-      <p>Stolen from <a href="http://htmlfivewow.com">htmlfivewow.com</a></p>      
+      <button>Animate</button> <br>
+      <canvas width="300" height="300"></canvas>
+      <pre>cubic-bezier(<span class="val lit">0.9</span>, <span class="val lit">0.1</span>, <span class="val lit">0.1</span>, <span class="val lit">0.9</span>);</pre>
+      <p>Stolen from <a href="http://htmlfivewow.com">htmlfivewow.com</a></p>
     </li>
   </ul>
 </div>
@@ -266,10 +265,10 @@ setTimeout("window.onresize=regenerate",450);
   <h2>Uncool things about Transitions</h2>
   <ul class="delayed">
     <li>Cannot transition from keywords, e.g. from <code>auto</code> to <code>100%</code></li>
-    <li>Not all properties can be transitioned. <a href="http://www.w3.org/TR/css3-transitions/#animatable-properties-">bit.ly/animatablecss</a></li>    
+    <li>Not all properties can be transitioned. <a href="http://www.w3.org/TR/css3-transitions/#animatable-properties-">bit.ly/animatablecss</a></li>
     <li>If another transition cancels existing transition, existing transition never fires a <code>transitionend</code>.</li>
     <li><code>transitionEnd</code> fires for each property that changes if <code>all</code> properties are transitioned.</li>
-    <li><code>event.target.removeEventListener(event.type, transCallback, false);</code></li>    
+    <li><code>event.target.removeEventListener(event.type, transCallback, false);</code></li>
     <li><code>transition-delay</code> applies differently across browsers <a href="http://jsfiddle.net/p5ztz/">jsfiddle.net/p5ztz/</a></li>
     <li>Changing styles in JavaScript won't trigger transitions.</li>
     <li><pre>node.style.backgroundColor ="red";
@@ -277,16 +276,16 @@ node.style.backgroundColor = "blue";</pre>
     </li>
     <li><h3>Trigger reflow</h3>
       <pre>
-node.style.backgroundColor ="red"; 
-document.body.offsetWidth; 
+node.style.backgroundColor ="red";
+document.body.offsetWidth;
 node.style.backgroundColor = "blue";</pre>
     </li>
     <li>
       <h3>Delay setting second style</h3>
       <pre>
-  window.setTimeout(function() { 
+  window.setTimeout(function() {
   node.style.backgroundColor = "blue"; }, 0);</pre>
-      </li>    
+      </li>
   </ul>
 </div>
 <div class="slide single">
@@ -336,31 +335,31 @@ node.style.backgroundColor = "blue";</pre>
   <h2>Example</h2>
   <ul>
     <li>
-      <iframe class="sidebyside" src="./demo/zoomparty-transitions.html"></iframe>                  
-      <iframe class="sidebyside" src="./demo/zoomparty.html"></iframe>    
+      <iframe class="sidebyside" src="./demo/zoomparty-transitions.html"></iframe>
+      <iframe class="sidebyside" src="./demo/zoomparty.html"></iframe>
     </li>
   </ul>
 </div>
 <div class="slide">
-  <h2>Differences</h2>  
+  <h2>Differences</h2>
   <ul class="delayed">
     <li>
       <div class="sidebyside">
         <h3>Transitions</h3>
         <ul>
           <li>Triggered when property values change</li>
-          <li>Cannot repeat unless via JavaScript</li>          
+          <li>Cannot repeat unless via JavaScript</li>
         </ul>
-      </div>      
+      </div>
       <div class="sidebyside">
         <h3>Animations</h3>
         <ul>
           <li>Triggered when element is put in to animating state</li>
-          <li>Can be repeated via <code>animation-iteration-count</code></li>          
-          <li>Keyframe control</li>          
+          <li>Can be repeated via <code>animation-iteration-count</code></li>
+          <li>Keyframe control</li>
         </ul>
       </div>
-    </li>  
+    </li>
   </ul>
 </div>
 <div class="slide">
@@ -369,12 +368,12 @@ node.style.backgroundColor = "blue";</pre>
     <li>
       <div class="sidebyside">
         <h3>Transitions</h3>
-        <img src="./img/transition.png">        
+        <img src="http://s3.amazonaws.com/nimbublips/transition.png">
       </div>
       <div class="sidebyside">
         <h3>Animations</h3>
-        <img src="./img/animation.png">
-      </div>      
+        <img src="http://s3.amazonaws.com/nimbublips/animation.png">
+      </div>
     </li>
   </ul>
 </div>
@@ -389,8 +388,8 @@ node.style.backgroundColor = "blue";</pre>
   <h2>Performance of CSS vs JS animations?</h2>
   <ul>
     <li>
-      <iframe class="sidebyside" src="./demo/zoomparty.html"></iframe>    
-      <iframe class="sidebyside" src="./demo/zoomparty-js.html"></iframe>            
+      <iframe class="sidebyside" src="./demo/zoomparty.html"></iframe>
+      <iframe class="sidebyside" src="./demo/zoomparty-js.html"></iframe>
     </li>
   </ul>
 </div>
@@ -400,15 +399,15 @@ node.style.backgroundColor = "blue";</pre>
     <li>
       <div class="sidebyside">
         <h3>CSS</h3>
-<p><b>Chrome:</b><img src="./img/chrome-fontsize.png"></p>
-<p><b>Firefox:</b><img src="./img/firefox-fontsize.png"></p>
+<p><b>Chrome:</b><img src="http://s3.amazonaws.com/nimbublips/chrome-fontsize.png"></p>
+<p><b>Firefox:</b><img src="http://s3.amazonaws.com/nimbublips/firefox-fontsize.png"></p>
       </div>
       <div class="sidebyside">
         <h3>JavaScript</h3>
-<p><b>Chrome:</b><img src="./img/chrome-js-fontsize.png"></p>
-<p><b>Firefox:</b><img src="./img/firefox-js-fontsize.png"></p>
+<p><b>Chrome:</b><img src="http://s3.amazonaws.com/nimbublips/chrome-js-fontsize.png"></p>
+<p><b>Firefox:</b><img src="http://s3.amazonaws.com/nimbublips//firefox-js-fontsize.png"></p>
       </div>
-    </li>    
+    </li>
   </ul>
 </div>
 <div class="slide">
@@ -448,45 +447,37 @@ node.style.backgroundColor = "blue";</pre>
       <ul>
         <li>Holler <a href="http://twitter.com/divya">@divya</a></li>
         <li>Slides: <a href="http://nimbu.in/txjs/">nimbu.in/txjs/</a></li>
-        <li>Demos: <a href="http://jsfiddle.net/user/nimbu">jsfiddle.net/user/nimbu</a></li>
-        <li>Rate: <a href="http://speakerrate.com/talks/7477">spkr8.com/t/7477</a></li>        
-      </ul>      
+      </ul>
     </li>
   </ul>
 </div>
 <footer>
   <p>A presentation by <a href="http://nimbupani.com">Divya Manian</a> 2011</p>
 </footer>
-<script src="classList.js"></script>
-<script src="slideshow.js"></script>
+<script src="/js/slideshow.js"></script>
 <script>
 var slideshow = new SlideShow(document.getElementById('presentation'));
 window.requestAnimFrame = (function(){
-     return  window.requestAnimationFrame       || 
-             window.webkitRequestAnimationFrame || 
-             window.mozRequestAnimationFrame    || 
-             window.oRequestAnimationFrame      || 
-             window.msRequestAnimationFrame     || 
+     return  window.requestAnimationFrame       ||
+             window.webkitRequestAnimationFrame ||
+             window.mozRequestAnimationFrame    ||
+             window.oRequestAnimationFrame      ||
+             window.msRequestAnimationFrame     ||
              function(/* function */ callback, /* DOMElement */ element){
                window.setTimeout(callback, 1000 / 60);
              };
-   })();      
+   })();
 </script>
-<script src="./syntaxhighlighter/scripts/shCore.js"></script>
-<script src="./syntaxhighlighter/scripts/shBrushCSS.js"></script>
-<script src="./syntaxhighlighter/scripts/shBrushJScript.js"></script>
-<script src="./syntaxhighlighter/scripts/shBrushXML.js"></script>
-<script src="./syntaxhighlighter/scripts/shBrushBash.js"></script>
 <script type="text/javascript">
 SyntaxHighlighter.all();
 
-// Shamelessly ripped from HTMLFiveWow but also fixed cross-browserly, SO THERE 
+// Shamelessly ripped from HTMLFiveWow but also fixed cross-browserly, SO THERE
 /*******************************************************************************
  * TWEENING
  ******************************************************************************/
 function TweenSlide(w, h, slide) {
   this.domSlide = slide;
-  this.domPre = slide.querySelector('pre');  
+  this.domPre = slide.querySelector('pre');
   this.domCanvas = slide.querySelector('canvas');
   this.domLogo = slide.querySelector('.logo');
   this.domButton = slide.querySelector('button');
@@ -498,9 +489,9 @@ function TweenSlide(w, h, slide) {
   this.padding = 8.5;
   this.domCanvas.width = w;
   this.domCanvas.height = h;
-  var self=this; 
+  var self=this;
 
-  this.domCanvas.addEventListener('mousedown', function(ev) { self.onMouseDown.call(self, ev); }, 
+  this.domCanvas.addEventListener('mousedown', function(ev) { self.onMouseDown.call(self, ev); },
       false);
   this.domCanvas.addEventListener('selectstart', this.onSelectStart, false);
   this.domSlide.addEventListener('mouseup', function(ev) { self.onMouseUp.call(self, ev); }, false);
@@ -562,7 +553,7 @@ TweenSlide.prototype.onSelectStart = function(evt) {
 TweenSlide.prototype.onMouseMove = function(evt) {
   var offsetX = evt.offsetX ? evt.offsetX : (evt.layerX - evt.target.offsetLeft),
       offsetY = evt.offsetY ? evt.offsetY : (evt.layerY - evt.target.offsetTop);
-  
+
   var x = (offsetX - this.padding) / this.w;
   var y = (this.h - offsetY + this.padding) / this.h;
 

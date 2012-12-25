@@ -1,74 +1,74 @@
-<!doctype html>  
+<!doctype html>
 <html lang="en">
-	
+
 	<head>
 		<meta charset="utf-8">
-		
+
 		<title>Wordcamp Seattle</title>
-		
+
 		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:regular,600,bold' rel='stylesheet' type='text/css'>
-		
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/main.css">
+
+		<link rel="stylesheet" href="/css/reveal-reset.css">
+		<link rel="stylesheet" href="/css/reveal-main.css">
 	</head>
-	
+
 	<body>
-		
+
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div id="main">
-			
+
 			<section>
       	<h1>Writing Better Plugins for a Better Web</h1>
       	<h3>By Divya Manian</h3>
 			</section>
-			
+
 			<section>
       	<h2>Who am I?</h2>
         <section>
         	<p>Open Web Vigilante</p>
         </section>
       	<section>
-          <p>Web Opener at <img class="opera" src="./assets/images/opera-logo.png"></p>
+          <p>Web Opener at <img class="opera" src="http://s3.amazonaws.com/nimbublips/opera-logo.png"></p>
       	</section>
       	<section>
       	  <h3>Core team</h3>
-      	 	<p><img src="./assets/images/html5boilerplate.png"></p>      	
+      	 	<p><img src="http://s3.amazonaws.com/nimbublips/html5boilerplate.png"></p>
       	</section>
       	<section>
       	  <h3>Co-conspirator</h3>
-      		<p> <a href="http://html5readiness.com">HTML5Readiness.com</a>, <a href="http://w3fools.com">W3Fools.com</a></p>      	 
+      		<p> <a href="http://html5readiness.com">HTML5Readiness.com</a>, <a href="http://w3fools.com">W3Fools.com</a></p>
       	</section>
       	<section>
       	  <h3>Website</h3>
       	 <p><a href="http://nimbupani.com">nimbupani.com</a></p>
       	 <h3>Twitter</h3>
-      	 <p><a href="http://twitter.com/nimbuin">@nimbuin</a></p>
+      	 <p><a href="http://twitter.com/divya">@divya</a></p>
       	</section>
 			</section>
-			
+
 			<section>
 			  <section>
 	   			 <h2>Some Wordpress Sites I did</h2>
 			  </section>
         <section>
-          <img class="center" width="800" src="./assets/images/autodetailer.png">          
+          <img class="center" width="800" src="http://s3.amazonaws.com/nimbublips/autodetailer.png">
         </section>
         <section>
-          <img class="center" width="800" src="./assets/images/enlai.png">          
+          <img class="center" width="800" src="http://s3.amazonaws.com/nimbublips/enlai.png">
         </section>
 			</section>
 
 			<section>
         <h2>Wordpress Plugins Now</h2>
-        <p><img src="./assets/images/plugingraph.png"></p>
+        <p><img src="http://s3.amazonaws.com/nimbublips/plugingraph.png"></p>
 			</section>
 			<section>
-		   <h2>How they are now</h2>			   			  
+		   <h2>How they are now</h2>
 			 <section>
-			   <p>Start from PHP than work backwards from markup, styles, and script.</p>			   
+			   <p>Start from PHP than work backwards from markup, styles, and script.</p>
 			 </section>
 			 <section><p>Use several assets and files.</p></section>
-			 <section>Not optimized for highly efficient website performance.</section>			   
+			 <section>Not optimized for highly efficient website performance.</section>
 			</section>
 			<section>
 			 <h2>Plugins Should</h2>
@@ -80,7 +80,7 @@
 			 </section>
 			 <section>
 			   <p>Efficient, least time consuming.</p>
-			 </section>			  
+			 </section>
 			</section>
 			<section>
 			 <h2>Why does website performance matter?</h2>
@@ -88,39 +88,39 @@
 			 <section><p>Even more Breaking News! They don't always have broadband connections!</p></section>
 			 <section><p>People use a <b>lot</b> of plugins on their sites. Each adding a layer of traffic burden.</p></section>
 			</section>
-				
+
 			<section>
 				<h2>Lets fix this!</h2>
         <section>Mantra: Use as less as you can get away with. </section>
 			</section>
-			
+
 			<section>
-				  <h2>Philosophy</h2>			  
+				  <h2>Philosophy</h2>
 				  <section>What problem does this plugin solve?</section>
 				  <section>What is the most minimal solution?</section>
 				  <section>What are the constraints of the minimal solution?</section>
 				  <section>What kind of browsers are you willing to support?</section>
 				  <section>How much user-assistance are you willing to provide?</section>
-				  <section>How much style should you provide and how much should the theme?</section>			 
-      	  <section>Figure out how much control you want your users to have.</section>      	  
+				  <section>How much style should you provide and how much should the theme?</section>
+      	  <section>Figure out how much control you want your users to have.</section>
       	  <section>Don't neglect the power users.</section>
 			</section>
 
-			
+
 			<section>
 				<h2>Start from the end</h2>
 				<section>Write your markup, style and script (if necessary).</section>
 			</section>
-			
+
 			<section>
        	<h2>Style</h2>
        	<section>Reuse your styles.</section>
        	<section>Use a reasonably unique namespace. </section>
        	<section>Keep it short. Make sure you cover all browsers.</section>
        	<section>Do not inline CSS.</section>
-       	<section><h3>Tools</h3> <p><a href="http://sass-lang.com">Sass</a>, <a href="http://css3please.com">css3please.com</a>, <a href="http://caniuse.com">caniuse.com</a></p></section>		 
-			</section>			  
-			
+       	<section><h3>Tools</h3> <p><a href="http://sass-lang.com">Sass</a>, <a href="http://css3please.com">css3please.com</a>, <a href="http://caniuse.com">caniuse.com</a></p></section>
+			</section>
+
 			<section>
         <h2>Markup</h2>
           <section>Do not add divs just because it is easy to do that in PHP.</section>
@@ -136,13 +136,13 @@
     	  <section><ul><li>Avoid using JavaScript plugins (if you can).</li> <li>Plain JavaScript could be faster than depending on other jQuery plugins.</li></ul></section>
     	  <section>Make sure your script does not conflict with any other.</section>
     	  <section><h3>Tools</h3><p><a href="http://jshint.com">JsHint</a>, <a href="http://alexsexton.com/uglifui/">Uglifui</a>.</p>
-    	    <h3>Learn</h3><p><a href="http://www.yuiblog.com/blog/2007/01/24/video-crockford-tjpl/">Videos: The JavaScript Programming Language</a>, <a href="http://eloquentjavascript.net/contents.html">Learning JavaScript</a>, <a href="http://addyosmani.com/blog/jquery-performance-tips-2011/">jQuery Performance Tricks</a></p> </section>			 
+    	    <h3>Learn</h3><p><a href="http://www.yuiblog.com/blog/2007/01/24/video-crockford-tjpl/">Videos: The JavaScript Programming Language</a>, <a href="http://eloquentjavascript.net/contents.html">Learning JavaScript</a>, <a href="http://addyosmani.com/blog/jquery-performance-tips-2011/">jQuery Performance Tricks</a></p> </section>
 			</section>
       <section>
         <h2>Assets</h2>
         <section><p>Avoid using images for styles, if it is possible.</p></section>
         <section><p>Use a sprite if absolutely necessary.</p></section>
-        <section>Avoid using custom fonts. The theme design should override your preferences. </section>        
+        <section>Avoid using custom fonts. The theme design should override your preferences. </section>
       </section>
       <section>
         <h2>Test</h2>
@@ -164,9 +164,8 @@
       </section>
 			<section>
 				<h1>Thanks</h1>
-				<p>Questions? Holler <a href="http://twitter.com/nimbuin">@nimbuin</a></p>
+				<p>Questions? Ask <a href="http://twitter.com/divya">@divya</a></p>
 			</section>
-			
 		</div>
 	</body>
 </html>

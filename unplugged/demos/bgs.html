@@ -1,11 +1,10 @@
 
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-  <title>Multiple Backgrounds</title>   
-  <link rel="stylesheet" href="../reset.css">
-  <style> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Multiple Backgrounds</title>
+  <style>
     html, body { max-height: 100%; overflow-y: hidden; }
     body { background: #ccc; padding: 4% 8% 8%;}
     b { display: inline-block; position: relative; -webkit-transform: rotate(5deg); -o-transform: rotate(5deg); -moz-transform: rotate(5deg); -ms-transform: rotate(5deg); transform: rotate(5deg); }
@@ -18,20 +17,20 @@
       content: "";
       display: block;
       position: absolute;
-      background-size: 10px 10px; 
+      background-size: 10px 10px;
     }
 
     b::after, a::after { left: auto; right: 0; }
-    
+
     img { margin: 10px; padding: 10px; background: #fff; }
-    
+
     b::before,
     b::after { width: 10px; top: 10px; bottom: 10px; }
-    
+
     a::before, a::after { height: 10px; left: 10px; top: 0; right: 10px; }
-    
+
     a::after { top: auto; bottom: 0; }
-    
+
     b::before {
       background-image: -webkit-linear-gradient(135deg, #fff 25%, #999 25%, transparent 50%),
                         -webkit-linear-gradient(-135deg, #fff 25%, #999 25%, transparent 50%);
@@ -44,7 +43,7 @@
       background-image: linear-gradient(135deg, #fff 25%, #999 25%, transparent 50%),
                         linear-gradient(-135deg, #fff 25%, #999 25%, transparent 50%);
     }
-    
+
     a::after {
       background-image: -webkit-linear-gradient(-45deg, #fff 25%, #999 25%, transparent 50%),
                         -webkit-linear-gradient(-135deg, #fff 25%, #999 25%, transparent 50%);
@@ -56,8 +55,8 @@
                         -ms-linear-gradient(-135deg, #fff 25%, #999 25%, transparent 50%);
       background-image: linear-gradient(-45deg, #fff 25%, #999 25%, transparent 50%),
                         linear-gradient(-135deg, #fff 25%, #999 25%, transparent 50%);
-    }    
-    
+    }
+
     a::before {
       background-image: -webkit-linear-gradient(45deg, #fff 25%, #999 25%, transparent 50%),
                         -webkit-linear-gradient(135deg, #fff 25%, #999 25%, transparent 50%);
@@ -68,9 +67,9 @@
       background-image: -ms-linear-gradient(45deg, #fff 25%, #999 25%, transparent 50%),
                         -ms-linear-gradient(135deg, #fff 25%, #999 25%, transparent 50%);
       background-image: linear-gradient(45deg, #fff 25%, #999 25%, transparent 50%),
-                        linear-gradient(135deg, #fff 25%, #999 25%, transparent 50%);    
+                        linear-gradient(135deg, #fff 25%, #999 25%, transparent 50%);
     }
-    
+
      b::after {
       background-image: -webkit-linear-gradient(45deg, #fff 25%, #999 25%, transparent 50%),
                         -webkit-linear-gradient(-45deg, #fff 25%, #999 25%, transparent 50%);
@@ -81,20 +80,20 @@
       background-image: -ms-linear-gradient(45deg, #fff 25%, #999 25%, transparent 50%),
                         -ms-linear-gradient(-45deg, #fff 25%, #999 25%, transparent 50%);
       background-image: linear-gradient(45deg, #fff 25%, #999 25%, transparent 50%),
-                        linear-gradient(-45deg, #fff 25%, #999 25%, transparent 50%);    
-    }    
-    
+                        linear-gradient(-45deg, #fff 25%, #999 25%, transparent 50%);
+    }
+
     h1 { position: absolute; bottom: 1em; right: 1em; font-size: 5em; }
 
-  </style>  
-  
-</head> 
-<body> 
+  </style>
+
+</head>
+<body>
   <b><a href="#"><img src="http://placekitten.com/200/178" width="240" height="178" alt="Kitteh"></a></b>
   <b><a href="#" title="Kitteh"><img src="http://placekitten.com/500/200" width="500" height="206" alt=""></a></b>
   <b><a href="#" title="Kitteh"><img src="http://placekitten.com/240/160" width="240" height="160" alt="Kitten"></a></b>
   <h1>My Family’s Scrapbook</h1>
-</body> 
- 
- 
-</html> 
+</body>
+
+
+</html>
