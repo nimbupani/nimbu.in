@@ -1,6 +1,6 @@
 // S5 v1.2a1 slides.js -- released into the Public Domain
 //
-// Please see http://www.meyerweb.com/eric/tools/s5/credits.html for information 
+// Please see http://www.meyerweb.com/eric/tools/s5/credits.html for information
 // about all the wonderful and talented contributors to this code!
 
 var undef;
@@ -79,7 +79,7 @@ function nodeValue(node) {
 		var children = node.childNodes;
 		for (var i = 0; i < children.length; ++i) {
 			result += nodeValue(children[i]);
-		}		
+		}
 	}
 	else if (node.nodeType == 3) {
 		result = node.nodeValue;
@@ -122,9 +122,9 @@ function currentSlide() {
 	} else {
 		cs = document.currentSlide;
 	}
-	cs.innerHTML = '<a id="plink" href="">' + 
-		'<span id="csHere">' + snum + '<\/span> ' + 
-		'<span id="csSep">\/<\/span> ' + 
+	cs.innerHTML = '<a id="plink" href="">' +
+		'<span id="csHere">' + snum + '<\/span> ' +
+		'<span id="csSep">\/<\/span> ' +
 		'<span id="csTotal">' + (smax-1) + '<\/span>' +
 		'<\/a>'
 		;
@@ -173,7 +173,7 @@ function go(step) {
 	if (isOp) { //hallvord
 		location.hash = nid;
 	} else {
-		ce.style.visibility = 'hidden'; 
+		ce.style.visibility = 'hidden';
 		ne.style.visibility = 'visible';
 	} // /hallvord
 	jl.selectedIndex = snum;
@@ -494,7 +494,7 @@ function notOperaFix() {
 
 function getIncrementals(obj) {
 	var incrementals = new Array();
-	if (!obj) 
+	if (!obj)
 		return incrementals;
 	var children = obj.childNodes;
 	for (var i = 0; i < children.length; i++) {
@@ -596,7 +596,7 @@ function loadNote() {
 	if (document.getElementById('note' + (snum + 1))) {
 		nextNotes = document.getElementById('note' + (snum + 1)).innerHTML;
 	}
-	
+
 	var jl = document.getElementById('jumplist');
 	var slideTitle = jl.options[jl.selectedIndex].text.replace(/^\d+\s+:\s+/, '') + ((jl.selectedIndex) ? ' (' + jl.selectedIndex + '/' + (smax - 1) + ')' : '');
 	if (incrementals[snum].length > 0) {
@@ -608,7 +608,7 @@ function loadNote() {
 	} else {
 		var nextTitle = '[end of slide show]';
 	}
-	
+
 	if (s5NotesWindow && !s5NotesWindow.closed && s5NotesWindow.document) {
 		s5NotesWindow.document.getElementById('slide').innerHTML = slideTitle;
 		s5NotesWindow.document.getElementById('notes').innerHTML = notes;
@@ -706,15 +706,15 @@ function alterRemainingTime(amt) {
 
 function formatTime(msecs)  {
 	var time = new Date(msecs);
-	
+
 	var hrs = time.getUTCHours() + ((time.getUTCDate() -1) * 24); // I doubt anyone will spend more than 24 hours on a presentation or single slide but just in case...
 	hrs = (hrs < 10) ? '0'+hrs : hrs;
 	if (hrs == 'NaN' || isNaN(hrs)) hrs = '--';
-	
+
 	var min = time.getUTCMinutes();
 	min = (min < 10) ? '0'+min : min;
 	if (min == 'NaN' || isNaN(min)) min = '--';
-	
+
 	var sec = time.getUTCSeconds();
 	sec = (sec < 10) ? '0'+sec : sec;
 	if (sec == 'NaN' || isNaN(sec)) sec = '--';

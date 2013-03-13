@@ -1,11 +1,11 @@
 /* Use this classname on the scrolling container for graceful degradation */
 .wm-mom { padding: 0.25em 1em; }
-div.wm-mom { overflow:hidden; position: relative; height: 2em; padding: 0; }  
+div.wm-mom { overflow:hidden; position: relative; height: 2em; padding: 0; }
 
-.wm-mom .wm-el { display: inline; white-space: nowrap; }                    
+.wm-mom .wm-el { display: inline; white-space: nowrap; }
 
-.marquee { margin:0; padding:0; position: absolute; top: 0.25em; left: 0; } 
-						
+.marquee { margin:0; padding:0; position: absolute; top: 0.25em; left: 0; }
+
 /* Style for marquee that fades */
 .wm-fade .wm-mom > b,
 .wm-fade .wm-mom > i {
@@ -14,26 +14,26 @@ div.wm-mom { overflow:hidden; position: relative; height: 2em; padding: 0; }
 	left: 0;
 	width: 40px;
 	height: 100%;
-	z-index: 2;  
-	background-repeat: repeat-y; 				
-}  
+	z-index: 2;
+	background-repeat: repeat-y;
+}
 
-.wm-fade .wm-mom > i { right: 0; left: auto; } 
+.wm-fade .wm-mom > i { right: 0; left: auto; }
 
-/* SKIN STYLE: wm-fade the default skin name, if you change it, add your CSS styles too */                 
+/* SKIN STYLE: wm-fade the default skin name, if you change it, add your CSS styles too */
 
-.wm-base.wm-fade { background: #121244; }			
+.wm-base.wm-fade { background: #121244; }
 
-.wm-base.wm-mom, .wm-base.wm-fade .wm-mom { background: #467ba4; color: #fff; text-shadow: 0 1px 1px #121244; }  
+.wm-base.wm-mom, .wm-base.wm-fade .wm-mom { background: #467ba4; color: #fff; text-shadow: 0 1px 1px #121244; }
 
-.wm-base.wm-fade .wm-mom { margin: 0 auto; }			
+.wm-base.wm-fade .wm-mom { margin: 0 auto; }
 
 .wm-base.wm-fade .wm-mom > b,
-.wm-base.wm-fade .wm-mom > i {  
+.wm-base.wm-fade .wm-mom > i {
   /* This uses an inline-image, you can either replace it with a PNG file that fades to transparency or create another data-url image. See http://www.phpied.com/mhtml-when-you-need-data-uris-in-ie7-and-under/ cross-browser use of data-urls */
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAFCAYAAAA3zK6FAAABYklEQVQoFYVSS3LCMAyVFHcybFgww44Fl8gNev8zcAJWJBAltvqeAkw3tBqMZH2fn6KHw3fIR9EmEjeEF5ybqiwROoo0FzH6YEfGIsJVFXEZmSeiWYe7m8VIrRoT6r21gK8bzRryY+y64o/HjLstpXwhbuN+f/dhOC7lI7YMoO0m1NoAF+AEQJR6E80cM/oUMUCOBt/vUhPGawU8xLvONKLKuipsEXeXvu+llE6WpaLtVS6XHY7InwDRjIxhYORgDHnbEYZGiAAHh4KVHI47ND34QQxpiMFqsAnsBRzN0AAgo++LgEEALuG+4n6Q8/kuw/APQA4gExiXzThI1Z6wCIxAtoFkiLMBCJqsbgyzBsBQo9FwYUmtLbDiKKURsLpbMriuVXa7PjdF9nhIw0d5P3bL2Ch5ZpM7rDJvzMPsRIrPIPUGnmHsEMIHpIE/rrVWrvjlcZnnGY9oOk1TOk+nY+b/AOpq3bw9Soi8AAAAAElFTkSuQmCC);  				
-}   			
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAFCAYAAAA3zK6FAAABYklEQVQoFYVSS3LCMAyVFHcybFgww44Fl8gNev8zcAJWJBAltvqeAkw3tBqMZH2fn6KHw3fIR9EmEjeEF5ybqiwROoo0FzH6YEfGIsJVFXEZmSeiWYe7m8VIrRoT6r21gK8bzRryY+y64o/HjLstpXwhbuN+f/dhOC7lI7YMoO0m1NoAF+AEQJR6E80cM/oUMUCOBt/vUhPGawU8xLvONKLKuipsEXeXvu+llE6WpaLtVS6XHY7InwDRjIxhYORgDHnbEYZGiAAHh4KVHI47ND34QQxpiMFqsAnsBRzN0AAgo++LgEEALuG+4n6Q8/kuw/APQA4gExiXzThI1Z6wCIxAtoFkiLMBCJqsbgyzBsBQo9FwYUmtLbDiKKURsLpbMriuVXa7PjdF9nhIw0d5P3bL2Ch5ZpM7rDJvzMPsRIrPIPUGnmHsEMIHpIE/rrVWrvjlcZnnGY9oOk1TOk+nY+b/AOpq3bw9Soi8AAAAAElFTkSuQmCC);
+}
 
-.wm-base.wm-fade .wm-mom > i { 
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAFCAYAAAA3zK6FAAABTUlEQVQoFX1Ry27DQAiEfTiRbfXWW37LX5kPyW/kkFvvUVRloTOsnbZRWiQbWAYYQJdlyafTZbjdUhGZ59ZaVfXZrNSc70NrOqWUqlmD1kFVB3cfVWUQJLgr8RPeKmzEZWLMrGsRryJp6lpm5KOWIUdnEUVMoD1Bv5R0PIpcLjs3e1Mi9ntDrrrI55pAu0nOKeIoDi6gADFjzKDpJcEAwgghKIGY4OsYvDMHfRyYnh9hCRwLvBQwP/rh8B4Nr9erYJMg4PC5IJFSaFNQeZWcN6sFSRKjsDnbwQe9IIFAJ4N35q+1Ah6//+lxbFm0lI9oPo4jGvze4P3ODSRtrRfFuZUbokc7JQ5AdxvkeYNBuScDtA4T+Xh87HIDPOu4/fn8/azaN1hrWadlY/XtxERywzh1bI8+TDRUNKfXN/jjjFFnPXEH4M8zUT0e/jC+AEMwo6ZVqtU7AAAAAElFTkSuQmCC);				
-}			
+.wm-base.wm-fade .wm-mom > i {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAFCAYAAAA3zK6FAAABTUlEQVQoFX1Ry27DQAiEfTiRbfXWW37LX5kPyW/kkFvvUVRloTOsnbZRWiQbWAYYQJdlyafTZbjdUhGZ59ZaVfXZrNSc70NrOqWUqlmD1kFVB3cfVWUQJLgr8RPeKmzEZWLMrGsRryJp6lpm5KOWIUdnEUVMoD1Bv5R0PIpcLjs3e1Mi9ntDrrrI55pAu0nOKeIoDi6gADFjzKDpJcEAwgghKIGY4OsYvDMHfRyYnh9hCRwLvBQwP/rh8B4Nr9erYJMg4PC5IJFSaFNQeZWcN6sFSRKjsDnbwQe9IIFAJ4N35q+1Ah6//+lxbFm0lI9oPo4jGvze4P3ODSRtrRfFuZUbokc7JQ5AdxvkeYNBuScDtA4T+Xh87HIDPOu4/fn8/azaN1hrWadlY/XtxERywzh1bI8+TDRUNKfXN/jjjFFnPXEH4M8zUT0e/jC+AEMwo6ZVqtU7AAAAAElFTkSuQmCC);
+}
