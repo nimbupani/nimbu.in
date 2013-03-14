@@ -9,29 +9,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Custom Filters | JSCamp 2012</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">            
-        <style>        
-            
+        <meta name="viewport" content="width=device-width">
+        <style>
+
             html, body { width: 100%; height: 100%; margin: 0; padding: 0; background: #002b36;}
 
-            .timepiece {                                
-                text-align: center;                                
-                font-size: 3rem;                
+            .timepiece {
+                text-align: center;
+                font-size: 3rem;
             }
-                
-            .clock {                                
-                -webkit-filter: custom(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/vertex/tile-flip.vs) 
-                                       mix(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/fragment/tile-flip.fs) multiply source-atop), 
-                                       25 32 border-box detached, 
-                                       transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), 
-                                       amount 0, randomness 2, flipAxis 0 1 0, tileOutline 1) opacity(100%);                
+
+            .clock {
+                -webkit-filter: custom(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/vertex/tile-flip.vs)
+                                       mix(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/fragment/tile-flip.fs) multiply source-atop),
+                                       25 32 border-box detached,
+                                       transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg),
+                                       amount 0, randomness 2, flipAxis 0 1 0, tileOutline 1) opacity(100%);
                 -webkit-transition: -webkit-filter linear 2s;
             }
-        
+
             .timepiece .clock:hover {
-                -webkit-filter: custom(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/vertex/tile-flip.vs) mix(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/fragment/tile-flip.fs) multiply source-atop), 25 32 border-box detached, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 1, randomness 2, flipAxis 0 1 0, tileOutline 1) opacity(0%);                
+                -webkit-filter: custom(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/vertex/tile-flip.vs) mix(url(http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/shaders/fragment/tile-flip.fs) multiply source-atop), 25 32 border-box detached, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 1, randomness 2, flipAxis 0 1 0, tileOutline 1) opacity(0%);
             }
-        
+
 
             .timepiece .clock {
                 font-family: sans-serif;
@@ -41,25 +41,25 @@
                              0px 0px 2px rgba(255,128,255,0.9);
             }
         </style>
-        
+
     </head>
-    <body>        
+    <body>
         <div class="timepiece tfin">
             <span class="clock">12:34:56</span>
-        </div>        
+        </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>        
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
 
         <script type="text/javascript">
             function Clock_Start()
             {
-                Clock_Nu = new Date;                
+                Clock_Nu = new Date;
 
                 Clock_Indhold = showFilled(Clock_Nu.getHours()) + ":";
                 Clock_Indhold += showFilled(Clock_Nu.getMinutes()) + ":";
                 Clock_Indhold += showFilled(Clock_Nu.getSeconds());
 
-                $('.clock').text(Clock_Indhold);                
+                $('.clock').text(Clock_Indhold);
 
                 setTimeout("Clock_Start()",1000);
             }
@@ -74,11 +74,11 @@
               Clock_Start();
 
               // check if clock is displayed
-              var $clock = $('.clock');              
+              var $clock = $('.clock');
               var fontSize = $clock.css('font-size');
               fontSize = parseInt(fontSize);
               fontSize *= 2;
-                           
+
             });
             </script>
     </body>

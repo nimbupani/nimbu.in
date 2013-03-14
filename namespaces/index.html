@@ -3,29 +3,29 @@
 <head>
   <title>CSS Namespaces</title>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" > 
+  <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" >
 	<meta charset="utf-8" />
 	<style type="text/css" media="screen">
 		@namespace "http://www.w3.org/1999/xhtml";
-		@namespace svg "http://www.w3.org/2000/svg";		
-		
-		body { color: cadetblue; background: cornsilk; height: 90%; font-family: helvetica, arial, sans-serif; } 
-		
+		@namespace svg "http://www.w3.org/2000/svg";
+
+		body { color: cadetblue; background: cornsilk; height: 90%; font-family: helvetica, arial, sans-serif; }
+
 		a { color: darkslategray; text-decoration: none; }
 
 		p { position: absolute; top: 25%; left: 30%; font-size: 5em; font-weight: bold; text-transform: uppercase; line-height: 1.5; }
 
-		svg|a { fill: darkslategray; }  
-		svg|path#mouth { fill: cadetblue; }				
-		svg|svg { position: absolute; top: 30%; left: 20%; background: lightblue; z-index: -1; width: 200px; height: 200px; -moz-border-radius: 200px; }  
-		
+		svg|a { fill: darkslategray; }
+		svg|path#mouth { fill: cadetblue; }
+		svg|svg { position: absolute; top: 30%; left: 20%; background: lightblue; z-index: -1; width: 200px; height: 200px; -moz-border-radius: 200px; }
+
 	</style>
 </head>
 <body>
 	<p>What&rsquo;s Up <a href="http://html5.org">mortals?</a></p>
-	<svg>		
-			<g transform = "scale(2,2)"> 					
-				<a xlink:href="http://nimbupani.com/spacing-out-on-css-namespaces.html">				
+	<svg>
+			<g transform = "scale(2,2)">
+				<a xlink:href="http://nimbupani.com/spacing-out-on-css-namespaces.html">
 				<path d="M37.177,28.32c0,0,0.718,8.611-1.743,11.687c0,0,2.666-9.226-1.64-11.994s-10.046,5.536-9.431,8.509
 					c0,0,1.743-14.25,10.251-11.277C37.063,26.1,37.177,28.32,37.177,28.32z"/>
 				<polygon points="30.822,28.013 29.796,35.394 32.041,36.399 33.179,28.525 "/>
@@ -125,9 +125,9 @@
 					c0.285-2.022-0.657-4.928-0.657-3.94c0,0.691-0.413,1.729-0.792,2.538c0.029-0.15,0.059-0.29,0.087-0.469
 					c0.352-2.245-1.365-3.962-1.057-2.465s-0.88,2.994-0.88,2.994l1.101,1.541c0,0,0.055,0.012,0.138-0.042
 					c0.034,0.756,0.241,2.384,1.447,1.274c0.014-0.013,0.024-0.032,0.038-0.046l0.579,0.442c0,0,0.616-2.025,0.44-2.245
-					C34.617,35.702,34.438,35.91,34.238,36.202z"/>				
-				</a> 							 					 		
-			</g>                                                    		 			
+					C34.617,35.702,34.438,35.91,34.238,36.202z"/>
+				</a>
+			</g>
 	</svg>
 </body>
 </html>
