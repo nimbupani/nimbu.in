@@ -16,7 +16,7 @@
   }
   @return unquote($output);
 }
- 
+
 $icon-spacing: 20px;
 $icon-sprite-dimensions: true;
 $icons: sprite-map("icon/*.png");
@@ -26,8 +26,8 @@ $icons: sprite-map("icon/*.png");
 .icons {
   .rss { @include icon-sprite(rss); }
   .share { @include icon-sprite(share); }
-  .spin { @include icon-sprite(spin); } 
-  a { @extend .ir;  display: inline-block; } 
+  .spin { @include icon-sprite(spin); }
+  a { @extend .ir;  display: inline-block; }
 }
 
 $icon-sprite-dimensions: false;
@@ -36,19 +36,19 @@ $icon-sprite-dimensions: false;
   font-size: 3.05em;
   letter-spacing: 2em;
   line-height: 1.12em;
-  margin-bottom: 1.71em;  
-  @include text-shadow(omg(#bada55));   
+  margin-bottom: 1.71em;
+  @include text-shadow(omg(#bada55));
 }
 
 .icons-noir {
   .rss { @include icon-sprite(rss); }
   .share { @include icon-sprite(share); }
-  .spin { @include icon-sprite(spin); } 
-  a { 
-    display: inline-block; padding: 0 image-width(sprite-file($icons, rss)) + 5px; color: white; text-decoration: none; font-size: 0.9em; line-height: image-height(sprite-file($icons, rss)); 
-    
+  .spin { @include icon-sprite(spin); }
+  a {
+    display: inline-block; padding: 0 image-width(sprite-file($icons, rss)) + 5px; color: white; text-decoration: none; font-size: 0.9em; line-height: image-height(sprite-file($icons, rss));
+
     &:hover { color: khaki; }
-  } 
+  }
 }
 
 .icons-omg {

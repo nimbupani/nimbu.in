@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Regions - without Shadow DOM</title>    
+    <title>Regions - without Shadow DOM</title>
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; background: #002b36;}
 
         .content p {
             -webkit-flow-into: poemflow;
             white-space: pre-line;
-            color: #00D9EF;             
+            color: #00D9EF;
             font: 16px/1.25 Baskerville, Palantino, serif;
         }
 
         .content p::first-letter {
             font-size: 2em;
             line-height: 1px;
-            vertical-align: -0.05em;            
+            vertical-align: -0.05em;
         }
 
         .content p:nth-child(odd) {
-            text-align: right;            
+            text-align: right;
         }
 
         .layout {
@@ -28,7 +28,7 @@
         .layout article {
             overflow: hidden;
             max-width: 40em;
-            margin: 0 auto;            
+            margin: 0 auto;
         }
         .layout article img {
             float: left;
@@ -36,9 +36,9 @@
             margin: 0 1em 0 0;
         }
         .layout article div {
-            -webkit-flow-from: poemflow;            
-            height: 10em;        
-        }    
+            -webkit-flow-from: poemflow;
+            height: 10em;
+        }
 
         .layout article:after {
             content: "― • ―";
@@ -50,7 +50,7 @@
         .layout article:nth-child(odd) img {
             float: right;
             margin: 0 0 0 1em;
-        }        
+        }
 
         .layout article:last-child div {
             min-height: 7em;
@@ -89,7 +89,7 @@ But the fact is I was napping, and so gently you came rapping,
 And so faintly you came tapping, tapping at my chamber door,
 That I scarce was sure I heard you' - here I opened wide the door; -
 Darkness there, and nothing more.
-        </p>        
+        </p>
     </section>
     <section class="layout">
         <article>
@@ -99,7 +99,7 @@ Darkness there, and nothing more.
         <article>
             <img src="img-2.png">
             <div></div>
-        </article>        
+        </article>
     </section>
 </body>
 </html>

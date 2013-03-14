@@ -20,7 +20,7 @@ var DD_belatedPNG = {
 
 	ns: 'DD_belatedPNG',
 	imgSize: {},
-	
+
 	createVmlNameSpace: function() { /* enable VML */
 		if (document.namespaces && !document.namespaces[this.ns]) {
 		  document.namespaces.add(this.ns, 'urn:schemas-microsoft-com:vml');
@@ -31,7 +31,7 @@ var DD_belatedPNG = {
 			});
 		}
 	},
-	
+
 	createVmlStyleSheet: function() { /* style VML, enable behaviors */
 		/*
 			Just in case lots of other developers have added
@@ -47,7 +47,7 @@ var DD_belatedPNG = {
 		styleSheet.addRule('img.' + this.ns + '_sizeFinder', 'behavior:none; border:none; position:absolute; z-index:-1; top:-10000px; visibility:hidden;'); /* large negative top value for avoiding vertical scrollbars for large images, suggested by James O'Brien, http://www.thanatopsic.org/hendrik/ */
 		this.styleSheet = styleSheet;
 	},
-	
+
 	readPropertyChange: function() {
 		var el = event.srcElement;
 		if (event.propertyName.search('background') != -1 || event.propertyName.search('border') != -1) {
@@ -63,7 +63,7 @@ var DD_belatedPNG = {
 			DD_belatedPNG.vmlOpacity(el);
 		}
 	},
-	
+
 	vmlOpacity: function(el) {
 		if (el.currentStyle.filter.search('lpha') != -1) {
 			var trans = el.currentStyle.filter;
@@ -72,13 +72,13 @@ var DD_belatedPNG = {
 			el.vml.image.fill.opacity = trans; /* complete guesswork */
 		}
 	},
-	
+
 	handlePseudoHover: function(el) {
 		setTimeout(function() { /* wouldn't work as intended without setTimeout */
 			DD_belatedPNG.applyVML(el);
 		}, 1);
 	},
-	
+
 	/**
 	* This is the method to use in a document.
 	* @param {String} selector - REQUIRED - a CSS selector, such as '#doc .container'
@@ -90,7 +90,7 @@ var DD_belatedPNG = {
 			this.styleSheet.addRule(selectors[i], 'behavior:expression(DD_belatedPNG.fixPng(this))'); /* seems to execute the function without adding it to the stylesheet - interesting... */
 		}
 	},
-	
+
 	applyVML: function(el) {
 		el.runtimeStyle.cssText = '';
 		this.vmlFill(el);
@@ -100,7 +100,7 @@ var DD_belatedPNG = {
 			this.copyImageBorders(el);
 		}
 	},
-	
+
 	attachHandlers: function(el) {
 		var self = this;
 		var handlers = {resize: 'vmlOffsets', move: 'vmlOffsets'};
@@ -117,21 +117,21 @@ var DD_belatedPNG = {
 		}
 		el.attachEvent('onpropertychange', this.readPropertyChange);
 	},
-	
+
 	giveLayout: function(el) {
 		el.style.zoom = 1;
 		if (el.currentStyle.position == 'static') {
 			el.style.position = 'relative';
 		}
 	},
-	
+
 	copyImageBorders: function(el) {
 		var styles = {'borderStyle':true, 'borderWidth':true, 'borderColor':true};
 		for (var s in styles) {
 			el.vml.color.shape.style[s] = el.currentStyle[s];
 		}
 	},
-	
+
 	vmlFill: function(el) {
 		if (!el.currentStyle) {
 			return;
@@ -178,13 +178,13 @@ var DD_belatedPNG = {
 		el.runtimeStyle.backgroundImage = 'none';
 		el.runtimeStyle.backgroundColor = 'transparent';
 	},
-	
+
 	/* IE can't figure out what do when the offsetLeft and the clientLeft add up to 1, and the VML ends up getting fuzzy... so we have to push/enlarge things by 1 pixel and then clip off the excess */
 	vmlOffsets: function(el) {
 		var thisStyle = el.currentStyle;
 		var size = {'W':el.clientWidth+1, 'H':el.clientHeight+1, 'w':this.imgSize[el.vmlBg].width, 'h':this.imgSize[el.vmlBg].height, 'L':el.offsetLeft, 'T':el.offsetTop, 'bLW':el.clientLeft, 'bTW':el.clientTop};
 		var fudge = (size.L + size.bLW == 1) ? 1 : 0;
-		
+
 		/* vml shape, left, top, width, height, origin */
 		var makeVisible = function(vml, l, t, w, h, o) {
 			vml.coordsize = w+','+h;
@@ -197,7 +197,7 @@ var DD_belatedPNG = {
 		};
 		makeVisible(el.vml.color.shape, (size.L + (el.isImg ? 0 : size.bLW)), (size.T + (el.isImg ? 0 : size.bTW)), (size.W-1), (size.H-1), 0);
 		makeVisible(el.vml.image.shape, (size.L + size.bLW), (size.T + size.bTW), (size.W), (size.H), 1);
-		
+
 		var bg = {'X':0, 'Y':0};
 		var figurePercentage = function(axis, position) {
 			var fraction = true;
@@ -230,9 +230,9 @@ var DD_belatedPNG = {
 		for (var b in bg) {
 			figurePercentage(b, thisStyle['backgroundPosition'+b]);
 		}
-		
+
 		el.vml.image.fill.position = (bg.X/size.W) + ',' + (bg.Y/size.H);
-		
+
 		var bgR = thisStyle.backgroundRepeat;
 		var dC = {'T':1, 'R':size.W+fudge, 'B':size.H, 'L':1+fudge}; /* these are defaults for repeat of any kind */
 		var altC = { 'X': {'b1': 'L', 'b2': 'R', 'd': 'W'}, 'Y': {'b1': 'T', 'b2': 'B', 'd': 'H'} };
@@ -252,10 +252,10 @@ var DD_belatedPNG = {
 			el.vml.image.shape.style.clip = 'rect('+dC.T+'px '+dC.R+'px '+dC.B+'px '+dC.L+'px)';
 		}
 	},
-	
+
 	fixPng: function(el) {
 	  if (!$.browser.ie6) return; // just a doublecheck catch.
-	  
+
 		el.style.behavior = 'none';
 		if (el.nodeName == 'BODY' || el.nodeName == 'TD' || el.nodeName == 'TR') { /* elements not supported yet */
 			return;
@@ -288,16 +288,16 @@ var DD_belatedPNG = {
 		el.vml.image.shape.fillcolor = 'none'; /* Don't show blank white shapeangle when waiting for image to load. */
 		el.vml.image.fill.type = 'tile'; /* Ze magic!! Makes image show up. */
 		el.vml.color.fill.on = false; /* Actually going to apply vml element's style.backgroundColor, so hide the whiteness. */
-		
+
 		lib.attachHandlers(el);
-		
+
 		lib.giveLayout(el);
 		lib.giveLayout(el.offsetParent);
-		
+
 		/* set up element */
 		lib.applyVML(el);
 	}
-	
+
 };
 try {
 	document.execCommand("BackgroundImageCache", false, true); /* TredoSoft Multiple IE doesn't like this, so try{} it */
