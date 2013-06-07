@@ -597,9 +597,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {    
+body {
     color: #222;
-    font: 100%/1.5 'Open sans', sans-serif;    
+    font: 100%/1.5 'Open sans', sans-serif;
 }
 
 a,
@@ -636,10 +636,10 @@ small {
     width: auto;
 }
 
-.about {        
+.about {
     background: #222;
-    color: #fff; 
-    padding: 0 0.5em 2rem;   
+    color: #fff;
+    padding: 0 0.5em 2rem;
     text-align: center;
 }
 
@@ -648,11 +648,11 @@ small {
 }
 
 .link-home::after {
-    content: '\AGo to Home Page \261D';    
+    content: '\AGo to Home Page \261D';
     opacity: 0;
     font-size: 0.7em;
     text-transform: uppercase;
-    color: #aaa;    
+    color: #aaa;
     margin-bottom: 1rem;
 }
 
@@ -673,13 +673,13 @@ small {
     line-height: 1;
     font-size: 0.9em;
     text-transform: uppercase;
-    margin: 0;    
+    margin: 0;
     font-weight: normal;
     color: #fff;
 }
 
 .about-title-book {
-    font-size: 1.2rem;  
+    font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.2em;
     margin: 0 .5em 0;
@@ -713,7 +713,7 @@ small {
 
 .chapter-list-title + p {
     margin-top: 0;
-} 
+}
 
 .chapter-title-about {
     margin: 0;

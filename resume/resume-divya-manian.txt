@@ -5,11 +5,11 @@ Open Web Vigilante – Making the web a better place for users, 1rem at a time.
 ======================
 
 
-divya.manian@gmail.com 
-nimbupani.com 
-+1 206.607.7908 
+divya.manian@gmail.com
+nimbupani.com
++1 206.607.7908
 
-Code repository @ Github  •  Design snippets @ Dribble • References @ LinkedIn • Serious Tweets Fun Tweets 
+Code repository @ Github  •  Design snippets @ Dribble • References @ LinkedIn • Serious Tweets Fun Tweets
 
 
 Accomplishments
@@ -18,7 +18,7 @@ Accomplishments
 Serious
 -------
 
-- Co-created and designed HTML5 Boilerplate which has been used on websites of Barack Obama, Jerry Seinfeld, Open NASA Project, Financial Crisis Enquiry Commission and more. 
+- Co-created and designed HTML5 Boilerplate which has been used on websites of Barack Obama, Jerry Seinfeld, Open NASA Project, Financial Crisis Enquiry Commission and more.
 
 - Designed the HTML5Readiness chart written about on Gizmodo, Ajaxian, Flowing Data & Infosthetics. It was also highlighted in a WWDC talk on Safari Integrated Tools and at Google I/O 2011.
 Co-designed and created content for Move the Web Forward to inform web developers how they can contribute actively to move the web forward. (covered by Smashing Magazine and the Web Standards Project).
@@ -37,7 +37,7 @@ Co-designed and created content for Move the Web Forward to inform web developer
 
 - Researched technologies around HTML5 leading to wider adoption of new techniques using SVG web fonts, CSS Namespaces and HTML5.
 
-- Currently writing a book on HTML5Boilerplate to be published by Packt Publishers. 
+- Currently writing a book on HTML5Boilerplate to be published by Packt Publishers.
 
 - Featured in the “The Word It Book” Book published by HOW Books in Spring 2007
 
@@ -54,11 +54,11 @@ Fun
 
 - Mblax — a one-page site that displays the upcoming events of select West African Musicians.
 
-- Chart Generator — A web app to create instant HTML bar charts written for the 10K apart contest. 
+- Chart Generator — A web app to create instant HTML bar charts written for the 10K apart contest.
 
 - HTML5 Homies — Quick bada$$ design for this project created by Jonathan Neal.
 
-- Standards Gandhi — Gandhi’s words of wisdom translated for web developers 
+- Standards Gandhi — Gandhi’s words of wisdom translated for web developers
 
 
 ===============
@@ -85,7 +85,7 @@ Nimbupani Designs
 
 - Owner, 2006 – Present
   - Worked on Graphic & Webdesign projects for startups and record labels.
-  - Managed and launched projects for Ministry of Education, Singapore, Volans, Knight Foundation, and Aviva Singapore. 
+  - Managed and launched projects for Ministry of Education, Singapore, Volans, Knight Foundation, and Aviva Singapore.
   - Initial Interface design and development for Singapore startup SharedCopy.
 
 MatrixView Limited

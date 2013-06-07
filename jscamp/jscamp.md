@@ -8,7 +8,7 @@ JSCamp.Asia Talk
 - Open Type Font Features (liga)
 - Chrome Canary
 
-IE Firefox 
+IE Firefox
 - Words into icons: http://symbolset.com/
 
 ### Unicode
@@ -28,7 +28,7 @@ IE Firefox
 - Chrome Canary
 - Path Tool: http://betravis.github.com/shape-tools/polygon-drawing/
 
-## Flexbox 
+## Flexbox
 - http://demo.agektmr.com/flexbox/
 
 ## Regions
