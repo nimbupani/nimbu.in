@@ -1,0 +1,48 @@
+<html>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: red;
+        }
+        
+        div {
+            -webkit-filter: url(#T1);          
+            width: 400px;
+            height: 200px;
+        }
+        
+        h1 { 
+            color: black;
+            background: blue;
+        }
+    </style>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="0" height="0">
+<filter id="T1" x=0 y=0 width=200 height=200>
+	<feTurbulence baseFrequency="0.01" type="fractalNoise"/>
+</filter>
+
+<filter id="T2">
+	<feTurbulence baseFrequency=".04" numOctaves="2"/>
+</filter>
+
+<filter id="T3">
+	<feTurbulence baseFrequency=".04" numOctaves="2" 
+	seed="201"/>
+</filter>
+
+<filter id="T4">
+	<feTurbulence baseFrequency=".004" numOctaves="5" 
+	seed="201"/>
+</filter>
+</svg>
+        <div>
+        </div>
+
+    </body>
+</html>

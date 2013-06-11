@@ -111,7 +111,7 @@
     
         <div class="step " data-x="90000" data-y="0" data-z="" data-scale="2">
             <h1>How to detect Layout/Reflow</h1>
-            <p><a href="http://codepen.io/nimbupani/full/nkbfC">Demo</a></p>
+            <p><a href="layout.html">Demo</a></p>
         </div>
     
         <div class="step " data-x="95000" data-y="0" data-z="" data-scale="2">
@@ -189,7 +189,7 @@
             <h1>When does it happen?</h1>
             <ul>
                 <li>Scrolling</li>
-                <li>Hover, Mouse moves</li>
+                <li>Hover</li>
                 <li>Basically all the time</li>
             </ul>
         </div>
@@ -222,8 +222,7 @@
         <div class="step " data-x="190000" data-y="0" data-z="" data-scale="2">
             <ul>
                 <li>Each Stacking context creates a Render Layer</li>
-                <li>WebGL or accelerated canvas has own Render Layer</li>
-                <li>So does Video or Accelerated Canvas Element</li>
+                <li>WebGL, Video or accelerated canvas has own Render Layer</li>                
             </ul>
         </div>
     
@@ -272,9 +271,9 @@
     
         <div class="step " data-x="230000" data-y="0" data-z="" data-scale="2">
             <ul>
-                <li>No Repaints, relayouts [Demo]</li>
+                <li>No Repaints, relayouts</li>
                 <li>If area is large, tiled textures to swap in and out textures quickly. </li>
-                <li>Larger power consumption</li>
+                <li>Larger power consumption (vs. not using the features)</li>
             </ul>
         </div>
     
@@ -289,8 +288,7 @@
             <h1>GPU reduces burden on CPU</h1>
             <ul>
                 <li>Limited by Memory</li>
-                <li>Each backing store (what?) uses dimension of texture * 4 bytes</li>
-                <li>More layers, more memory use: Retina is 4x, Retina zoomed texture is 16x!</li>                
+                <li>Each backing store (what?) uses dimension of texture * 4 bytes (minimum)</li>                
             </ul>
         </div>
         <div class="step " data-x="245000" data-y="0" data-z="" data-scale="2">
@@ -322,7 +320,7 @@
             <h1>Why Opacity?</h1>
             <ul>
                 <li>Textures remain in the GPU</li>
-                <li><code>visibility:hidden</code> removes textures from GPU <a href="">Demo</a></li>
+                <li><code>visibility:hidden</code> removes textures from GPU</li>
                 <li><code>display: none</code> causes repaints</li>                
                 <li>removing elements from DOM causes style recalculations, layout, repaint, firing of events. </li>
             </ul>
@@ -334,15 +332,21 @@
                 <li>Use specific class names</li>
                 <li>Do layout, repaint, GPU acceleration sparingly</li>                
                 <li>Memory can quickly get out of hand!</li>
-                <li>Use tools to test!</li>
+                <li>Use Browser developer tools to test!</li>
             </ul>
         </div>                
-    
-    </div>
+        <div class="step " data-x="270000" data-y="0" data-z="" data-scale="2">            
+            <p>Thanks to <a href="http://twitter.com/achicu">@achicu</a> for technical review</p>
+        </div>
+        <div class="step " data-x="275000" data-y="0" data-z="" data-scale="2">            
+            <h1>Follow</h1>
+            <p><a href="http://twitter.com/adobeweb">@adobeweb</a> for work my team does</p>
+        </div>
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
 <script>
+if ("ontouchstart" in document.documentElement) {
 if ("ontouchstart" in document.documentElement) {
     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
 }

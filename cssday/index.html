@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Creating Web Experiences with users in mind</title>
+    <meta name="description" content="Talk at HTML5 Dev Conf on April 1st 2013">
+    <meta name="author" content="Divya Manian">
+    <link rel=stylesheet href=http://nimbu.in/css/impress.css>
+    <script>
+        var anelm = document.getElementById('impress');
+        
+    </script>
+</head>
+
+<body class="impress-not-supported">
+<div id="impress">
+    
+        <div class="step  middle" data-x="0" data-y="0" data-z="" data-scale="2">
+            <h1>Filter Effects & Blend Modes</h1>
+<h2><a href="http://twitter.com/divya">@divya</a> • Product Manager, Adobe</h2>
+
+        </div>
+    
+        <div class="step " data-x="5000" data-y="0" data-z="" data-scale="2">
+            <h1><a href="http://html5please.com">HTML5 Please</a> / <a href="http://html5boilerplate.com">HTML5 Boilerplate</a></h1>
+        </div>
+    
+        <div class="step " data-x="10000" data-y="0" data-z="" data-scale="2">
+            <h1>Filter Effects</h1>
+        </div>
+    
+        <div class="step " data-x="15000" data-y="0" data-z="" data-scale="2">
+            <h2>Creation of FX Task Force</h2>
+            <p>Originally drafted 25 October 2012</p>
+        </div>
+    
+        <div class="step  middle" data-x="20000" data-y="0" data-z="" data-scale="2">
+            <h1>Based on SVG Filters</h1>
+            <p>Introduced by Apple.</p>
+        </div>
+    
+        <div class="step  middle" data-x="25000" data-y="0" data-z="" data-scale="2">
+            <h2>Available since Chrome 18, Safari 6. </h2>
+
+        </div>
+    
+        <div class="step  middle" data-x="30000" data-y="0" data-z="" data-scale="2">
+            <h1>What is it?</h1>
+
+        </div>
+    
+        <div class="step " data-x="35000" data-y="0" data-z="" data-scale="2">
+            <a href="http://www.flickr.com/photos/arkku/471713062/" title="Filter stack by Arkku, on Flickr"><img src="http://farm1.staticflickr.com/227/471713062_61a8e66ca8.jpg" width="500" height="334" alt="Filter stack"></a>
+        </div>
+    
+        <div class="step  middle" data-x="40000" data-y="0" data-z="" data-scale="2">
+            <h2>Define the color of an output pixel based on calculations on input pixel color</h2>
+
+        </div>
+        <div class="step  middle" data-x="70000" data-y="0" data-z="" data-scale="2">
+           <h1>What are filters?</h1>
+            <pre>h1 {
+  filter: blur(10px);
+}</pre>
+        </div>
+        
+    <div class="step " data-x="45000" data-y="0" data-z="" data-scale="2">
+            <p><a href="blur.html">Demo</a></p>
+        </div>
+    
+        <div class="step " data-x="50000" data-y="0" data-z="" data-scale="2">
+            <h1>Wait, we have seen this before!</h1>
+        </div>
+    
+        <div class="step " data-x="55000" data-y="0" data-z="" data-scale="2">
+            <h2>Box Shadows, Text Shadows</h2>
+            <p>(But they are different)</p>
+        </div>        
+        
+        <div class="step  middle" data-x="75000" data-y="0" data-z="" data-scale="2">
+            <p>What filters do we have?</p>
+        </div>
+    
+        <div class="step  middle" data-x="80000" data-y="0" data-z="" data-scale="2">
+            <ul>
+                <li>Built-in Filters</li>
+                <li>SVG Filters</li>
+                <li>Custom Filters</li>
+            </ul>
+        </div>
+    
+        <div class="step " data-x="85000" data-y="0" data-z="" data-scale="2">
+            <h2>How do filters work?</h2>
+        </div>
+    
+        <div class="step " data-x="90000" data-y="0" data-z="" data-scale="2">
+            <p>Filters create a new stacking context</p>
+        </div>
+    
+        <div class="step " data-x="95000" data-y="0" data-z="" data-scale="2">
+            <h1>Stacking Context</h1>
+        </div>
+    
+        <div class="step " data-x="100000" data-y="0" data-z="" data-scale="2">
+            <p>Determines the paint order of elements (<a href="stacking-context.html">example</a>) - <a href="http://www.w3.org/TR/CSS21/zindex.html">Detailed explanation</a></p>
+        </div>
+        <div class="step " data-x="105000" data-y="0" data-z="" data-scale="2">
+            <h2>Stacking Contexts determine which layers are accelerated</h2>
+            <p>What does it mean?</p>
+        </div>
+        <div class="step " data-x="110000" data-y="0" data-z="" data-scale="2">    
+            <p>Filters will be computed &amp; applied by GPU on content that are also rendered via the GPU. (<a href="http://s.codepen.io/hinducows/fullpage/CuDdI">Demo</a>)</p>
+        </div>
+    
+        <div class="step " data-x="115000" data-y="0" data-z="" data-scale="2">
+            <h1>When are filters applied?</h1>
+        </div>
+    
+        <div class="step " data-x="120000" data-y="0" data-z="" data-scale="2">
+            <p>Element gets rendered (with border, outline, box-shadows, border radius, etc (used as input image)</p>
+            <p>Filters apply</p>
+            <p>Clipping, Masking or Opacity</p>
+        </div>
+        <div class="step " data-x="125000" data-y="0" data-z="" data-scale="2">
+            <h1>Color Calculations</h1>
+        </div>
+        <div class="step " data-x="130000" data-y="0" data-z="" data-scale="2">
+            <h2>Operate on premultiplied colors</h2>
+        </div>
+        <div class="step " data-x="135000" data-y="0" data-z="" data-scale="2">
+            <p>Intermediate RGB values of RGBA colors are multiplied with the Alpha transparency to provide a smoother transition.</p>
+        </div>
+        <div class="step " data-x="140000" data-y="0" data-z="" data-scale="2">
+            <p>This looks familiar</p>
+        </div>
+        <div class="step " data-x="145000" data-y="0" data-z="" data-scale="2">
+            <h1>Premultiplied Gradients!</h1>
+            <p><img height="147" src="http://hammerspace.co.uk/wp-content/uploads/2012/02/Screen-Shot-2012-02-11-at-20.35.09-300x147.png"><img src="http://hammerspace.co.uk/wp-content/uploads/2012/02/Screen-Shot-2012-02-11-at-20.37.06.png" height="147"></p>
+            <p>(from <a href="http://hammerspace.co.uk/2012/02/css3-gradients-with-transparency">hammerspace.co.uk</a>)</p>
+        </div>        
+    
+        <div class="step " data-x="150000" data-y="0" data-z="" data-scale="2">
+            <h1>Built-in Filters</h1>
+        </div>
+    
+        <div class="step " data-x="155000" data-y="0" data-z="" data-scale="2">
+            <p>Short-hand CSS reference for various image processing functions</p>        
+        </div>
+    
+        <div class="step " data-x="160000" data-y="0" data-z="" data-scale="2">
+            <h1>List of Built-in Filters</h1>
+        </div>
+    
+        <div class="step " data-x="165000" data-y="0" data-z="" data-scale="2">
+            <ul>
+                <li>grayscale</li>
+                <li>sepia</li>
+                <li>saturate</li>
+                <li>hue-rotate</li>
+                <li>invert</li>
+                <li>opacity</li>
+                <li>brightness</li>
+                <li>contrast</li>
+                <li>blur</li>
+                <li>drop-shadow</li>
+            </ul>
+        </div>
+        <div class="step " data-x="170000" data-y="0" data-z="" data-scale="2">
+            <h2>Aside: Different from CSS/Canvas Blurs</h2>
+            <p><a href="http://dbaron.org/log/20110225-blur-radius">dbaron.org/log/20110225-blur-radius</a></p>
+            <p><img src="gaussianvscss.png"></p>
+        </div>
+        
+
+        <div class="step " data-x="175000" data-y="0" data-z="" data-scale="2">
+            <h1>Hue Rotate</h1>        
+        </div>
+    
+        <div class="step " data-x="180000" data-y="0" data-z="" data-scale="2">
+            <p>Rotates the color by a certain degree on the coolor wheel.</p>
+            <p><img src="http://s3.amazonaws.com/Gyazo/1370734410.png"></p>
+        </div>
+    
+        <div class="step " data-x="185000" data-y="0" data-z="" data-scale="2">
+            <p><a href="hue-rotate.html">Demo</a></p>
+        </div>
+        <div class="step " data-x="190000" data-y="0" data-z="" data-scale="2">
+            <h1>Drop Shadow</h1>
+            <p>Blurred offset version of input's non-transparent areas</p>
+        </div>
+    
+        <div class="step " data-x="195000" data-y="0" data-z="" data-scale="2">
+            <h3>Box Shadow</h3>
+            <p><img src="http://s3.amazonaws.com/Gyazo/1370736580.png"></p>
+            <h3>Drop Shadow</h3>
+            <p><img src="http://s3.amazonaws.com/Gyazo/1370736538.png"></p>
+        </div>
+    
+        <div class="step " data-x="200000" data-y="0" data-z="" data-scale="2">
+            <p>Drop Shadow also uses gaussian blur instead of Triple box blur that Box shadow does.</p>
+        </div>
+    
+        <div class="step " data-x="205000" data-y="0" data-z="" data-scale="2">
+            <h1>Browser Support</h1>
+            <p>Stable Chrome (all flavours), Safari (all flavours), Opera 15+</p>
+        </div>
+        <div class="step " data-x="210000" data-y="0" data-z="" data-scale="2">
+            <h1>SVG Filters</h1>
+        </div>
+    
+        <div class="step " data-x="215000" data-y="0" data-z="" data-scale="2">
+            <p>All built-in filters have <a href="https://dvcs.w3.org/hg/FXTF/raw-file/default/filters/index.html#ShorthandEquivalents">SVG Filter equivalents</a></p>            
+        </div>
+        <div class="step " data-x="220000" data-y="0" data-z="" data-scale="2">
+            <h2>E.g. Blur Filter</h2>
+            <p><code>filter: blur([radius]);</code></p>
+            <pre>&lt;filter id="blur">
+    &lt;feGaussianBlur stdDeviation="[radius radius]">
+&lt;/filter></pre>
+        </div>
+    
+        <div class="step " data-x="225000" data-y="0" data-z="" data-scale="2">
+           <p>Handy cheatsheet to make it work in Firefox!</p>
+        </div>
+    
+        <div class="step " data-x="230000" data-y="0" data-z="" data-scale="2">
+           <h1>Filter Primitives</h1>
+            <p>Built-in filters described in terms of these Filter primitives</p>
+        </div>
+    
+        <div class="step " data-x="235000" data-y="0" data-z="" data-scale="2">
+            <h1>Advantages</h1>
+        </div>
+    
+        <div class="step " data-x="240000" data-y="0" data-z="" data-scale="2">
+            <ul>
+                <li>Input as CSS filter (<a href="primitives.html">Demo</a>)</li>                
+                <li>More effects like morphing, diffuse lighting, specular lighting, etc.</li>            
+                <li>Chrome also <a href="https://code.google.com/p/chromium/issues/detail?id=227470">hardware accelerates some SVG Filters</a></li>
+            </ul>
+        </div>
+    
+        <div class="step " data-x="245000" data-y="0" data-z="" data-scale="2">
+            <p><a href="http://codepen.io/johanberonius/pen/hmpFB">Demo</a></p>
+        </div>
+    
+        <div class="step " data-x="250000" data-y="0" data-z="" data-scale="2">
+            <h1>Browser Support</h1>
+            <p>IE 10+ (unprefixed), Firefox (unprefixed), Chrome, Safari</p>
+        </div>
+        <div class="step " data-x="255000" data-y="0" data-z="" data-scale="2">
+            <h1>Blend Modes</h1>            
+        </div>
+    
+        <div class="step " data-x="260000" data-y="0" data-z="" data-scale="2">
+            <h2>How Colors mix when source elemnt and backdrop overlap.</h2>        
+        </div>
+        <div class="step " data-x="265000" data-y="0" data-z="" data-scale="2">    
+            <p>Note colors are blended without being pre-multiplied. </p>
+        </div>
+        <div class="step " data-x="270000" data-y="0" data-z="" data-scale="2">
+            <h1>Source Element</h1>
+            <p>Element on which the blend mode is specified.</p>
+        </div>
+    
+        <div class="step " data-x="275000" data-y="0" data-z="" data-scale="2">
+            <pre>h1 { mix-blend-mode: multiply; }</pre>
+        </div>
+    
+        <div class="step " data-x="280000" data-y="0" data-z="" data-scale="2">
+            <h1>Backdrop</h1>
+        </div>
+    
+        <div class="step " data-x="285000" data-y="0" data-z="" data-scale="2">
+            <p>Content that is behind the element that it should composite with.</p>
+        </div>
+        <div class="step " data-x="290000" data-y="0" data-z="" data-scale="2">
+            <p>All the elements behind the source elements are composited (rendered into place) before applying the blend mode.</p>
+        </div>
+        <div class="step " data-x="295000" data-y="0" data-z="" data-scale="2">
+            <h1>Stacking Context!</h1>            
+        </div>            
+        <div class="step " data-x="300000" data-y="0" data-z="" data-scale="2">
+            <p>Backdrop only extends to current stacking context.</p>
+        </div>                        
+        <div class="step " data-x="305000" data-y="0" data-z="" data-scale="2">
+            <p>Each element using <code>mix-blend-mode</code> creates a new stacking context</p>            
+        </div>                        
+        <div class="step " data-x="310000" data-y="0" data-z="" data-scale="2">
+            <h1>What creates stacking context?</h1>
+        </div>    
+        <div class="step " data-x="315000" data-y="0" data-z="" data-scale="2">            
+            <ul>
+                <li>Absolutely/Fixed positioned elements</li>
+                <li>Opacity < 1</li>
+                <li>Filters</li>                
+                <li>Overflow is set</li>
+                <li>Transform is used.</li>
+            </ul>
+        </div>                    
+        <div class="step " data-x="320000" data-y="0" data-z="" data-scale="2">            
+            <h2>What happens when blending within a stacking context?</h2>
+        </div>
+        <div class="step " data-x="325000" data-y="0" data-z="" data-scale="2">            
+            <p>The backdrop of the element creating the stacking context is considered transparent black.</p>
+        </div>
+        <div class="step " data-x="330000" data-y="0" data-z="" data-scale="2">            
+            <h2>What if you want this effect without specifying a stacking context?</h2>
+        </div>    
+        <div class="step " data-x="335000" data-y="0" data-z="" data-scale="2">            
+            <h2><code>isolation</code></h2>
+            <pre>h1 { isolation: isolate; }</pre>
+        </div>
+        <div class="step " data-x="340000" data-y="0" data-z="" data-scale="2">            
+            <p>Blend modes applied on element or descendants will assume transparent black as starting backdrop.</p>
+        </div>
+        <div class="step " data-x="345000" data-y="0" data-z="" data-scale="2">            
+            <pre>h1 { 
+  isolation: isolate; 
+  background: url(cir.png); }
+
+h1 span { 
+  mix-blend-mode: multiply; }</pre>
+        </div>
+        <div class="step " data-x="350000" data-y="0" data-z="" data-scale="2">            
+            <p><img src="isolation.png"></p>
+        </div>
+        <div class="step " data-x="355000" data-y="0" data-z="" data-scale="2">            
+            <h1>Isolation Defaults</h1>
+        </div>
+        <div class="step " data-x="360000" data-y="0" data-z="" data-scale="2">            
+            <ul>
+                <li>Backgrounds</li>
+                <li>Images</li>
+            </ul>
+        </div>    
+        <div class="step " data-x="365000" data-y="0" data-z="" data-scale="2">            
+            <p>(<a href="./isolation-background.html">Demo</a>)</p>
+        </div>
+        <div class="step " data-x="370000" data-y="0" data-z="" data-scale="2">            
+            <h1>Blend Modes in Canvas</h1>
+        </div>
+        <div class="step " data-x="375000" data-y="0" data-z="" data-scale="2">            
+            <pre>globalCompositeOperation = '&lt;blend-mode>';</pre>
+        </div>
+        <div class="step " data-x="380000" data-y="0" data-z="" data-scale="2">            
+            <p><a href="http://codepen.io/adobe/pen/GjKDc">(Demo)</a></p>
+        </div>
+        <div class="step " data-x="385000" data-y="0" data-z="" data-scale="2">            
+            <h1>Why do we need blend modes when we have filters?</h1>            
+        </div>
+        <div class="step " data-x="390000" data-y="0" data-z="" data-scale="2">            
+            <ul>
+                <li>Filters cannot create similar effects</li>
+                <li><code>feBlend</code> Filter primitive will use Blend Modes in the future.</li>
+                <li><code>enableBackground</code> attribute that allows primitive blend mode in SVG Filter primitives is not implemented in most browsers.</li>
+            </ul>
+        </div>
+        <div class="step " data-x="395000" data-y="0" data-z="" data-scale="2">            
+            <h2>Thanks</h2>
+            <p><a href="http://twitter.com/dirkschulze">Dirk Schulze</a>& <a href="http://twitter.com/rcabanier">Rik Cabanier</a></p>
+        </div>
+        <div class="step " data-x="400000" data-y="0" data-z="" data-scale="2">            
+            <h2>Follow</h2>
+            <p><a href="http://twitter.com/adobeweb">@adobeweb</a> & <a href="http://codepen.io/adobe/">codepen.io/adobe/</a></p>
+        </div>    
+    </div>
+    
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="http://nimbu.in/js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
