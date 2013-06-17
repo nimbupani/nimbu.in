@@ -21,10 +21,6 @@ body {
     min-height: 740px;
 
     background: #476ca6;
-    background: -webkit-radial-gradient(#476ca6, #597db7);
-    background:    -moz-radial-gradient(#476ca6, #597db7);
-    background:     -ms-radial-gradient(#476ca6, #597db7);
-    background:      -o-radial-gradient(#476ca6, #597db7);
     color: khaki;
     text-shadow: 1px 1px 1px #1b396c;
 }
