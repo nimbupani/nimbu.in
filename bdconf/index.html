@@ -8,6 +8,17 @@
     <meta name="author" content="Divya Manian">
     <link rel=stylesheet href=http://nimbu.in/css/impress.css>
     <style>
+        .images {
+            text-align:center;
+            letter-spacing:-0.08em;
+            word-spacing:-0.2em;                        
+        }
+        .images img {
+            display: inline-block;
+            width: 400px;
+            vertical-align:bottom;            
+        }
+        
         li {
             display: inline-block;            
         }
@@ -45,164 +56,155 @@
         </div>        
     
         <div class="step " data-x="5000" data-y="0" data-z="" data-scale="2">
-            <h1>What we can do now</h1>
+            <h1>What layout are we talking about?</h1>
         </div>
     
-        <div class="step " data-x="10000" data-y="0" data-z="" data-scale="2">
-            <ul>
-                <li>Flexbox</li>
-                <li></li>
-            </ul>
+        <div class="step images" data-x="10000" data-y="0" data-z="" data-scale="2">
+            <img src="http://s3.amazonaws.com/Gyazo/1374354460.png">
+            <img src="http://s3.amazonaws.com/Gyazo/1374354511.png">
+            <img src="http://s3.amazonaws.com/Gyazo/1374354530.png">
+            <img src="http://s3.amazonaws.com/Gyazo/1374354577.png">
+            <img src="http://s3.amazonaws.com/Gyazo/1374354705.png">
         </div>
     
         <div class="step  middle" data-x="15000" data-y="0" data-z="" data-scale="2">
-            <h1>Based on SVG Filters</h1>
-            <p>Introduced by Adobe.</p>
+            <h1>Restrictions on web layout</h1>            
         </div>
     
-        <div class="step  middle" data-x="20000" data-y="0" data-z="" data-scale="2">
-            <h2>Available since Chrome 18, Safari 6. </h2>
-
+        <div class="step  middle" data-x="20000" data-y="0" data-z="" data-scale="2">            
+            <p>Follow order of HTML markup</p>
         </div>
     
         <div class="step  middle" data-x="25000" data-y="0" data-z="" data-scale="2">
-            <h1>What is it?</h1>
+            <p>Rectangular containers</p>
         </div>
     
         <div class="step " data-x="30000" data-y="0" data-z="" data-scale="2">
-            <a href="http://www.flickr.com/photos/arkku/471713062/" title="Filter stack by Arkku, on Flickr"><img src="http://farm1.staticflickr.com/227/471713062_61a8e66ca8.jpg" width="500" height="334" alt="Filter stack"></a>
+            <p>Cannot center content vertically</p>
         </div>
     
         <div class="step  middle" data-x="35000" data-y="0" data-z="" data-scale="2">
-            <h2>A filter changes the pixels of an element.</h2>
-
+            <p>No hyphens, widow, orphan controls.</p>
         </div>
         <div class="step  middle" data-x="40000" data-y="0" data-z="" data-scale="2">
-           <h1>What are filters?</h1>
-            <pre>h1 {
-  filter: blur(10px);
-}</pre>
+            <img src="orphanswidows.png">
         </div>
         
     <div class="step " data-x="45000" data-y="0" data-z="" data-scale="2">
-            <p><a href="blur.html">Demo</a></p>
+            <p>No ligatures</p>
         </div>
     
         <div class="step " data-x="50000" data-y="0" data-z="" data-scale="2">
-            <h1>Wait, we have seen this before!</h1>
+            <img src="http://typophile.com/files/f-umlaut_4616.gif">
         </div>
     
         <div class="step " data-x="55000" data-y="0" data-z="" data-scale="2">
-            <h2>Box Shadows, Text Shadows</h2>
-            <p>(But they are different)</p>
+            <h1>What is possible in modern browsers</h1>            
         </div>        
                 
         <div class="step " data-x="60000" data-y="0" data-z="" data-scale="2">
-            <h2>How do filters work?</h2>
+            <p>Latest of Chrome, Safari, Internet Explorer, Firefox</p>            
         </div>
         <div class="step " data-x="65000" data-y="0" data-z="" data-scale="2">
-            <ul class=onebyone>
-                <li>Element rendered (with border, outline, box-shadows, border radius, etc.</li>
-                <li>Filters apply on rendered element.</li>
-                <li>Clipping, Masking or Opacity.</li>
-            </ul>            
+            <p>Center content vertically.</p>
         </div>    
         <div class="step " data-x="70000" data-y="0" data-z="" data-scale="2">
-            <p>Filters create a new stacking context</p>
-        </div>
+            <p>Organize content outside of source order (somewhat)</p>            
+        </div>    
     
         <div class="step " data-x="75000" data-y="0" data-z="" data-scale="2">
-            <h1>Stacking Context</h1>
+            <p>Widow, orphan controls.</p>            
         </div>
     
         <div class="step " data-x="80000" data-y="0" data-z="" data-scale="2">
-            <p>Determines the paint order of elements (<a href="stacking-context.html">example</a>) - <a href="http://www.w3.org/TR/CSS21/zindex.html">Detailed explanation</a></p>
+            <p>Ligatures</p>
         </div>
         <div class="step " data-x="85000" data-y="0" data-z="" data-scale="2">
-            <p>Stacking Context is important in choosing an element to be rendered by the GPU.</p>            
+            <h1>What we can see in the future</h1>
         </div>
+        <div class="step " data-x="85000" data-y="0" data-z="" data-scale="2">
+            <p>Actual layout of content irrespective of order in HTML.</p>
+        </div>
+        
         <div class="step " data-x="90000" data-y="0" data-z="" data-scale="2">    
-            <p>Filters will be computed &amp; applied by GPU on animated elements (Safari & Chrome). <a href="http://codepen.io/hinducows/full/CuDdI">Demo</a></p>
+            <p>Text wrapping without rectangles</p>
         </div>            
         <div class="step  middle" data-x="95000" data-y="0" data-z="" data-scale="2">
-            <p>What filters do we have?</p>
+            <p>Clipping content into shapes</p>
         </div>                
         <div class="step  middle" data-x="100000" data-y="0" data-z="" data-scale="2">
-            <ul class="onebyone">
-                <li>Built-in Filters</li>
-                <li>SVG Filters</li>
-                <li>Custom Filters (<a href="http://adobe-webplatform.github.io/custom-filters-demo-travel-app/src/">Demo</a>)</li>
-            </ul>
+            <p>Hyphens</p>
         </div>
         <div class="step " data-x="105000" data-y="0" data-z="" data-scale="2">
-            <h1>Built-in Filters</h1>
+            <h1>Flexbox</h1>
         </div>
     
         <div class="step " data-x="110000" data-y="0" data-z="" data-scale="2">
-            <p>Short-hand CSS reference for various image processing functions</p>        
+            <pre>.flex-container {
+ display: flex; 
+ justify-content: center; 
+ align-items: center; 
+}</pre>
         </div>            
     
         <div class="step " data-x="115000" data-y="0" data-z="" data-scale="2">
-            <ul>
-                <li>blur</li>
-                <li>grayscale</li>
-                <li>sepia</li>
-                <li>saturate</li>
-                <li>hue-rotate</li>
-                <li>invert</li>
-                <li>opacity</li>
-                <li>brightness</li>
-                <li>contrast</li>                
-                <li>drop-shadow</li>
-            </ul>
+           <iframe src="flexbox.html" width=800 height=600></iframe> 
         </div>                
         <div class="step " data-x="120000" data-y="0" data-z="" data-scale="2">
-            <h1>Hue Rotate</h1>        
+            <h2>What else can Flexbox do?</h2>
+            <ul>
+                <li>Distribute elements among full height of viewport</li>
+                <li>Align horizontally</li>
+                <li>Organize content irrespective of source order.</li>
+            </ul>
         </div>
     
         <div class="step " data-x="125000" data-y="0" data-z="" data-scale="2">
-            <p>Rotates the color by a certain degree on the color wheel.</p>
-            <p><img src="http://s3.amazonaws.com/Gyazo/1370734410.png"></p>
-        </div>
+            <h2>Widows, Orphans</h2>
+<pre>.multicol h1 {
+    widows: 4;
+}
+</pre></div>
     
         <div class="step " data-x="130000" data-y="0" data-z="" data-scale="2">
-            <p><a href="hue-rotate.html">Demo</a></p>
+            <iframe src="widows.html" width=800 height=600></iframe>
         </div>
         <div class="step " data-x="135000" data-y="0" data-z="" data-scale="2">
-            <h1>Drop Shadow</h1>
-            <p>Blurred offset version of input’s non-transparent areas</p>
+            <h1>Font Load Events</h1>            
         </div>
     
         <div class="step " data-x="140000" data-y="0" data-z="" data-scale="2">
-            <pre>h1 { 
-  filter: drop-shadow(0 0 3px #000); 
-}</pre>
+            <p>Load a font, take action when fonts are loaded</p>
         </div>
  
         <div class="step " data-x="145000" data-y="0" data-z="" data-scale="2">
-            <div class="sidebyside">
-                <h3>Box Shadow</h3>
-                <p><img src="http://s3.amazonaws.com/Gyazo/1370736580.png" height=150></p>
-            </div>
-            <div class="sidebyside">
-                <h3>Drop Shadow</h3>
-                <p><img src="http://s3.amazonaws.com/Gyazo/1370736538.png" height=150></p>
-            </div>            
+            <pre>document.fontloader.onloadingdone = function(e) {
+                console.log(e.fontface);
+}</pre>
         </div>     
         <div class="step " data-x="150000" data-y="0" data-z="" data-scale="2">
-            <p>Box Shadows drawn to parts of the element to optimize the rendering of blurs.</p>
+            <ul>
+                <li>document.fontloader.loadFont</li>
+                <li>document.fontloader.checkFont</li>                
+                <li>document.fontloader.notifyWhenFontsReady</li>
+                <li>document.fontloader.onloading</li>
+                <li>document.fontloader.onloadstart</li>
+                <li>document.fontloader.onerror</li>
+                <li>document.fontloader.onloadingdone</li>
+            </ul>
         </div>
         <div class="step " data-x="155000" data-y="0" data-z="" data-scale="2">
-            <p><img src="box-blur.png"></p>
+            <h1>Ligatures</h1>
         </div>
         <div class="step " data-x="160000" data-y="0" data-z="" data-scale="2">
-            <p><code>drop-shadow()</code> operates on the entire element.</p>
+            <iframe src="ligatures.html" width=800 height=600></iframe>
         </div>  
         <div class="step " data-x="165000" data-y="0" data-z="" data-scale="2">
-            <h1>Blurs in CSS Filters</h1>            
+            <h1>Future</h1>            
         </div>
         <div class="step " data-x="170000" data-y="0" data-z="" data-scale="2">
-            <p>Blur radius calculation different from CSS/Canvas Blurs (<a href="http://dbaron.org/log/20110225-blur-radius">David Baron on Blur Radius</a>)</p>        </div>
+            <p>Named flows of content</p>
+        </div>
         <div class="step " data-x="175000" data-y="0" data-z="" data-scale="2">
             <h2>CSS Blurs</h2>
             <p><code>box-shadow</code>, <code>text-shadow</code> with blur radius</p>            

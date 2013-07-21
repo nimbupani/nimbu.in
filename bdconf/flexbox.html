@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Flex box centering</title>
+
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
+
+body {
+  font: 16px/1.5 sans-serif;  
+  background: indianred;
+  color: #fff;
+}
+
+
+body { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-flow: column wrap;
+}
+
+h1 {
+  background: purple;
+  padding: 0 1em;
+  font-size: 3rem;
+  margin: 0;
+}
+
+nav a {
+  padding: 1em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+h2 {
+  flex: 1;
+  background: green;
+  padding: 1em;
+  margin: 0;
+}
+      
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  text-align:center;
+  background: rgba(0, 0, 0, 0.8);
+}
+      
+footer a { color: white; }
+  </style>
+
+</head>
+
+<body>
+    <h1>Banner</h1>
+    <nav>
+        <a href="">home</a>
+        <a href="">about</a>
+        <a href="">contact</a>
+    </nav>
+    <h2>and more content</h2>
+    <footer><a href="http://codepen.io/nimbupani/pen/Inzao">codepen.io/nimbupani/pen/Inzao</a></footer>
+</body>
+
+</html>

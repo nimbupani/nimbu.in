@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+
+  <title>Blur</title>
+
+  <style>
+      body {
+          margin: 0 auto;
+          width: 70%;
+          font: 100%/1.5 sans-serif;
+          background: indianred;
+          color: white;
+      }
+      .multicol {
+        -webkit-column-count: 4;
+      }
+
+      .multicol p {
+        widows: 4;
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1em;
+        text-align:center;
+        background: rgba(0, 0, 0, 0.8);
+      }
+      
+      footer a { color: white; }
+
+  </style>
+
+</head>
+
+<body>
+<div class='multicol'>
+				<h2>The multi-column model</h2>
+				<p>A <dfn id="multi-column-element">multi-column element</dfn> (or <em>multicol element</em> for short) is an element whose ‘<code>column-width</code>’ or ‘<code>column-count</code>’ property is not ‘<code>auto</code>’ and therefore acts as a container for multi-column layout.</p>
+				<p>In the traditional CSS box model, the content of an element is flowed into the content box of the corresponding element.
+					Multi-column layout introduces a new type of container between the content box and the content, namely the <dfn id="column-box">column box</dfn> (or <em>column</em> for short). The content of a multicol element is flowed into its column boxes.</p>
+				<p>Column boxes in a multi-column element are arranged into <em>rows</em>. Like table cells, the column boxes in a row are ordered in the inline direction of the multicol element. The <em>column width</em> is the length of the column box in the inline direction. The <em>column height</em> is the length of the column box in the block direction. All column boxes in a row have the same column width, and all column boxes in a row have the same column height. Within each row in the multi-column element, adjacent column boxes are separated by a <em>column gap</em>, which may contain a <em>column rule</em>. All column gaps in the same row are equal. All column rules in the same row are also equal, if they appear; column rules only appear between columns that both have content.</p>
+				<p>In the simplest case a multicol element will contain only one row of columns, and the height of each column will be equivalent to the used height of the multi-column element's content box. If the multi-column element is paginated, the height of each row is constrained by the page and the content continues in a new row of column boxes on the next page;</p>
+  </div>
+    <footer><a href="http://codepen.io/nimbupani/pen/EoAdm">codepen.io/nimbupani/pen/EoAdm</a></footer>
+</body>
+
+</html>
