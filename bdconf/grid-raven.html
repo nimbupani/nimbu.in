@@ -8,19 +8,16 @@
     var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
   })();
 </script>
-    <style>
-body, html { margin: 0; padding: 0; height: 100%; font: 100%/1.5 'adobe calson' serif; font-feature-settings: "dlig" 1, "liga" 1; }
+<style>
+
+body, html { margin: 0; padding: 0; height: 100%; font: 100%/1.5 'adobe calson' serif; -webkit-font-feature-settings: "dlig" 1, "liga" 1; }
 
 nav {
     padding: 1em;
     background: green;
     border-bottom: 1px solid darkgreen;
-    box-sizing:border-box;
-    width: 100%;
-    display: flex;
-    justify-content:center;
+    width: 100%;    
     font-family: sans-serif;
-    -webkit-flow-into: nav;
 }
         
 nav a {
@@ -28,98 +25,133 @@ nav a {
     text-transform:uppercase;
     padding: 0 1em;
     color: white;
-}  
+}
+        
+.poem-container { display: none; }
 
+.content p {
+    padding: 3em;
+    box-sizing:border-box;
+}
+        
+.content figure {
+    width: 200px;
+}
+        
 figcaption {
     font-family: sans-serif;
     text-transform:uppercase;
     font-size: .8rem;
-}            
-        
+}
         
 footer {
     background: purple;
     color: white;
-    text-align: center;
+    text-align: center;    
+}
+        
+.content figure img {
     width: 100%;
-}
-        
-.content p {
-    -webkit-flow-into: poetry;
-    break-inside: avoid;
-}
-        
-.content figure {
-    -webkit-flow-into: poetry-images;    
-    -webkit-region-break-after: always;            
-    margin: 0 0 3em 0;            
+}    
+
+/* GRID STYLING */
+body { 
+  display: grid;
+  grid-definition-columns: 100%;
+  grid-definition-rows: 10% auto 10%;
 }
 
-figure img {
-    width: 100%;
-    -webkit-region-break-inside: avoid;            
+nav {
+  grid-column: 1;
+  grid-row: 1;
 }
-
-.poem-container, 
-.poem-mobile-container,
-.nav-footer {
-    display: none;
-}
-        
-@media (min-width: 800px) {
-    .site-header {
-        -webkit-flow-from: nav;
-        display: block;
-    }
-        
-    .poem-mobile-container {
-        display: none;
-    }
-    .poem-container {
-        display: block;        
-    }
-        
-    .poem-container .image {
-        -webkit-flow-from: poetry-images;
-    }
-        
-    .poem-container .verse {
-        -webkit-flow-from: poetry;
-        padding: 2em;
-    }                
-}
-        
-@media (max-width: 800px) {
-    .poem-container {
-        display: none;
-    }
-    .poem-mobile-container {
-        display:block;
-    }
-        
-    .poem-mobile-container .image {
-        -webkit-flow-from: poetry-images;                
-    }
-        
-    .poem-mobile-container .verse {
-        -webkit-flow-from: poetry;
-        max-height: 500px;
-        padding: 1em;        
-    }                    
-        
     
-    .poem-mobile-container .verse:last-of-type {
-        max-height:none;            
-    }
-    .nav-footer {
-        display: block;
-        -webkit-flow-from: nav;
-    }
+.content {
+ grid-column: 1;
+ grid-row: 2; 
+ display: grid;        
+}                
+    
+footer {
+  grid-column: 1;
+  grid-row: 3;                
 }
-        
-        
-    </style>
-    <body>
+    
+@media (max-width: 799px) {
+    .content figure {
+        width: 100%;
+    }
+    .content {    
+        grid-definition-columns: 100%;
+        grid-definition-rows: auto auto auto auto auto auto auto;
+        grid-auto-flow: row;
+    }
+    
+    .content p:first-of-type {      
+        grid-row: 1;
+    }
+    
+    .content p:nth-of-type(2) {      
+        grid-row: 3;
+    }
+    
+    .content p:nth-of-type(3) {      
+        grid-row: 5;
+    }
+    
+    .content p {
+        grid-row: auto;
+    }
+    
+    .content figure:first-of-type {     
+        grid-row: 2;
+    }
+    
+    .content figure:nth-of-type(2) {     
+        grid-row: 4;
+    }
+    
+    .content figure:nth-of-type(3) {     
+        grid-row: 6;
+    }                    
+}    
+   
+@media (min-width: 800px) {
+    .content {    
+        grid-definition-columns: 50% 50%;
+        grid-definition-rows: auto;
+        grid-auto-flow: row;
+    }    
+    
+    .content p {
+      grid-column: 1;  
+      grid-row: auto;
+    }
+    
+    .content figure {
+     grid-column: 2;
+     grid-row: auto;
+    }                    
+}
+</style>
+<body>
+<nav>
+  <a href=#>home</a>
+  <a href=#>about</a>
+  <a href=#>poems</a>
+</nav>
+<div class="poem-container">
+  <div class=image></div>
+    <div class=image></div>
+    <div class=image></div>
+    <div class=verse></div>
+    <div class=verse></div>
+    <div class=verse></div>
+    <div class=verse></div>
+</div>
+<footer>
+  &copy; 2013 Poems Not Ink
+</footer>
 <div class=content>
   <p>
   Once upon a midnight dreary, while I pondered weak and weary,
@@ -259,48 +291,6 @@ And my soul from out that shadow that lies floating on the floor
     <img src="https://s3.amazonaws.com/nimbupics/crow-3.jpg">
     <figcaption>Caption 3</figcaption>
   </figure>    
-</div> 
-<div class="site-header">
-</div>        
-<div class="poem-container">
-    <style scoped>
-        .image {
-            float: right;
-            clear: right;
-            width: 30%; 
-            margin: 0 20% 0 0;
-        }
-        
-        .verse {
-            margin-right: 50%;
-        }        
-    </style>    
-    <div class=image></div>
-    <div class=image></div>
-    <div class=image></div>
-    <div class=verse></div>
-    <div class=verse></div>
-    <div class=verse></div>
-    <div class=verse></div>
-</div>
-<div class="poem-mobile-container">    
-    <div class=image></div>
-    <div class=verse></div>
-    <div class=verse></div>
-    <div class=image></div>
-    <div class=verse></div>
-    <div class=image></div>
-    <div class=verse></div>
-</div>
-<nav>
-  <a href=#>home</a>
-  <a href=#>about</a>
-  <a href=#>poems</a>
-</nav>
-        
-<footer>
-  &copy; 2013 Poems Not Ink
-    <div class="nav-footer"></div>
-</footer>
+</div>    
 </body>
 </html>
