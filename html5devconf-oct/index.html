@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Unmasking the GPU: Using Hardware Acceleration Correctly in CSS</title>
+    <meta name="description" content="Talk at HTML5 Dev Conf on Oct 22 2013">
+    <meta name="author" content="Divya Manian">
+    <link rel=stylesheet href=http://nimbu.in/css/impress.css>
+    <script>
+        var anelm = document.getElementById('impress');
+        
+    </script>
+</head>
+
+<body class="impress-not-supported">
+<div id="impress">
+    
+        <div class="step  middle" data-x="0" data-y="0" data-z="" data-scale="2">
+            <h1>Unmasking the GPU</h1>
+            <h2>Using Hardware Acceleration Correctly with CSS</h2>
+            <p><a href="http://twitter.com/divya">@divya</a> • Product Manager, Adobe</p>
+            <p><a href="http://nimbu.in/html5devconf-2/">nimbu.in/html5devconf-oct/</a></p>
+        </div>
+    
+        <div class="step " data-x="10000" data-y="0" data-z="" data-scale="2">
+            <h1>Web Platform Team</h1>
+            <p><a href="http://html.adobe.com/webplatform/">html.adobe.com/webplatform</a></p>
+
+        </div>
+    
+        <div class="step " data-x="15000" data-y="0" data-z="" data-scale="2">
+            <h1>Mandate</h1>
+            <h2>Make the web awesome</h2>                        
+            <p>(<a href="http://makethewebawesome.com">makethewebawesome.com</a>)</p>
+        </div>
+    
+        <div class="step  middle" data-x="20000" data-y="0" data-z="" data-scale="2">
+            <h1>Features we work on</h1>
+            <ul>
+                <li><a href="http://html.adobe.com/webplatform/layout/regions">Regions</a></li>
+                <li><a href="http://html.adobe.com/webplatform/layout/shapes">Shapes</a></li>
+                <li><i><a href="http://html.adobe.com/webplatform/graphics/blendmodes">Blend Modes</a></i></li>
+                <li><i><a href="http://html.adobe.com/webplatform/graphics/customfilters">Filters</a></i></li>
+            </ul>
+        </div>
+    
+        <div class="step  middle" data-x="25000" data-y="0" data-z="" data-scale="2">
+            <p><small>My team has more than a passing knowledge of</small></p>
+            <h1>Graphical Processing Unit (GPU)</h1>
+
+        </div>
+    
+        <div class="step  middle" data-x="30000" data-y="0" data-z="" data-scale="2">            
+            <h1>Agenda Today</h1>
+            <p>Change our understanding of browsers.</p>            
+        </div>
+    
+        <div class="step " data-x="35000" data-y="0" data-z="" data-scale="2">
+            <p>From</p>
+            <p><img src="https://s3.amazonaws.com/nimbublips/blackbox-dev.svg" alt=""></p>
+            <p>to</p>
+            <p><img src="https://s3.amazonaws.com/nimbublips/blackbox.svg" alt=""></p>
+        </div>
+    
+        
+        <div class="step " data-x="40000" data-y="0" data-z="" data-scale="2">
+            <h1>Paint the Pixels</h1>
+        </div>
+    
+        <div class="step " data-x="45000" data-y="0" data-z="" data-scale="2">
+            <h1>How do the pixels render?</h1>
+        </div>
+    
+        <div class="step  middle" data-x="50000" data-y="0" data-z="" data-scale="2">
+            <img src="https://lh5.googleusercontent.com/mTQIYRturbWjgHKL2dRFEKPLXQd479b5X9kK5u_udyfr9WT8nR3gNdWm803v-OFL9gACxyZ8s4M2JwjtLk0jqLEpl9JV5X_PUID19QNPpSvrWEmdULg">
+        </div>
+    
+        <div class="step  middle" data-x="55000" data-y="0" data-z="" data-scale="2">
+            <h1>Layout/Reflow</h1>
+            <p>Calculation of information required to display visible DOM nodes.</p>
+        </div>
+    
+        <div class="step  middle" data-x="60000" data-y="0" data-z="" data-scale="2">
+            <h1>When does it happen?</h1>
+        </div>
+    
+        <div class="step  middle" data-x="65000" data-y="0" data-z="" data-scale="2">
+            <p>Style changes</p>
+
+        </div>
+    
+        <div class="step  middle" data-x="70000" data-y="0" data-z="" data-scale="2">
+            <p>Fetching of layout values/scroll values.</p>
+
+        </div>
+    
+        <div class="step " data-x="75000" data-y="0" data-z="" data-scale="2">
+            <p>Adding/removing elements</p>
+        </div>        
+        
+        <div class="step" data-x="80000" data-y="0" data-z="" data-scale="2">
+            <h2>How to minimize Layout?</h2>
+
+        </div>
+    
+        <div class="step " data-x="85000" data-y="0" data-z="" data-scale="2">
+            <p>Move content away from the flow.</p>
+
+        </div>
+    
+        <div class="step " data-x="90000" data-y="0" data-z="" data-scale="2">
+            <p>Use only on the element with least children.</p>
+        </div>       
+    
+        <div class="step " data-x="95000" data-y="0" data-z="" data-scale="2">
+            <p>Apply layout changes on <code>requestAnimationFrame</code></p>
+        </div>
+    
+        <div class="step " data-x="100000" data-y="0" data-z="" data-scale="2">
+            <h1><code>requestAnimationFrame</code></h1>
+        </div>
+    
+        <div class="step " data-x="105000" data-y="0" data-z="" data-scale="2">
+            <h1>60fps</h1>
+            <p><a href="https://vimeo.com/64733304">Rendering without the lumpy bits</a></p>
+        </div>
+    
+        <div class="step " data-x="110000" data-y="0" data-z="" data-scale="2">
+            <p>new frame every 16.67ms</p>
+        </div>
+    
+        <div class="step " data-x="115000" data-y="0" data-z="" data-scale="2">
+            <p> <code>setInterval</code>, <code>setTimeout</code> <a href="http://www.html5rocks.com/en/tutorials/speed/rendering/raf-motivation.html">Drops frames if not synched to Browser refresh rate</a></p>
+        </div>
+        <div class="step " data-x="120000" data-y="0" data-z="" data-scale="2">
+            <p>Batch reading/writing <a href="http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html">layout values</a></p>
+            <p><a href="http://www.html5rocks.com/en/tutorials/speed/rendering/too-much-layout.html">Demo</a> - <a href="http://www.html5rocks.com/en/tutorials/speed/rendering/too-much-layout-fixed.html">Fixed</a></p>
+        </div>
+    
+        <div class="step " data-x="125000" data-y="0" data-z="" data-scale="2">
+            <h1>Paints</h1>
+            <p>Browser changes the pixel values of an area of the viewport</p>
+        </div>
+        <div class="step " data-x="130000" data-y="0" data-z="" data-scale="2">
+            <h1>Two kinds of painting</h1>
+            <ul>
+                <li>Paint an element.</li>
+                <li>Combine overlapping elements to present a flat image in the viewport.</li>
+            </ul>
+        </div>
+    
+        <div class="step " data-x="135000" data-y="0" data-z="" data-scale="2">
+            <h1>When does it happen?</h1>
+            <ul>
+                <li>Scrolling</li>
+                <li>Hover</li>
+                <li>Basically all the time</li>
+            </ul>
+        </div>
+    
+        <div class="step " data-x="140000" data-y="0" data-z="" data-scale="2">
+            <h1>Typical Painting Experience</h1>
+            <p><img src="https://lh5.googleusercontent.com/mTQIYRturbWjgHKL2dRFEKPLXQd479b5X9kK5u_udyfr9WT8nR3gNdWm803v-OFL9gACxyZ8s4M2JwjtLk0jqLEpl9JV5X_PUID19QNPpSvrWEmdULg"></p>
+        </div>    
+        <div class="step " data-x="145000" data-y="0" data-z="" data-scale="2">
+            <h2>Stacking contexts create RenderLayer Objects</h2>
+        </div>
+    
+        <div class="step " data-x="150000" data-y="0" data-z="" data-scale="2">
+            <h1>Traditional Stacking Contexts</h1>
+            <ul>
+                <li>Root Object (html)</li>
+                <li><code>position: relative</code>, <code>position: absolute</code></li>
+                <li>opacity < 1</li>                
+                <li>overflow is set</li>
+            </ul>
+        </div>        
+    
+        <div class="step " data-x="155000" data-y="0" data-z="" data-scale="2">
+            <h1>Create Render Layers</h1>
+        </div>
+    
+        <div class="step " data-x="160000" data-y="0" data-z="" data-scale="2">            
+            <p>Each Stacking context creates a Render Layer</p>                            
+        </div>
+    
+        <div class="step " data-x="165000" data-y="0" data-z="" data-scale="2">
+            <h2>CPU paints to ONE Bitmap</h2>
+        </div>
+    
+        <div class="step " data-x="170000" data-y="0" data-z="" data-scale="2">
+            <h2>What happens to painting when GPU is involved?</h2>
+
+        </div>
+    
+        <div class="step " data-x="175000" data-y="0" data-z="" data-scale="2">
+            <h1>New Stacking Contexts</h1>
+            <ul>
+                <li>Transforms</li>
+                <li>Blend Modes</li>
+                <li>Filters</li>                
+            </ul>
+        </div>    
+    
+        <div class="step " data-x="180000" data-y="0" data-z="" data-scale="2">
+            <ul>
+                <li>Many bitmaps not just ONE.</li>
+                <li>Most bitmaps rendered directly by GPU.</li>                
+                <li>Browser determines which render layers go into which bitmap.</li>
+            </ul>
+        </div>
+    
+        <div class="step " data-x="185000" data-y="0" data-z="" data-scale="2">
+            <p><img src="https://lh5.googleusercontent.com/mTQIYRturbWjgHKL2dRFEKPLXQd479b5X9kK5u_udyfr9WT8nR3gNdWm803v-OFL9gACxyZ8s4M2JwjtLk0jqLEpl9JV5X_PUID19QNPpSvrWEmdULg"></p>
+            <p>How does the browser decide which bitmaps are painted by GPU?</p>
+        </div>
+    
+        <div class="step" data-x="190000" data-y=0 data-z="" data-scale=2>
+            <ul>
+                <li>Intense painting occurs: e.g. video, WebGL or canvas</li>
+                <li>3D Transformed elements</li>
+                <li>Animated filters, masks, blend modes, reflections, opacity</li>
+                <li><code>position: fixed</code></li>
+                <li>content overlapping existing GPU-rendered bitmaps</li>
+            </ul>    
+        </div>
+    
+        <div class="step " data-x="195000" data-y="0" data-z="" data-scale="2">
+            <h1>How can you find out how many GPU-renderd bitmaps?</h1>
+            <p><a href="http://www.html5rocks.com/static/demos/movikantirevo/build4.html">Demo</a></p>
+        </div>
+    
+        <div class="step " data-x="200000" data-y="0" data-z="" data-scale="2">
+            <h2>GPU!!</h2>
+            <p><img src="http://images2.fanpop.com/image/photos/14200000/CS-source-wallpaper-counter-strike-14231626-1024-768.jpg"></p>
+        </div>
+    
+        <div class="step " data-x="205000" data-y="0" data-z="" data-scale="2">
+            <p>Like CPU but optimized for processing large blocks of data in parallel.</p>
+        </div>
+    
+        <div class="step " data-x="210000" data-y="0" data-z="" data-scale="2">
+            <ul>
+                <li>No Repaints, relayouts.</li>
+                <li>If area is large, tiled textures to swap in and out textures quickly. </li>
+                <li>Larger power consumption (vs. not using the features).</li>
+            </ul>
+        </div>
+    
+        <div class="step " data-x="215000" data-y="0" data-z="" data-scale="2">
+            <h1>Flicker happens</h1>
+            <ul>
+                <li>GPU scrambles to swap new textures into tiles as you scroll. </li>
+                <li>Browser is switching from CPU rendering to a GPU rendering (<a href="http://codepen.io/nimbupani/pen/GCxIn">Demo</a>)</li>
+            </ul>
+        </div>
+        <div class="step " data-x="220000" data-y="0" data-z="" data-scale="2">
+            <h1>GPU reduces burden on CPU, but</h1>
+            <ul>
+                <li>Limited by Memory</li>
+                <li>Limited by CPU/GPU bandwidth for communication</li>
+            </ul>            
+        </div>
+        <div class="step " data-x="225000" data-y="0" data-z="" data-scale="2">
+            <h1>Memory</h1>
+            <ul>
+                <li>All data & GPU textures are stored.</li>
+                <li>Android & iOS can force quit browser or webview to free memory (unlike Desktop).</li>
+                <li>More apps open, smaller the size of memory available to your page.</li>
+            </ul>
+        </div>            
+        <div class="step " data-x="230000" data-y="0" data-z="" data-scale="2">
+            <h1>Reduce Memory Usage</h1>
+            <ul>
+                <li>Smaller images (dimensions of image * 4 bytes)</li>
+                <li>Smaller JavaScript files/CSS files</li>
+                <li>Smaller/Fewer textures to GPU</li>
+                <li>Fewer GPU layers</li>
+            </ul>
+        </div>
+        <div class="step" data-x="235000" data-y=0 data-z="" data-scale="2">
+            <h1>Reduce CPU/GPU Communication</h1>
+            <p>Animate only</p>
+            <ul>
+                <li>Opacity</li>
+                <li>Transform</li>
+                <li>Filters</li>
+                <li>Blend Modes</li>
+            </ul>     
+            <p><a href="http://codepen.io/nimbupani/pen/GCxIn">Demo</a></p>
+        </div>
+        <div class="step " data-x="240000" data-y="0" data-z="" data-scale="2">
+            <h1>Others</h1>
+            <ul>                
+                <li>Don't animate <code>z-index</code></li>                
+                <li>Try not to <a href="http://ariya.ofilabs.com/2013/06/optimizing-css3-for-gpu-compositing.html">animate non-hardware-accelerated properties on GPU-accelerated content</a>.</li>
+                <li>Use Opacity to toggle visibility of GPU-accelerated content</li>                
+            </ul>
+        </div>                        
+        <div class="step " data-x="245000" data-y="0" data-z="" data-scale="2">
+            <h1>Why Opacity?</h1>
+            <ul>
+                <li>Textures remain in the GPU.</li>                
+                <li><code>visibility:hidden</code> removes textures from GPU.</li>
+                <li><code>display: none</code> causes repaints.</li>                
+                <li>removing elements from DOM causes style recalculations, layout, repaint, firing of events.</li>
+            </ul>
+        </div>    
+        <div class="step " data-x="250000" data-y="0" data-z="" data-scale="2">
+            <h1>In Summary</h1>
+            <ul>
+                <li>Rendering is a beast.</li>                
+                <li>Do layout, repaint, GPU acceleration sparingly.</li>
+                <li>Memory can quickly get out of hand!</li>
+                <li>Reduce CPU/GPU communication</li>
+                <li>Use Browser developer tools to test!</li>
+            </ul>
+        </div>                        
+        <div class="step " data-x="255000" data-y="0" data-z="" data-scale="2">
+            <p><a href="http://twitter.com/adobeweb">@adobeweb</a> for updates on our work on the web.</p>
+        </div>
+        <div class="hint">
+            <p>Use a spacebar or arrow keys to navigate</p>
+        </div>
+</div>
+        <script>
+        if ("ontouchstart" in document.documentElement) {
+            document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+        }
+        </script>
+        <script src="http://nimbu.in/js/impress.js"></script>
+        <script>impress().init();</script>
+</body>
+</html>
