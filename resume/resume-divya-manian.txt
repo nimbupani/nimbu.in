@@ -1,4 +1,3 @@
-
 ======================
 Divya Manian
 Open Web Vigilante – Making the web a better place for users, 1rem at a time.
@@ -65,10 +64,15 @@ Fun
 Work Experience
 ===============
 
+Adobe Systems
+------------
+- Product Manager, Jun 2012 - Present
+
+
 Opera Software
 --------------
 
-- Web Opener, Feb 2011 – Present
+- Web Opener, Feb 2011 – Mar 2012
   - Developer Advocate and Web Opener for World’s most popular mobile browser.
   - Liaise with web developers to find out what is missing in the product and make it more useful for the community.
 
